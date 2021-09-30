@@ -35,12 +35,13 @@ export	TESTCASE_BUILD_DIR
 # Rules of Compilation
 # ********************
 
-all: $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).bin $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).data convert entry
-	@./convert $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).bin $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).data
+all: inst.bin data.bin convert
+	@./convert inst.bin data.bin
 	@mv convert $(TESTCASE_BUILD_DIR)
 	@mv inst_rom.coe $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)_inst.coe
 	@mv data_ram.coe $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)_data.coe
-	@mv entry ../
+	@mv inst.bin ../
+	@mv data.bin ../
 
 
 $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).o: $(TESTCASE_SRC_DIR)$(USER_PROGRAM).S
@@ -51,18 +52,11 @@ $(TESTCASE_BUILD_DIR)$(USER_PROGRAM): default.ld $(OBJECTS)
 	$(LD) -T default.ld $(CFLAGS) $(OBJECTS) -o $@
 	$(OBJDUMP) -alD $@ > $@.asm
 
-entry: $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)
-	$(OBJCOPY) -S -O binary $(TESTCASE_BUILD_DIR)$(USER_PROGRAM) entry
-
-$(TESTCASE_BUILD_DIR)$(USER_PROGRAM).bin: $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)
+inst.bin: $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)
 	$(OBJCOPY) -O binary -j .text $<  $@
 
-$(TESTCASE_BUILD_DIR)$(USER_PROGRAM).data: $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)
+data.bin: $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)
 	$(OBJCOPY) -O binary -j .data $<  $@
 
 convert: convert.c
 	gcc $< -o $@
-
-clean:
-	rm -R $(TESTCASE_BUILD_DIR)
-	cd .. && rm entry
