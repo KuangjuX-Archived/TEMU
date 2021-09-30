@@ -26,6 +26,8 @@ void print_bin_instr(uint32_t pc) {
 
 /* Simulate how the MiniMIPS32 CPU works. */
 void cpu_exec(volatile uint32_t n) {
+	
+	uint32_t pc;
 	if(temu_state == END) {
 		printf("Program execution has ended. To restart the program, exit TEMU and run again.\n");
 		return;
@@ -37,8 +39,11 @@ void cpu_exec(volatile uint32_t n) {
 #endif
 
 	for(; n > 0; n --) {
+
+		pc = cpu.pc & 0x1fffffff;  //map the virtual address to the physical address, e.g. high 3 bits in cpu.pc are cleared
+		
 #ifdef DEBUG
-		uint32_t pc_temp = cpu.pc;
+		uint32_t pc_temp = pc;
 		if((n & 0xffff) == 0) {
 			
 			fputc('.', stderr);
@@ -47,7 +52,7 @@ void cpu_exec(volatile uint32_t n) {
 
 		/* Execute one instruction, including instruction fetch,
 		 * instruction decode, and the actual execution. */
-		exec(cpu.pc);
+		exec(pc);
 
 		cpu.pc += 4;
 

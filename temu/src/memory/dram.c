@@ -11,7 +11,7 @@
 #define COL_WIDTH 10
 #define ROW_WIDTH 10
 #define BANK_WIDTH 3
-#define RANK_WIDTH (27 - COL_WIDTH - ROW_WIDTH - BANK_WIDTH)
+#define RANK_WIDTH (29 - COL_WIDTH - ROW_WIDTH - BANK_WIDTH)
 
 typedef union {
 	struct {
@@ -52,6 +52,7 @@ void init_ddr3() {
 }
 
 static void ddr3_read(uint32_t addr, void *data) {
+
 	Assert(addr < HW_MEM_SIZE, "physical address %x is outside of the physical memory!", addr);
 
 	dram_addr temp;

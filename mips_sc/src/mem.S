@@ -1,6 +1,4 @@
-#include <regdef.h>
-   .org 0x0
-   .set noreorder
+#include "trap.h"
    .set nomacro
    .set noat
    .globl main
@@ -34,4 +32,5 @@ main:
    sw   $at,0x8($zero)       # [0x8] = 0x44, [0x9]= 0x55, [0xa]= 0x66, [0xb] = 0x77
    lw   $v0,0x8($zero)       # $v0 = 0x44556677
    nop
+   HIT_GOOD_TRAP		#stop temu
 
