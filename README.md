@@ -25,5 +25,5 @@ export PATH={Your compiler path}/bin:$PATH
   
 Try to use mips cross compiler:
 ```shell
-mips-sde-elf-gcc –v”
+mips-sde-elf-gcc –v
 ```
