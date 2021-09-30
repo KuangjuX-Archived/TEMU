@@ -27,3 +27,71 @@ make_helper(and) {
 	sprintf(assembly, "and   %s,   %s,   %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
+make_helper(add) {
+
+}
+
+make_helper(addu) {
+
+}
+
+make_helper(sub) {
+
+}
+
+make_helper(subu) {
+
+}
+
+make_helper(slt) {
+
+}
+
+make_helper(sltu) {
+
+}
+
+make_helper(and) {
+
+}
+
+make_helper(or) {
+
+}
+
+make_helper(xor) {
+
+}
+
+make_helper(nor) {
+
+}
+
+make_helper(sll) {
+
+}
+
+make_helper(srl) {
+
+}
+
+make_helper(sra) {
+
+}
+
+make_helper(sllv) {
+
+}
+
+make_helper(srlv) {
+
+}
+
+make_helper(srav) {
+
+}
+
+
+make_helper(jr) {
+	
+}

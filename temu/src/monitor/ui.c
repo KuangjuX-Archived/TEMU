@@ -1,5 +1,6 @@
 #include "monitor.h"
 #include "temu.h"
+#include "watchpoint.h"
 
 #include <stdlib.h>
 #include <readline/readline.h>
@@ -52,110 +53,16 @@ static int cmd_si(char *args) {
 	return 0;
 }
 
-static int cmd_info(char *args) {
-	char *arg = strtok(args, " ");
-	// printf("%s\n", arg);
-	if (strcmp(arg, "r") == 0)
-	{
-		int i;
-		for ( i = R_EAX; i <= R_EDI; i++)
-		{
-			printf("%s\t0x%08x\n", regsl[i], reg_l(i));
-		}
-		
-	}
-
-	if (strcmp(arg, "w") == 0)
-	{
-		printf("Will print the watch point.\n");
-		info_wp();
-	}
-	
-	
-	return 0;
-}
-
-static int cmd_x(char *args) {
-	if (args == NULL)
-	{
-		printf("Need more parameters.\n");
-		return 1;
-	}
-	
-	char *arg = strtok(args, " ");
-	if (arg == NULL)
-	{
-		printf("Need more parameters.\n");
-		return 1;
-	}
-
-	int n = atoi(arg);
-	char *EXPR = strtok(NULL, " ");
-	if (EXPR == NULL)
-	{
-		printf("Need more parameters.\n");
-	}
-
-
-	char *str;
-	swaddr_t address = strtol(EXPR, &str, 16);
-
-	// Scan
-	int i;
-	int j;
-	for (i = 0; i < n; i++)
-	{
-		uint32_t data = swaddr_read(address+i*4, 4, R_DS);
-		printf("0x%08x: ", address + i * 4);
-
-		for (j = 0; j < 4; j++)
-		{
-			printf("0x%02x ", data & 0xff);
-			data = data >> 8; /*4 bytes each time*/
-		}
-		printf("\n");
-	}
-	
-	return 0;
-	
-};
-
-static int cmd_p(char *args) {
-	uint32_t num;
-	bool success;
-	num = expr(args, &success);
-	if (success)
-	{
-		printf("Expression %s:\t0x%x\t%d\n", args, num, num);
-	}
-	else assert(0);
-	return 0;
-};
-
-static int cmd_w(char *args) {
-	WP *f;
-	bool suc;
-	f = new_wp();
-	printf("Watch-point %d: %s is set\n", f->NO, args);
-	f->value = expr(args, &suc);
-	strcpy(f->expr, args);
-	if (suc == false) Assert(1, "Evaluation failed!");
-	printf("Value: %d\n", f->value);
-	return 0;
-}
-
-static int cmd_d(char *args) {
+static int cmd_info(char* args) {
 	char* arg = strtok(args, " ");
-	int num;
-	if (arg==NULL) {
-		printf("Need more arguments, please inset an integer to appoint the watch-point.\n");
-	} else {
-		num = atoi(arg);
-		delete_wp(num);
+	if(strcmp(arg, "r") == 0) {
+		int i;
+		for(i = R_ZERO; i <= R_RA; i++) {
+			printf("%s\t0x%08x\n", regfile[i], reg_w(i));
+		}
 	}
 	return 0;
 }
-
 
 static struct {
 	char *name;
@@ -164,11 +71,10 @@ static struct {
 } cmd_table [] = {
 	{ "help", "Display informations about all supported commands", cmd_help },
 	{ "c", "Continue the execution of the program", cmd_c },
-	{ "q", "Exit NEMU", cmd_q },
-	{ "si", "Step into implementation of N instructions after the execution with a default value of 1 when N is not given.", cmd_si},
-	{ "info", "r: print the state of registers.\nw: print watch point position.", cmd_info},
-	{ "x", "Caculate the result of the expression and print continuous N byte in hex started with the value.", cmd_x},
+	{ "q", "Exit TEMU", cmd_q },
+	{ "si", "Single step", cmd_si },
 	/* TODO: Add more commands */
+	{ "info", "r for print register state \n w for print watchpoint information", cmd_info},
 
 };
 

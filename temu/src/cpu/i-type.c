@@ -36,5 +36,41 @@ make_helper(ori) {
 
 make_helper(addi) {
 	decode_imm_type(instr);
+	reg_w(op_dest->reg) = (int)op_src1->val + (int)op_src2->val;
+	sprintf(assembly, "addi  %s,  %s,   0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(addiu) {
+	decode_imm_type(instr);
+	reg_w(op_dest->reg) = op_src1->val + op_src2->val;
+	sprintf(assembly, "addiu  %s,  %s,   0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(slti) {
+	decode_imm_type(instr);
+	reg_w(op_dest->reg) = ((int)op_src1->val < (int)op_src2->val) ? 1 : 0;
+	sprintf(assembly, "slti  %s,  %s,   0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(sltiu) {
+	decode_imm_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val < op_src2->val) ? 1 : 0;
+	sprintf(assembly, "sltiu  %s,  %s,   0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(andi) {
+
+}
+
+make_helper(xori) {
+
+}
+
+make_helper(lw) {
+
+}
+
+make_helper(sw) {
+
 }
 
