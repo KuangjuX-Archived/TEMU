@@ -51,9 +51,6 @@ make_helper(sltu) {
 
 }
 
-make_helper(and) {
-
-}
 
 make_helper(or) {
 

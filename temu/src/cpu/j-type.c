@@ -11,9 +11,9 @@ static void decode_j_type(uint32_t instr) {
 }
 
 make_helper(j) {
-
+    decode_j_type(instr);
 }
 
 make_helper(jal) {
-    
+    decode_j_type(instr);
 }

@@ -3,6 +3,9 @@
 #include "monitor.h"
 #include "reg.h"
 
+extern uint32_t instr;
+extern char assembly[80];
+
 #define TRAP_ADDR 0xBFC00380
 // 地址错例外
 // 取指或读数据
@@ -52,7 +55,36 @@ make_helper(mfc0) {
 
 }
 
+static void decode_mtc0(uint32_t instr) {
+    op_dest->type = OP_TYPE_REG;
+    op_dest->reg = (instr & 0x0000F800) >> 11;
+
+    op_src1->type = OP_TYPE_REG;
+    op_src1->reg = (instr & 0x001F0000) >> 16;
+
+    op_src2->type = OP_TYPE_IMM;
+    op_src2->imm = (instr & 0x00000007);
+}
+
 // 向协处理器0的寄存器存值
 make_helper(mtc0) {
+    decode_mtc0(instr);
+    switch(op_dest->reg) {
+        case BadVAddr_R:
+            cpu.cp0.BadVAddr = reg_w(op_src1->reg);
+            break;
+        case Status_R:
+            cpu.cp0.status.val = reg_w(op_src1->reg);
+            break;
+        case Cause_R:
+            cpu.cp0.status.val = reg_w(op_src1->reg);
+            break;
+        case EPC_R:
+            cpu.cp0.EPC = reg_w(op_src1->reg);
+            break;
+        default:
+            panic("Unresolved cp0 register.\n");
+    }
+    // sprintf(assembly, "mtc0  %s,  %s,   0x%04x", REG_NAME());
 
 }
