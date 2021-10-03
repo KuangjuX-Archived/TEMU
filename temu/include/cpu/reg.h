@@ -10,6 +10,26 @@ enum { R_ZERO, R_AT, R_V0, R_V1, R_A0, R_A1, R_A2, R_A3, R_T0, R_T1, R_T2, R_T3,
 #define Cause_R 13
 #define EPC_R 14
 
+#define TRAP_ADDR 0xBFC00380
+
+// 地址错例外
+// 取指或读数据
+#define AdEL 0x04
+// 写数据
+#define AdES 0x05
+
+// 整形溢出例外
+#define Ov 0x0c
+
+// 系统调用例外
+#define Sys 0x08
+
+// 断点例外
+#define Bp 0x09
+
+// 保留指令例外
+#define RI 0x0a
+
 typedef union { 
 	struct {
 		uint32_t reversed_1 : 2;
