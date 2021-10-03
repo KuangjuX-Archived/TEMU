@@ -56,26 +56,28 @@ static void decode_mfc0(uint32_t instr) {
 
     op_src1->type = OP_TYPE_REG;
     op_dest->reg = (instr & 0x0000F800) >> 11;
+
+    op_src2->type = OP_TYPE_IMM;
+    op_src2->imm = (instr & 0x00000007);
 }
 
 // 向协处理器0的寄存器取值
 make_helper(mfc0) {
     decode_mfc0(instr);
-    switch(op_src1->reg) {
-        case BadVAddr_R:
-            reg_w(op_dest->reg) = cpu.cp0.BadVAddr;
-            break;
-        case Status_R:
-            reg_w(op_dest->reg) = cpu.cp0.status.val;
-            break;
-        case Cause_R:
-            reg_w(op_dest->reg) = cpu.cp0.cause.val;
-            break;
-        case EPC_R:
-            reg_w(op_dest->reg) = cpu.cp0.EPC;
-            break;
-        default:
-            panic("[mfc0] Invalid cp0 register.\n");
+    if(op_src1->reg == BadVAddr_R && op_src2->imm == 0) {
+        reg_w(op_dest->reg) = cpu.cp0.BadVAddr;
+        sprintf(assembly, "MFC0 %s, BadVAddr, 0x%04x", REG_NAME(op_dest->reg), op_src2->imm);
+    }else if(op_src1->reg == Cause_R && op_src2->imm == 0) {
+        reg_w(op_dest->reg) = cpu.cp0.cause.val;
+        sprintf(assembly, "MFC0 %s, Casue, 0x%04x", REG_NAME(op_dest->reg), op_src2->imm);
+    }else if(op_src1->reg == EPC_R && op_src2->imm == 0) {
+        reg_w(op_dest->reg) = cpu.cp0.EPC;
+        sprintf(assembly, "MFC0 %s, EPC, 0x%04x", REG_NAME(op_dest->reg), op_src2->imm);
+    }else if(op_src1->reg == Status_R && op_src1->imm == 0) {
+        reg_w(op_dest->reg) = cpu.cp0.status.val;
+        sprintf(assembly, "MFC0 %s, Status, 0x%04x", REG_NAME(op_dest->reg), op_src2->imm);
+    }else {
+        panic("[mtc0] Invalid cp0 register.\n");
     }
 }
 
@@ -93,22 +95,19 @@ static void decode_mtc0(uint32_t instr) {
 // 向协处理器0的寄存器存值
 make_helper(mtc0) {
     decode_mtc0(instr);
-    switch(op_dest->reg) {
-        case BadVAddr_R:
-            cpu.cp0.BadVAddr = reg_w(op_src1->reg);
-            break;
-        case Status_R:
-            cpu.cp0.status.val = reg_w(op_src1->reg);
-            break;
-        case Cause_R:
-            cpu.cp0.status.val = reg_w(op_src1->reg);
-            break;
-        case EPC_R:
-            cpu.cp0.EPC = reg_w(op_src1->reg);
-            break;
-        default:
-            panic("[mtc0] Invalid cp0 register.\n");
+        if(op_dest->reg == BadVAddr_R && op_src2->imm == 0) {
+        cpu.cp0.BadVAddr = reg_w(op_src1->reg);
+        sprintf(assembly, "MTC0 %s, BadVAddr, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
+    }else if(op_dest->reg == Cause_R && op_src2->imm == 0) {
+        cpu.cp0.cause.val = reg_w(op_src1->reg);
+        sprintf(assembly, "MTC0 %s, Casue, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
+    }else if(op_dest->reg == EPC_R && op_src2->imm == 0) {
+        cpu.cp0.EPC = reg_w(op_src1->reg);
+        sprintf(assembly, "MTC0 %s, EPC, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
+    }else if(op_dest->reg == Status_R && op_src1->imm == 0) {
+        cpu.cp0.status.val = reg_w(op_src1->reg);
+        sprintf(assembly, "MTC0 %s, Status, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
+    }else {
+        panic("[mtc0] Invalid cp0 register.\n");
     }
-    // sprintf(assembly, "mtc0  %s,  %s,   0x%04x", REG_NAME());
-
 }
