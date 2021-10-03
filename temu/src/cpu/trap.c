@@ -50,9 +50,33 @@ make_helper(eret) {
     cpu.cp0.status.EXL = 0;
 }
 
+static void decode_mfc0(uint32_t instr) {
+    op_dest->type = OP_TYPE_REG;
+    op_dest->reg = (instr & 0x001F0000) >> 16;
+
+    op_src1->type = OP_TYPE_REG;
+    op_dest->reg = (instr & 0x0000F800) >> 11;
+}
+
 // 向协处理器0的寄存器取值
 make_helper(mfc0) {
-
+    decode_mfc0(instr);
+    switch(op_src1->reg) {
+        case BadVAddr_R:
+            reg_w(op_dest->reg) = cpu.cp0.BadVAddr;
+            break;
+        case Status_R:
+            reg_w(op_dest->reg) = cpu.cp0.status.val;
+            break;
+        case Cause_R:
+            reg_w(op_dest->reg) = cpu.cp0.cause.val;
+            break;
+        case EPC_R:
+            reg_w(op_dest->reg) = cpu.cp0.EPC;
+            break;
+        default:
+            panic("[mfc0] Invalid cp0 register.\n");
+    }
 }
 
 static void decode_mtc0(uint32_t instr) {
@@ -83,7 +107,7 @@ make_helper(mtc0) {
             cpu.cp0.EPC = reg_w(op_src1->reg);
             break;
         default:
-            panic("Unresolved cp0 register.\n");
+            panic("[mtc0] Invalid cp0 register.\n");
     }
     // sprintf(assembly, "mtc0  %s,  %s,   0x%04x", REG_NAME());
 
