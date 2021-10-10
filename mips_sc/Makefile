@@ -5,12 +5,18 @@ include src/Makefile.testcase
 ifndef CROSS_COMPILE
 CROSS_COMPILE := mips-sde-elf-
 endif
+
 ifndef TESTCASE_SRC_DIR
-TESTCASE_SRC_DIR := src/
+TESTCASE_SRC_DIR := src/inst/
 endif
+
 ifndef TESTCASE_BUILD_DIR
 TESTCASE_BUILD_DIR := build/
 endif
+
+
+TEST_INC_DIR := src/include
+
 DEBUG := false
 
 CC :=  $(CROSS_COMPILE)gcc
@@ -19,7 +25,7 @@ LD := $(CROSS_COMPILE)ld
 OBJCOPY := $(CROSS_COMPILE)objcopy
 OBJDUMP := $(CROSS_COMPILE)objdump
 
-CFLAGS := -mips1 -EL
+CFLAGS := -I$(TEST_INC_DIR) -mips1 -EL
 
 ifeq ($(DEBUG), true)
 CFLAGS += -g

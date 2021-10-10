@@ -17,8 +17,8 @@ int main(int argc, char* argv[])
 	strcat(file_bin_name, argv[1]);  
 	strcat(file_data_name, argv[2]);
 
-    	in = fopen(file_bin_name, "rb");
-    	out = fopen("inst_rom.coe","w");
+    in = fopen(file_bin_name, "rb");
+    out = fopen("inst_rom.coe","w");
 
 	fprintf(out, "memory_initialization_radix = 16;\n");
 	fprintf(out, "memory_initialization_vector =\n");

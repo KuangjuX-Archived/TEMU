@@ -24,71 +24,70 @@ make_helper(and) {
 
 	decode_r_type(instr);
 	reg_w(op_dest->reg) = (op_src1->val & op_src2->val);
-	sprintf(assembly, "and   %s,   %s,   %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
+	sprintf(assembly, "AND %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(add) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) + (op_src2->val);
+	if (reg_w(op_dest->reg) < op_src1->val || reg_w(op_dest->reg) < op_src2->val) {
+		// 触发整形溢出例外
+	}
+	sprintf(assembly, "ADD %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(addu) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) + (op_src2->val);
+	sprintf(assembly, "ADDIU %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(sub) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) - (op_src2->val);
+	// 此处应当触发整形溢出例外
+	sprintf(assembly, "SUB %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(subu) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) - (op_src2->val);
+	sprintf(assembly, "SUBU %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(slt) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = ((int)op_src1->val < (int)op_src2->val) ? 1 : 0;
+	sprintf(assembly, "SLT %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(sltu) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val < op_src2->val) ? 1 : 0;
+	sprintf(assembly, "SLT %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 
 make_helper(or) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) | (op_src2->val);
+	sprintf(assembly, "OR %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(xor) {
-
-}
-
-make_helper(nor) {
-
-}
-
-make_helper(sll) {
-
-}
-
-make_helper(srl) {
-
-}
-
-make_helper(sra) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) ^ (op_src2->val);
+	sprintf(assembly, "XOR %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(sllv) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src2->val) << (op_src1->val); 
+	sprintf(assembly, "SLLV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
 }
 
 make_helper(srlv) {
-
-}
-
-make_helper(srav) {
-
-}
-
-
-make_helper(jr) {
-	
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src2->val) >> (op_src1->val);
+	sprintf(assembly, "SRLV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
 }
