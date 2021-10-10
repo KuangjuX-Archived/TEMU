@@ -3,4 +3,4 @@
 
 	
 #define HIT_BAD_TRAP \
-	.word 0x00000000
+	.word 0x0000003F

@@ -1,0 +1,2012 @@
+1fc00000:   24 08 00 01         ADDIU $t0, $zero, 0x0001
+1fc00004:   24 09 00 02         ADDIU $t1, $zero, 0x0002
+1fc00008:   21 10 00 02         ADDI $s0, $t0, 0x0002
+1fc0000c:   24 12 00 03         ADDIU $s2, $zero, 0x0003
+1fc00010:   16 12 09 04         BNE $s2, 0x0904
+1fc00014:   00 00 00 00         NOP
+1fc00018:   3c 08 01 51         LUI $t0, 0x0151
+1fc0001c:   35 08 e5 c0         ORI $t0, $t0, 0xe5c0
+1fc00020:   34 09 b9 45         ORI $t1, $zero, 0xb945
+1fc00024:   21 10 b9 45         ADDI $s0, $t0, 0xb945
+1fc00028:   3c 12 01 51         LUI $s2, 0x0151
+1fc0002c:   36 52 9f 05         ORI $s2, $s2, 0x9f05
+1fc00030:   16 12 08 fc         BNE $s2, 0x08fc
+1fc00034:   00 00 00 00         NOP
+1fc00038:   3c 08 64 82         LUI $t0, 0x6482
+1fc0003c:   35 08 15 68         ORI $t0, $t0, 0x1568
+1fc00040:   34 09 e4 23         ORI $t1, $zero, 0xe423
+1fc00044:   21 10 e4 23         ADDI $s0, $t0, 0xe423
+1fc00048:   3c 12 64 81         LUI $s2, 0x6481
+1fc0004c:   36 52 f9 8b         ORI $s2, $s2, 0xf98b
+1fc00050:   16 12 08 f4         BNE $s2, 0x08f4
+1fc00054:   00 00 00 00         NOP
+1fc00058:   3c 08 f4 87         LUI $t0, 0xf487
+1fc0005c:   35 08 6a d2         ORI $t0, $t0, 0x6ad2
+1fc00060:   34 09 bd 20         ORI $t1, $zero, 0xbd20
+1fc00064:   21 10 bd 20         ADDI $s0, $t0, 0xbd20
+1fc00068:   3c 12 f4 87         LUI $s2, 0xf487
+1fc0006c:   36 52 27 f2         ORI $s2, $s2, 0x27f2
+1fc00070:   16 12 08 ec         BNE $s2, 0x08ec
+1fc00074:   00 00 00 00         NOP
+1fc00078:   3c 08 1f ea         LUI $t0, 0x1fea
+1fc0007c:   35 08 4d ca         ORI $t0, $t0, 0x4dca
+1fc00080:   24 09 1b 08         ADDIU $t1, $zero, 0x1b08
+1fc00084:   21 10 1b 08         ADDI $s0, $t0, 0x1b08
+1fc00088:   3c 12 1f ea         LUI $s2, 0x1fea
+1fc0008c:   36 52 68 d2         ORI $s2, $s2, 0x68d2
+1fc00090:   16 12 08 e4         BNE $s2, 0x08e4
+1fc00094:   00 00 00 00         NOP
+1fc00098:   3c 08 a1 39         LUI $t0, 0xa139
+1fc0009c:   35 08 a6 db         ORI $t0, $t0, 0xa6db
+1fc000a0:   24 09 03 9c         ADDIU $t1, $zero, 0x039c
+1fc000a4:   21 10 03 9c         ADDI $s0, $t0, 0x039c
+1fc000a8:   3c 12 a1 39         LUI $s2, 0xa139
+1fc000ac:   36 52 aa 77         ORI $s2, $s2, 0xaa77
+1fc000b0:   16 12 08 dc         BNE $s2, 0x08dc
+1fc000b4:   00 00 00 00         NOP
+1fc000b8:   3c 08 45 57         LUI $t0, 0x4557
+1fc000bc:   35 08 1c 50         ORI $t0, $t0, 0x1c50
+1fc000c0:   34 09 f3 a8         ORI $t1, $zero, 0xf3a8
+1fc000c4:   21 10 f3 a8         ADDI $s0, $t0, 0xf3a8
+1fc000c8:   3c 12 45 57         LUI $s2, 0x4557
+1fc000cc:   36 52 0f f8         ORI $s2, $s2, 0x0ff8
+1fc000d0:   16 12 08 d4         BNE $s2, 0x08d4
+1fc000d4:   00 00 00 00         NOP
+1fc000d8:   3c 08 51 ab         LUI $t0, 0x51ab
+1fc000dc:   35 08 23 a0         ORI $t0, $t0, 0x23a0
+1fc000e0:   34 09 d2 70         ORI $t1, $zero, 0xd270
+1fc000e4:   21 10 d2 70         ADDI $s0, $t0, 0xd270
+1fc000e8:   3c 12 51 aa         LUI $s2, 0x51aa
+1fc000ec:   36 52 f6 10         ORI $s2, $s2, 0xf610
+1fc000f0:   16 12 08 cc         BNE $s2, 0x08cc
+1fc000f4:   00 00 00 00         NOP
+1fc000f8:   3c 08 d4 e4         LUI $t0, 0xd4e4
+1fc000fc:   35 08 5e e7         ORI $t0, $t0, 0x5ee7
+1fc00100:   24 09 66 75         ADDIU $t1, $zero, 0x6675
+1fc00104:   21 10 66 75         ADDI $s0, $t0, 0x6675
+1fc00108:   3c 12 d4 e4         LUI $s2, 0xd4e4
+1fc0010c:   36 52 c5 5c         ORI $s2, $s2, 0xc55c
+1fc00110:   16 12 08 c4         BNE $s2, 0x08c4
+1fc00114:   00 00 00 00         NOP
+1fc00118:   3c 08 d1 8c         LUI $t0, 0xd18c
+1fc0011c:   35 08 16 f3         ORI $t0, $t0, 0x16f3
+1fc00120:   34 09 f7 a9         ORI $t1, $zero, 0xf7a9
+1fc00124:   21 10 f7 a9         ADDI $s0, $t0, 0xf7a9
+1fc00128:   3c 12 d1 8c         LUI $s2, 0xd18c
+1fc0012c:   36 52 0e 9c         ORI $s2, $s2, 0x0e9c
+1fc00130:   16 12 08 bc         BNE $s2, 0x08bc
+1fc00134:   00 00 00 00         NOP
+1fc00138:   3c 08 76 75         LUI $t0, 0x7675
+1fc0013c:   35 08 a8 04         ORI $t0, $t0, 0xa804
+1fc00140:   34 09 81 86         ORI $t1, $zero, 0x8186
+1fc00144:   21 10 81 86         ADDI $s0, $t0, 0x8186
+1fc00148:   3c 12 76 75         LUI $s2, 0x7675
+1fc0014c:   36 52 29 8a         ORI $s2, $s2, 0x298a
+1fc00150:   16 12 08 b4         BNE $s2, 0x08b4
+1fc00154:   00 00 00 00         NOP
+1fc00158:   3c 08 45 84         LUI $t0, 0x4584
+1fc0015c:   35 08 85 a8         ORI $t0, $t0, 0x85a8
+1fc00160:   24 09 57 a8         ADDIU $t1, $zero, 0x57a8
+1fc00164:   21 10 57 a8         ADDI $s0, $t0, 0x57a8
+1fc00168:   3c 12 45 84         LUI $s2, 0x4584
+1fc0016c:   36 52 dd 50         ORI $s2, $s2, 0xdd50
+1fc00170:   16 12 08 ac         BNE $s2, 0x08ac
+1fc00174:   00 00 00 00         NOP
+1fc00178:   3c 08 52 bd         LUI $t0, 0x52bd
+1fc0017c:   35 08 8c 72         ORI $t0, $t0, 0x8c72
+1fc00180:   24 09 62 a0         ADDIU $t1, $zero, 0x62a0
+1fc00184:   21 10 62 a0         ADDI $s0, $t0, 0x62a0
+1fc00188:   3c 12 52 bd         LUI $s2, 0x52bd
+1fc0018c:   36 52 ef 12         ORI $s2, $s2, 0xef12
+1fc00190:   16 12 08 a4         BNE $s2, 0x08a4
+1fc00194:   00 00 00 00         NOP
+1fc00198:   3c 08 c9 6a         LUI $t0, 0xc96a
+1fc0019c:   35 08 c0 d3         ORI $t0, $t0, 0xc0d3
+1fc001a0:   34 09 a8 4a         ORI $t1, $zero, 0xa84a
+1fc001a4:   21 10 a8 4a         ADDI $s0, $t0, 0xa84a
+1fc001a8:   3c 12 c9 6a         LUI $s2, 0xc96a
+1fc001ac:   36 52 69 1d         ORI $s2, $s2, 0x691d
+1fc001b0:   16 12 08 9c         BNE $s2, 0x089c
+1fc001b4:   00 00 00 00         NOP
+1fc001b8:   3c 08 e9 b6         LUI $t0, 0xe9b6
+1fc001bc:   35 08 85 70         ORI $t0, $t0, 0x8570
+1fc001c0:   24 09 62 58         ADDIU $t1, $zero, 0x6258
+1fc001c4:   21 10 62 58         ADDI $s0, $t0, 0x6258
+1fc001c8:   3c 12 e9 b6         LUI $s2, 0xe9b6
+1fc001cc:   36 52 e7 c8         ORI $s2, $s2, 0xe7c8
+1fc001d0:   16 12 08 94         BNE $s2, 0x0894
+1fc001d4:   00 00 00 00         NOP
+1fc001d8:   3c 08 3d 8c         LUI $t0, 0x3d8c
+1fc001dc:   35 08 44 00         ORI $t0, $t0, 0x4400
+1fc001e0:   34 09 c3 cd         ORI $t1, $zero, 0xc3cd
+1fc001e4:   21 10 c3 cd         ADDI $s0, $t0, 0xc3cd
+1fc001e8:   3c 12 3d 8c         LUI $s2, 0x3d8c
+1fc001ec:   36 52 07 cd         ORI $s2, $s2, 0x07cd
+1fc001f0:   16 12 08 8c         BNE $s2, 0x088c
+1fc001f4:   00 00 00 00         NOP
+1fc001f8:   3c 08 67 a7         LUI $t0, 0x67a7
+1fc001fc:   35 08 1a 80         ORI $t0, $t0, 0x1a80
+1fc00200:   24 09 58 86         ADDIU $t1, $zero, 0x5886
+1fc00204:   21 10 58 86         ADDI $s0, $t0, 0x5886
+1fc00208:   3c 12 67 a7         LUI $s2, 0x67a7
+1fc0020c:   36 52 73 06         ORI $s2, $s2, 0x7306
+1fc00210:   16 12 08 84         BNE $s2, 0x0884
+1fc00214:   00 00 00 00         NOP
+1fc00218:   3c 08 c4 a3         LUI $t0, 0xc4a3
+1fc0021c:   35 08 a5 94         ORI $t0, $t0, 0xa594
+1fc00220:   34 09 8f 95         ORI $t1, $zero, 0x8f95
+1fc00224:   21 10 8f 95         ADDI $s0, $t0, 0x8f95
+1fc00228:   3c 12 c4 a3         LUI $s2, 0xc4a3
+1fc0022c:   36 52 35 29         ORI $s2, $s2, 0x3529
+1fc00230:   16 12 08 7c         BNE $s2, 0x087c
+1fc00234:   00 00 00 00         NOP
+1fc00238:   3c 08 5a 7c         LUI $t0, 0x5a7c
+1fc0023c:   35 08 73 74         ORI $t0, $t0, 0x7374
+1fc00240:   34 09 96 1d         ORI $t1, $zero, 0x961d
+1fc00244:   21 10 96 1d         ADDI $s0, $t0, 0x961d
+1fc00248:   3c 12 5a 7c         LUI $s2, 0x5a7c
+1fc0024c:   36 52 09 91         ORI $s2, $s2, 0x0991
+1fc00250:   16 12 08 74         BNE $s2, 0x0874
+1fc00254:   00 00 00 00         NOP
+1fc00258:   3c 08 5a ab         LUI $t0, 0x5aab
+1fc0025c:   35 08 69 9a         ORI $t0, $t0, 0x699a
+1fc00260:   34 09 c6 c4         ORI $t1, $zero, 0xc6c4
+1fc00264:   21 10 c6 c4         ADDI $s0, $t0, 0xc6c4
+1fc00268:   3c 12 5a ab         LUI $s2, 0x5aab
+1fc0026c:   36 52 30 5e         ORI $s2, $s2, 0x305e
+1fc00270:   16 12 08 6c         BNE $s2, 0x086c
+1fc00274:   00 00 00 00         NOP
+1fc00278:   3c 08 1f f4         LUI $t0, 0x1ff4
+1fc0027c:   35 08 33 0c         ORI $t0, $t0, 0x330c
+1fc00280:   34 09 e5 34         ORI $t1, $zero, 0xe534
+1fc00284:   21 10 e5 34         ADDI $s0, $t0, 0xe534
+1fc00288:   3c 12 1f f4         LUI $s2, 0x1ff4
+1fc0028c:   36 52 18 40         ORI $s2, $s2, 0x1840
+1fc00290:   16 12 08 64         BNE $s2, 0x0864
+1fc00294:   00 00 00 00         NOP
+1fc00298:   3c 08 08 2b         LUI $t0, 0x082b
+1fc0029c:   35 08 cd 60         ORI $t0, $t0, 0xcd60
+1fc002a0:   24 09 2b 78         ADDIU $t1, $zero, 0x2b78
+1fc002a4:   21 10 2b 78         ADDI $s0, $t0, 0x2b78
+1fc002a8:   3c 12 08 2b         LUI $s2, 0x082b
+1fc002ac:   36 52 f8 d8         ORI $s2, $s2, 0xf8d8
+1fc002b0:   16 12 08 5c         BNE $s2, 0x085c
+1fc002b4:   00 00 00 00         NOP
+1fc002b8:   3c 08 9c 9e         LUI $t0, 0x9c9e
+1fc002bc:   35 08 12 20         ORI $t0, $t0, 0x1220
+1fc002c0:   34 09 ce 5e         ORI $t1, $zero, 0xce5e
+1fc002c4:   21 10 ce 5e         ADDI $s0, $t0, 0xce5e
+1fc002c8:   3c 12 9c 9d         LUI $s2, 0x9c9d
+1fc002cc:   36 52 e0 7e         ORI $s2, $s2, 0xe07e
+1fc002d0:   16 12 08 54         BNE $s2, 0x0854
+1fc002d4:   00 00 00 00         NOP
+1fc002d8:   3c 08 31 51         LUI $t0, 0x3151
+1fc002dc:   35 08 da 50         ORI $t0, $t0, 0xda50
+1fc002e0:   34 09 a1 40         ORI $t1, $zero, 0xa140
+1fc002e4:   21 10 a1 40         ADDI $s0, $t0, 0xa140
+1fc002e8:   3c 12 31 51         LUI $s2, 0x3151
+1fc002ec:   36 52 7b 90         ORI $s2, $s2, 0x7b90
+1fc002f0:   16 12 08 4c         BNE $s2, 0x084c
+1fc002f4:   00 00 00 00         NOP
+1fc002f8:   3c 08 f3 c5         LUI $t0, 0xf3c5
+1fc002fc:   35 08 a8 70         ORI $t0, $t0, 0xa870
+1fc00300:   24 09 40 40         ADDIU $t1, $zero, 0x4040
+1fc00304:   21 10 40 40         ADDI $s0, $t0, 0x4040
+1fc00308:   3c 12 f3 c5         LUI $s2, 0xf3c5
+1fc0030c:   36 52 e8 b0         ORI $s2, $s2, 0xe8b0
+1fc00310:   16 12 08 44         BNE $s2, 0x0844
+1fc00314:   00 00 00 00         NOP
+1fc00318:   3c 08 73 bb         LUI $t0, 0x73bb
+1fc0031c:   35 08 0f ee         ORI $t0, $t0, 0x0fee
+1fc00320:   24 09 35 a0         ADDIU $t1, $zero, 0x35a0
+1fc00324:   21 10 35 a0         ADDI $s0, $t0, 0x35a0
+1fc00328:   3c 12 73 bb         LUI $s2, 0x73bb
+1fc0032c:   36 52 45 8e         ORI $s2, $s2, 0x458e
+1fc00330:   16 12 08 3c         BNE $s2, 0x083c
+1fc00334:   00 00 00 00         NOP
+1fc00338:   3c 08 85 d9         LUI $t0, 0x85d9
+1fc0033c:   35 08 c2 68         ORI $t0, $t0, 0xc268
+1fc00340:   24 09 56 f8         ADDIU $t1, $zero, 0x56f8
+1fc00344:   21 10 56 f8         ADDI $s0, $t0, 0x56f8
+1fc00348:   3c 12 85 da         LUI $s2, 0x85da
+1fc0034c:   36 52 19 60         ORI $s2, $s2, 0x1960
+1fc00350:   16 12 08 34         BNE $s2, 0x0834
+1fc00354:   00 00 00 00         NOP
+1fc00358:   3c 08 bd b8         LUI $t0, 0xbdb8
+1fc0035c:   35 08 2b d1         ORI $t0, $t0, 0x2bd1
+1fc00360:   24 09 4b 50         ADDIU $t1, $zero, 0x4b50
+1fc00364:   21 10 4b 50         ADDI $s0, $t0, 0x4b50
+1fc00368:   3c 12 bd b8         LUI $s2, 0xbdb8
+1fc0036c:   36 52 77 21         ORI $s2, $s2, 0x7721
+1fc00370:   16 12 08 2c         BNE $s2, 0x082c
+1fc00374:   00 00 00 00         NOP
+1fc00378:   3c 08 61 44         LUI $t0, 0x6144
+1fc0037c:   35 08 73 54         ORI $t0, $t0, 0x7354
+1fc00380:   34 09 b7 e0         ORI $t1, $zero, 0xb7e0
+1fc00384:   21 10 b7 e0         ADDI $s0, $t0, 0xb7e0
+1fc00388:   3c 12 61 44         LUI $s2, 0x6144
+1fc0038c:   36 52 2b 34         ORI $s2, $s2, 0x2b34
+1fc00390:   16 12 08 24         BNE $s2, 0x0824
+1fc00394:   00 00 00 00         NOP
+1fc00398:   3c 08 c6 b1         LUI $t0, 0xc6b1
+1fc0039c:   35 08 10 00         ORI $t0, $t0, 0x1000
+1fc003a0:   34 09 90 d4         ORI $t1, $zero, 0x90d4
+1fc003a4:   21 10 90 d4         ADDI $s0, $t0, 0x90d4
+1fc003a8:   3c 12 c6 b0         LUI $s2, 0xc6b0
+1fc003ac:   36 52 a0 d4         ORI $s2, $s2, 0xa0d4
+1fc003b0:   16 12 08 1c         BNE $s2, 0x081c
+1fc003b4:   00 00 00 00         NOP
+1fc003b8:   3c 08 af d1         LUI $t0, 0xafd1
+1fc003bc:   35 08 2b a4         ORI $t0, $t0, 0x2ba4
+1fc003c0:   24 09 16 12         ADDIU $t1, $zero, 0x1612
+1fc003c4:   21 10 16 12         ADDI $s0, $t0, 0x1612
+1fc003c8:   3c 12 af d1         LUI $s2, 0xafd1
+1fc003cc:   36 52 41 b6         ORI $s2, $s2, 0x41b6
+1fc003d0:   16 12 08 14         BNE $s2, 0x0814
+1fc003d4:   00 00 00 00         NOP
+1fc003d8:   3c 08 9c c9         LUI $t0, 0x9cc9
+1fc003dc:   35 08 c1 d0         ORI $t0, $t0, 0xc1d0
+1fc003e0:   34 09 93 0e         ORI $t1, $zero, 0x930e
+1fc003e4:   21 10 93 0e         ADDI $s0, $t0, 0x930e
+1fc003e8:   3c 12 9c c9         LUI $s2, 0x9cc9
+1fc003ec:   36 52 54 de         ORI $s2, $s2, 0x54de
+1fc003f0:   16 12 08 0c         BNE $s2, 0x080c
+1fc003f4:   00 00 00 00         NOP
+1fc003f8:   3c 08 30 b8         LUI $t0, 0x30b8
+1fc003fc:   35 08 5a 68         ORI $t0, $t0, 0x5a68
+1fc00400:   34 09 c1 b0         ORI $t1, $zero, 0xc1b0
+1fc00404:   21 10 c1 b0         ADDI $s0, $t0, 0xc1b0
+1fc00408:   3c 12 30 b8         LUI $s2, 0x30b8
+1fc0040c:   36 52 1c 18         ORI $s2, $s2, 0x1c18
+1fc00410:   16 12 08 04         BNE $s2, 0x0804
+1fc00414:   00 00 00 00         NOP
+1fc00418:   3c 08 ec 88         LUI $t0, 0xec88
+1fc0041c:   35 08 b4 98         ORI $t0, $t0, 0xb498
+1fc00420:   34 09 88 f6         ORI $t1, $zero, 0x88f6
+1fc00424:   21 10 88 f6         ADDI $s0, $t0, 0x88f6
+1fc00428:   3c 12 ec 88         LUI $s2, 0xec88
+1fc0042c:   36 52 3d 8e         ORI $s2, $s2, 0x3d8e
+1fc00430:   16 12 07 fc         BNE $s2, 0x07fc
+1fc00434:   00 00 00 00         NOP
+1fc00438:   3c 08 82 65         LUI $t0, 0x8265
+1fc0043c:   35 08 2c 2f         ORI $t0, $t0, 0x2c2f
+1fc00440:   24 09 3e e3         ADDIU $t1, $zero, 0x3ee3
+1fc00444:   21 10 3e e3         ADDI $s0, $t0, 0x3ee3
+1fc00448:   3c 12 82 65         LUI $s2, 0x8265
+1fc0044c:   36 52 6b 12         ORI $s2, $s2, 0x6b12
+1fc00450:   16 12 07 f4         BNE $s2, 0x07f4
+1fc00454:   00 00 00 00         NOP
+1fc00458:   3c 08 7b f0         LUI $t0, 0x7bf0
+1fc0045c:   35 08 a3 46         ORI $t0, $t0, 0xa346
+1fc00460:   34 09 9a 2d         ORI $t1, $zero, 0x9a2d
+1fc00464:   21 10 9a 2d         ADDI $s0, $t0, 0x9a2d
+1fc00468:   3c 12 7b f0         LUI $s2, 0x7bf0
+1fc0046c:   36 52 3d 73         ORI $s2, $s2, 0x3d73
+1fc00470:   16 12 07 ec         BNE $s2, 0x07ec
+1fc00474:   00 00 00 00         NOP
+1fc00478:   3c 08 24 fd         LUI $t0, 0x24fd
+1fc0047c:   35 08 ce 96         ORI $t0, $t0, 0xce96
+1fc00480:   34 09 94 00         ORI $t1, $zero, 0x9400
+1fc00484:   21 10 94 00         ADDI $s0, $t0, 0x9400
+1fc00488:   3c 12 24 fd         LUI $s2, 0x24fd
+1fc0048c:   36 52 62 96         ORI $s2, $s2, 0x6296
+1fc00490:   16 12 07 e4         BNE $s2, 0x07e4
+1fc00494:   00 00 00 00         NOP
+1fc00498:   3c 08 41 5d         LUI $t0, 0x415d
+1fc0049c:   35 08 68 a0         ORI $t0, $t0, 0x68a0
+1fc004a0:   24 09 6b 44         ADDIU $t1, $zero, 0x6b44
+1fc004a4:   21 10 6b 44         ADDI $s0, $t0, 0x6b44
+1fc004a8:   3c 12 41 5d         LUI $s2, 0x415d
+1fc004ac:   36 52 d3 e4         ORI $s2, $s2, 0xd3e4
+1fc004b0:   16 12 07 dc         BNE $s2, 0x07dc
+1fc004b4:   00 00 00 00         NOP
+1fc004b8:   3c 08 d3 9b         LUI $t0, 0xd39b
+1fc004bc:   35 08 90 a4         ORI $t0, $t0, 0x90a4
+1fc004c0:   34 09 ec 14         ORI $t1, $zero, 0xec14
+1fc004c4:   21 10 ec 14         ADDI $s0, $t0, 0xec14
+1fc004c8:   3c 12 d3 9b         LUI $s2, 0xd39b
+1fc004cc:   36 52 7c b8         ORI $s2, $s2, 0x7cb8
+1fc004d0:   16 12 07 d4         BNE $s2, 0x07d4
+1fc004d4:   00 00 00 00         NOP
+1fc004d8:   3c 08 c0 57         LUI $t0, 0xc057
+1fc004dc:   35 08 76 1c         ORI $t0, $t0, 0x761c
+1fc004e0:   34 09 f3 ea         ORI $t1, $zero, 0xf3ea
+1fc004e4:   21 10 f3 ea         ADDI $s0, $t0, 0xf3ea
+1fc004e8:   3c 12 c0 57         LUI $s2, 0xc057
+1fc004ec:   36 52 6a 06         ORI $s2, $s2, 0x6a06
+1fc004f0:   16 12 07 cc         BNE $s2, 0x07cc
+1fc004f4:   00 00 00 00         NOP
+1fc004f8:   3c 08 1d d7         LUI $t0, 0x1dd7
+1fc004fc:   35 08 9b 95         ORI $t0, $t0, 0x9b95
+1fc00500:   24 09 1e b8         ADDIU $t1, $zero, 0x1eb8
+1fc00504:   21 10 1e b8         ADDI $s0, $t0, 0x1eb8
+1fc00508:   3c 12 1d d7         LUI $s2, 0x1dd7
+1fc0050c:   36 52 ba 4d         ORI $s2, $s2, 0xba4d
+1fc00510:   16 12 07 c4         BNE $s2, 0x07c4
+1fc00514:   00 00 00 00         NOP
+1fc00518:   3c 08 c8 67         LUI $t0, 0xc867
+1fc0051c:   35 08 e9 30         ORI $t0, $t0, 0xe930
+1fc00520:   34 09 8b ee         ORI $t1, $zero, 0x8bee
+1fc00524:   21 10 8b ee         ADDI $s0, $t0, 0x8bee
+1fc00528:   3c 12 c8 67         LUI $s2, 0xc867
+1fc0052c:   36 52 75 1e         ORI $s2, $s2, 0x751e
+1fc00530:   16 12 07 bc         BNE $s2, 0x07bc
+1fc00534:   00 00 00 00         NOP
+1fc00538:   3c 08 b8 33         LUI $t0, 0xb833
+1fc0053c:   35 08 fd f2         ORI $t0, $t0, 0xfdf2
+1fc00540:   24 09 74 e0         ADDIU $t1, $zero, 0x74e0
+1fc00544:   21 10 74 e0         ADDI $s0, $t0, 0x74e0
+1fc00548:   3c 12 b8 34         LUI $s2, 0xb834
+1fc0054c:   36 52 72 d2         ORI $s2, $s2, 0x72d2
+1fc00550:   16 12 07 b4         BNE $s2, 0x07b4
+1fc00554:   00 00 00 00         NOP
+1fc00558:   3c 08 8b 8d         LUI $t0, 0x8b8d
+1fc0055c:   35 08 cf 70         ORI $t0, $t0, 0xcf70
+1fc00560:   34 09 97 75         ORI $t1, $zero, 0x9775
+1fc00564:   21 10 97 75         ADDI $s0, $t0, 0x9775
+1fc00568:   3c 12 8b 8d         LUI $s2, 0x8b8d
+1fc0056c:   36 52 66 e5         ORI $s2, $s2, 0x66e5
+1fc00570:   16 12 07 ac         BNE $s2, 0x07ac
+1fc00574:   00 00 00 00         NOP
+1fc00578:   3c 08 b6 75         LUI $t0, 0xb675
+1fc0057c:   35 08 c5 e0         ORI $t0, $t0, 0xc5e0
+1fc00580:   24 09 76 6b         ADDIU $t1, $zero, 0x766b
+1fc00584:   21 10 76 6b         ADDI $s0, $t0, 0x766b
+1fc00588:   3c 12 b6 76         LUI $s2, 0xb676
+1fc0058c:   36 52 3c 4b         ORI $s2, $s2, 0x3c4b
+1fc00590:   16 12 07 a4         BNE $s2, 0x07a4
+1fc00594:   00 00 00 00         NOP
+1fc00598:   3c 08 21 4a         LUI $t0, 0x214a
+1fc0059c:   35 08 e0 00         ORI $t0, $t0, 0xe000
+1fc005a0:   24 09 38 6a         ADDIU $t1, $zero, 0x386a
+1fc005a4:   21 10 38 6a         ADDI $s0, $t0, 0x386a
+1fc005a8:   3c 12 21 4b         LUI $s2, 0x214b
+1fc005ac:   36 52 18 6a         ORI $s2, $s2, 0x186a
+1fc005b0:   16 12 07 9c         BNE $s2, 0x079c
+1fc005b4:   00 00 00 00         NOP
+1fc005b8:   3c 08 3b 1e         LUI $t0, 0x3b1e
+1fc005bc:   35 08 e7 a0         ORI $t0, $t0, 0xe7a0
+1fc005c0:   24 09 51 70         ADDIU $t1, $zero, 0x5170
+1fc005c4:   21 10 51 70         ADDI $s0, $t0, 0x5170
+1fc005c8:   3c 12 3b 1f         LUI $s2, 0x3b1f
+1fc005cc:   36 52 39 10         ORI $s2, $s2, 0x3910
+1fc005d0:   16 12 07 94         BNE $s2, 0x0794
+1fc005d4:   00 00 00 00         NOP
+1fc005d8:   3c 08 44 34         LUI $t0, 0x4434
+1fc005dc:   35 08 d9 5c         ORI $t0, $t0, 0xd95c
+1fc005e0:   24 09 44 44         ADDIU $t1, $zero, 0x4444
+1fc005e4:   21 10 44 44         ADDI $s0, $t0, 0x4444
+1fc005e8:   3c 12 44 35         LUI $s2, 0x4435
+1fc005ec:   36 52 1d a0         ORI $s2, $s2, 0x1da0
+1fc005f0:   16 12 07 8c         BNE $s2, 0x078c
+1fc005f4:   00 00 00 00         NOP
+1fc005f8:   3c 08 29 b8         LUI $t0, 0x29b8
+1fc005fc:   35 08 5e 98         ORI $t0, $t0, 0x5e98
+1fc00600:   34 09 80 5a         ORI $t1, $zero, 0x805a
+1fc00604:   21 10 80 5a         ADDI $s0, $t0, 0x805a
+1fc00608:   3c 12 29 b7         LUI $s2, 0x29b7
+1fc0060c:   36 52 de f2         ORI $s2, $s2, 0xdef2
+1fc00610:   16 12 07 84         BNE $s2, 0x0784
+1fc00614:   00 00 00 00         NOP
+1fc00618:   3c 08 ff 5f         LUI $t0, 0xff5f
+1fc0061c:   35 08 a9 cc         ORI $t0, $t0, 0xa9cc
+1fc00620:   24 09 55 48         ADDIU $t1, $zero, 0x5548
+1fc00624:   21 10 55 48         ADDI $s0, $t0, 0x5548
+1fc00628:   3c 12 ff 5f         LUI $s2, 0xff5f
+1fc0062c:   36 52 ff 14         ORI $s2, $s2, 0xff14
+1fc00630:   16 12 07 7c         BNE $s2, 0x077c
+1fc00634:   00 00 00 00         NOP
+1fc00638:   3c 08 37 73         LUI $t0, 0x3773
+1fc0063c:   35 08 e9 68         ORI $t0, $t0, 0xe968
+1fc00640:   24 09 6e a8         ADDIU $t1, $zero, 0x6ea8
+1fc00644:   21 10 6e a8         ADDI $s0, $t0, 0x6ea8
+1fc00648:   3c 12 37 74         LUI $s2, 0x3774
+1fc0064c:   36 52 58 10         ORI $s2, $s2, 0x5810
+1fc00650:   16 12 07 74         BNE $s2, 0x0774
+1fc00654:   00 00 00 00         NOP
+1fc00658:   3c 08 fc f8         LUI $t0, 0xfcf8
+1fc0065c:   35 08 f9 4c         ORI $t0, $t0, 0xf94c
+1fc00660:   34 09 bd 9f         ORI $t1, $zero, 0xbd9f
+1fc00664:   21 10 bd 9f         ADDI $s0, $t0, 0xbd9f
+1fc00668:   3c 12 fc f8         LUI $s2, 0xfcf8
+1fc0066c:   36 52 b6 eb         ORI $s2, $s2, 0xb6eb
+1fc00670:   16 12 07 6c         BNE $s2, 0x076c
+1fc00674:   00 00 00 00         NOP
+1fc00678:   3c 08 59 26         LUI $t0, 0x5926
+1fc0067c:   35 08 be 78         ORI $t0, $t0, 0xbe78
+1fc00680:   24 09 19 68         ADDIU $t1, $zero, 0x1968
+1fc00684:   21 10 19 68         ADDI $s0, $t0, 0x1968
+1fc00688:   3c 12 59 26         LUI $s2, 0x5926
+1fc0068c:   36 52 d7 e0         ORI $s2, $s2, 0xd7e0
+1fc00690:   16 12 07 64         BNE $s2, 0x0764
+1fc00694:   00 00 00 00         NOP
+1fc00698:   3c 08 c2 11         LUI $t0, 0xc211
+1fc0069c:   35 08 35 e4         ORI $t0, $t0, 0x35e4
+1fc006a0:   24 09 2e c1         ADDIU $t1, $zero, 0x2ec1
+1fc006a4:   21 10 2e c1         ADDI $s0, $t0, 0x2ec1
+1fc006a8:   3c 12 c2 11         LUI $s2, 0xc211
+1fc006ac:   36 52 64 a5         ORI $s2, $s2, 0x64a5
+1fc006b0:   16 12 07 5c         BNE $s2, 0x075c
+1fc006b4:   00 00 00 00         NOP
+1fc006b8:   3c 08 d7 ad         LUI $t0, 0xd7ad
+1fc006bc:   35 08 a5 28         ORI $t0, $t0, 0xa528
+1fc006c0:   34 09 c2 dd         ORI $t1, $zero, 0xc2dd
+1fc006c4:   21 10 c2 dd         ADDI $s0, $t0, 0xc2dd
+1fc006c8:   3c 12 d7 ad         LUI $s2, 0xd7ad
+1fc006cc:   36 52 68 05         ORI $s2, $s2, 0x6805
+1fc006d0:   16 12 07 54         BNE $s2, 0x0754
+1fc006d4:   00 00 00 00         NOP
+1fc006d8:   3c 08 74 29         LUI $t0, 0x7429
+1fc006dc:   35 08 9f 8a         ORI $t0, $t0, 0x9f8a
+1fc006e0:   24 09 4c 1d         ADDIU $t1, $zero, 0x4c1d
+1fc006e4:   21 10 4c 1d         ADDI $s0, $t0, 0x4c1d
+1fc006e8:   3c 12 74 29         LUI $s2, 0x7429
+1fc006ec:   36 52 eb a7         ORI $s2, $s2, 0xeba7
+1fc006f0:   16 12 07 4c         BNE $s2, 0x074c
+1fc006f4:   00 00 00 00         NOP
+1fc006f8:   3c 08 c7 b0         LUI $t0, 0xc7b0
+1fc006fc:   35 08 22 b2         ORI $t0, $t0, 0x22b2
+1fc00700:   24 09 00 80         ADDIU $t1, $zero, 0x0080
+1fc00704:   21 10 00 80         ADDI $s0, $t0, 0x0080
+1fc00708:   3c 12 c7 b0         LUI $s2, 0xc7b0
+1fc0070c:   36 52 23 32         ORI $s2, $s2, 0x2332
+1fc00710:   16 12 07 44         BNE $s2, 0x0744
+1fc00714:   00 00 00 00         NOP
+1fc00718:   3c 08 3f 9f         LUI $t0, 0x3f9f
+1fc0071c:   35 08 fe 80         ORI $t0, $t0, 0xfe80
+1fc00720:   34 09 ec 80         ORI $t1, $zero, 0xec80
+1fc00724:   21 10 ec 80         ADDI $s0, $t0, 0xec80
+1fc00728:   3c 12 3f 9f         LUI $s2, 0x3f9f
+1fc0072c:   36 52 eb 00         ORI $s2, $s2, 0xeb00
+1fc00730:   16 12 07 3c         BNE $s2, 0x073c
+1fc00734:   00 00 00 00         NOP
+1fc00738:   3c 08 fe d9         LUI $t0, 0xfed9
+1fc0073c:   35 08 c0 20         ORI $t0, $t0, 0xc020
+1fc00740:   24 09 3f 10         ADDIU $t1, $zero, 0x3f10
+1fc00744:   21 10 3f 10         ADDI $s0, $t0, 0x3f10
+1fc00748:   3c 12 fe d9         LUI $s2, 0xfed9
+1fc0074c:   36 52 ff 30         ORI $s2, $s2, 0xff30
+1fc00750:   16 12 07 34         BNE $s2, 0x0734
+1fc00754:   00 00 00 00         NOP
+1fc00758:   3c 08 b8 03         LUI $t0, 0xb803
+1fc0075c:   35 08 94 74         ORI $t0, $t0, 0x9474
+1fc00760:   24 09 60 0f         ADDIU $t1, $zero, 0x600f
+1fc00764:   21 10 60 0f         ADDI $s0, $t0, 0x600f
+1fc00768:   3c 12 b8 03         LUI $s2, 0xb803
+1fc0076c:   36 52 f4 83         ORI $s2, $s2, 0xf483
+1fc00770:   16 12 07 2c         BNE $s2, 0x072c
+1fc00774:   00 00 00 00         NOP
+1fc00778:   3c 08 78 04         LUI $t0, 0x7804
+1fc0077c:   35 08 09 ce         ORI $t0, $t0, 0x09ce
+1fc00780:   34 09 a4 34         ORI $t1, $zero, 0xa434
+1fc00784:   21 10 a4 34         ADDI $s0, $t0, 0xa434
+1fc00788:   3c 12 78 03         LUI $s2, 0x7803
+1fc0078c:   36 52 ae 02         ORI $s2, $s2, 0xae02
+1fc00790:   16 12 07 24         BNE $s2, 0x0724
+1fc00794:   00 00 00 00         NOP
+1fc00798:   3c 08 d6 d6         LUI $t0, 0xd6d6
+1fc0079c:   35 08 e9 44         ORI $t0, $t0, 0xe944
+1fc007a0:   34 09 c7 96         ORI $t1, $zero, 0xc796
+1fc007a4:   21 10 c7 96         ADDI $s0, $t0, 0xc796
+1fc007a8:   3c 12 d6 d6         LUI $s2, 0xd6d6
+1fc007ac:   36 52 b0 da         ORI $s2, $s2, 0xb0da
+1fc007b0:   16 12 07 1c         BNE $s2, 0x071c
+1fc007b4:   00 00 00 00         NOP
+1fc007b8:   3c 08 49 dc         LUI $t0, 0x49dc
+1fc007bc:   35 08 b5 74         ORI $t0, $t0, 0xb574
+1fc007c0:   24 09 6e b7         ADDIU $t1, $zero, 0x6eb7
+1fc007c4:   21 10 6e b7         ADDI $s0, $t0, 0x6eb7
+1fc007c8:   3c 12 49 dd         LUI $s2, 0x49dd
+1fc007cc:   36 52 24 2b         ORI $s2, $s2, 0x242b
+1fc007d0:   16 12 07 14         BNE $s2, 0x0714
+1fc007d4:   00 00 00 00         NOP
+1fc007d8:   3c 08 db 1d         LUI $t0, 0xdb1d
+1fc007dc:   35 08 40 00         ORI $t0, $t0, 0x4000
+1fc007e0:   34 09 c1 36         ORI $t1, $zero, 0xc136
+1fc007e4:   21 10 c1 36         ADDI $s0, $t0, 0xc136
+1fc007e8:   3c 12 db 1d         LUI $s2, 0xdb1d
+1fc007ec:   36 52 01 36         ORI $s2, $s2, 0x0136
+1fc007f0:   16 12 07 0c         BNE $s2, 0x070c
+1fc007f4:   00 00 00 00         NOP
+1fc007f8:   3c 08 54 96         LUI $t0, 0x5496
+1fc007fc:   35 08 26 b2         ORI $t0, $t0, 0x26b2
+1fc00800:   24 09 13 20         ADDIU $t1, $zero, 0x1320
+1fc00804:   21 10 13 20         ADDI $s0, $t0, 0x1320
+1fc00808:   3c 12 54 96         LUI $s2, 0x5496
+1fc0080c:   36 52 39 d2         ORI $s2, $s2, 0x39d2
+1fc00810:   16 12 07 04         BNE $s2, 0x0704
+1fc00814:   00 00 00 00         NOP
+1fc00818:   3c 08 73 77         LUI $t0, 0x7377
+1fc0081c:   35 08 35 c0         ORI $t0, $t0, 0x35c0
+1fc00820:   34 09 fd 0c         ORI $t1, $zero, 0xfd0c
+1fc00824:   21 10 fd 0c         ADDI $s0, $t0, 0xfd0c
+1fc00828:   3c 12 73 77         LUI $s2, 0x7377
+1fc0082c:   36 52 32 cc         ORI $s2, $s2, 0x32cc
+1fc00830:   16 12 06 fc         BNE $s2, 0x06fc
+1fc00834:   00 00 00 00         NOP
+1fc00838:   3c 08 fe e6         LUI $t0, 0xfee6
+1fc0083c:   35 08 ef 20         ORI $t0, $t0, 0xef20
+1fc00840:   34 09 d9 7c         ORI $t1, $zero, 0xd97c
+1fc00844:   21 10 d9 7c         ADDI $s0, $t0, 0xd97c
+1fc00848:   3c 12 fe e6         LUI $s2, 0xfee6
+1fc0084c:   36 52 c8 9c         ORI $s2, $s2, 0xc89c
+1fc00850:   16 12 06 f4         BNE $s2, 0x06f4
+1fc00854:   00 00 00 00         NOP
+1fc00858:   3c 08 7b 17         LUI $t0, 0x7b17
+1fc0085c:   35 08 81 20         ORI $t0, $t0, 0x8120
+1fc00860:   24 09 23 96         ADDIU $t1, $zero, 0x2396
+1fc00864:   21 10 23 96         ADDI $s0, $t0, 0x2396
+1fc00868:   3c 12 7b 17         LUI $s2, 0x7b17
+1fc0086c:   36 52 a4 b6         ORI $s2, $s2, 0xa4b6
+1fc00870:   16 12 06 ec         BNE $s2, 0x06ec
+1fc00874:   00 00 00 00         NOP
+1fc00878:   3c 08 c2 28         LUI $t0, 0xc228
+1fc0087c:   35 08 38 ec         ORI $t0, $t0, 0x38ec
+1fc00880:   34 09 ba f7         ORI $t1, $zero, 0xbaf7
+1fc00884:   21 10 ba f7         ADDI $s0, $t0, 0xbaf7
+1fc00888:   3c 12 c2 27         LUI $s2, 0xc227
+1fc0088c:   36 52 f3 e3         ORI $s2, $s2, 0xf3e3
+1fc00890:   16 12 06 e4         BNE $s2, 0x06e4
+1fc00894:   00 00 00 00         NOP
+1fc00898:   3c 08 ea fc         LUI $t0, 0xeafc
+1fc0089c:   35 08 bb c0         ORI $t0, $t0, 0xbbc0
+1fc008a0:   24 09 66 10         ADDIU $t1, $zero, 0x6610
+1fc008a4:   21 10 66 10         ADDI $s0, $t0, 0x6610
+1fc008a8:   3c 12 ea fd         LUI $s2, 0xeafd
+1fc008ac:   36 52 21 d0         ORI $s2, $s2, 0x21d0
+1fc008b0:   16 12 06 dc         BNE $s2, 0x06dc
+1fc008b4:   00 00 00 00         NOP
+1fc008b8:   3c 08 d3 e8         LUI $t0, 0xd3e8
+1fc008bc:   35 08 99 22         ORI $t0, $t0, 0x9922
+1fc008c0:   24 09 55 28         ADDIU $t1, $zero, 0x5528
+1fc008c4:   21 10 55 28         ADDI $s0, $t0, 0x5528
+1fc008c8:   3c 12 d3 e8         LUI $s2, 0xd3e8
+1fc008cc:   36 52 ee 4a         ORI $s2, $s2, 0xee4a
+1fc008d0:   16 12 06 d4         BNE $s2, 0x06d4
+1fc008d4:   00 00 00 00         NOP
+1fc008d8:   3c 08 d0 e1         LUI $t0, 0xd0e1
+1fc008dc:   35 08 ac d4         ORI $t0, $t0, 0xacd4
+1fc008e0:   34 09 97 69         ORI $t1, $zero, 0x9769
+1fc008e4:   21 10 97 69         ADDI $s0, $t0, 0x9769
+1fc008e8:   3c 12 d0 e1         LUI $s2, 0xd0e1
+1fc008ec:   36 52 44 3d         ORI $s2, $s2, 0x443d
+1fc008f0:   16 12 06 cc         BNE $s2, 0x06cc
+1fc008f4:   00 00 00 00         NOP
+1fc008f8:   3c 08 71 9a         LUI $t0, 0x719a
+1fc008fc:   35 08 8f b2         ORI $t0, $t0, 0x8fb2
+1fc00900:   24 09 1c fc         ADDIU $t1, $zero, 0x1cfc
+1fc00904:   21 10 1c fc         ADDI $s0, $t0, 0x1cfc
+1fc00908:   3c 12 71 9a         LUI $s2, 0x719a
+1fc0090c:   36 52 ac ae         ORI $s2, $s2, 0xacae
+1fc00910:   16 12 06 c4         BNE $s2, 0x06c4
+1fc00914:   00 00 00 00         NOP
+1fc00918:   3c 08 9d 71         LUI $t0, 0x9d71
+1fc0091c:   35 08 7a 82         ORI $t0, $t0, 0x7a82
+1fc00920:   24 09 23 74         ADDIU $t1, $zero, 0x2374
+1fc00924:   21 10 23 74         ADDI $s0, $t0, 0x2374
+1fc00928:   3c 12 9d 71         LUI $s2, 0x9d71
+1fc0092c:   36 52 9d f6         ORI $s2, $s2, 0x9df6
+1fc00930:   16 12 06 bc         BNE $s2, 0x06bc
+1fc00934:   00 00 00 00         NOP
+1fc00938:   3c 08 69 bb         LUI $t0, 0x69bb
+1fc0093c:   35 08 6d d8         ORI $t0, $t0, 0x6dd8
+1fc00940:   34 09 cb 59         ORI $t1, $zero, 0xcb59
+1fc00944:   21 10 cb 59         ADDI $s0, $t0, 0xcb59
+1fc00948:   3c 12 69 bb         LUI $s2, 0x69bb
+1fc0094c:   36 52 39 31         ORI $s2, $s2, 0x3931
+1fc00950:   16 12 06 b4         BNE $s2, 0x06b4
+1fc00954:   00 00 00 00         NOP
+1fc00958:   3c 08 57 e2         LUI $t0, 0x57e2
+1fc0095c:   35 08 d9 2c         ORI $t0, $t0, 0xd92c
+1fc00960:   34 09 ee 44         ORI $t1, $zero, 0xee44
+1fc00964:   21 10 ee 44         ADDI $s0, $t0, 0xee44
+1fc00968:   3c 12 57 e2         LUI $s2, 0x57e2
+1fc0096c:   36 52 c7 70         ORI $s2, $s2, 0xc770
+1fc00970:   16 12 06 ac         BNE $s2, 0x06ac
+1fc00974:   00 00 00 00         NOP
+1fc00978:   3c 08 2a af         LUI $t0, 0x2aaf
+1fc0097c:   35 08 b7 60         ORI $t0, $t0, 0xb760
+1fc00980:   24 09 6f 18         ADDIU $t1, $zero, 0x6f18
+1fc00984:   21 10 6f 18         ADDI $s0, $t0, 0x6f18
+1fc00988:   3c 12 2a b0         LUI $s2, 0x2ab0
+1fc0098c:   36 52 26 78         ORI $s2, $s2, 0x2678
+1fc00990:   16 12 06 a4         BNE $s2, 0x06a4
+1fc00994:   00 00 00 00         NOP
+1fc00998:   3c 08 db d1         LUI $t0, 0xdbd1
+1fc0099c:   35 08 5b e3         ORI $t0, $t0, 0x5be3
+1fc009a0:   24 09 12 80         ADDIU $t1, $zero, 0x1280
+1fc009a4:   21 10 12 80         ADDI $s0, $t0, 0x1280
+1fc009a8:   3c 12 db d1         LUI $s2, 0xdbd1
+1fc009ac:   36 52 6e 63         ORI $s2, $s2, 0x6e63
+1fc009b0:   16 12 06 9c         BNE $s2, 0x069c
+1fc009b4:   00 00 00 00         NOP
+1fc009b8:   3c 08 72 06         LUI $t0, 0x7206
+1fc009bc:   35 08 6f 32         ORI $t0, $t0, 0x6f32
+1fc009c0:   24 09 1d 11         ADDIU $t1, $zero, 0x1d11
+1fc009c4:   21 10 1d 11         ADDI $s0, $t0, 0x1d11
+1fc009c8:   3c 12 72 06         LUI $s2, 0x7206
+1fc009cc:   36 52 8c 43         ORI $s2, $s2, 0x8c43
+1fc009d0:   16 12 06 94         BNE $s2, 0x0694
+1fc009d4:   00 00 00 00         NOP
+1fc009d8:   3c 08 28 ae         LUI $t0, 0x28ae
+1fc009dc:   35 08 cc b8         ORI $t0, $t0, 0xccb8
+1fc009e0:   34 09 fd 30         ORI $t1, $zero, 0xfd30
+1fc009e4:   21 10 fd 30         ADDI $s0, $t0, 0xfd30
+1fc009e8:   3c 12 28 ae         LUI $s2, 0x28ae
+1fc009ec:   36 52 c9 e8         ORI $s2, $s2, 0xc9e8
+1fc009f0:   16 12 06 8c         BNE $s2, 0x068c
+1fc009f4:   00 00 00 00         NOP
+1fc009f8:   3c 08 d4 ff         LUI $t0, 0xd4ff
+1fc009fc:   35 08 f7 33         ORI $t0, $t0, 0xf733
+1fc00a00:   24 09 45 d8         ADDIU $t1, $zero, 0x45d8
+1fc00a04:   21 10 45 d8         ADDI $s0, $t0, 0x45d8
+1fc00a08:   3c 12 d5 00         LUI $s2, 0xd500
+1fc00a0c:   36 52 3d 0b         ORI $s2, $s2, 0x3d0b
+1fc00a10:   16 12 06 84         BNE $s2, 0x0684
+1fc00a14:   00 00 00 00         NOP
+1fc00a18:   3c 08 9c 2b         LUI $t0, 0x9c2b
+1fc00a1c:   35 08 d8 62         ORI $t0, $t0, 0xd862
+1fc00a20:   34 09 9c 0e         ORI $t1, $zero, 0x9c0e
+1fc00a24:   21 10 9c 0e         ADDI $s0, $t0, 0x9c0e
+1fc00a28:   3c 12 9c 2b         LUI $s2, 0x9c2b
+1fc00a2c:   36 52 74 70         ORI $s2, $s2, 0x7470
+1fc00a30:   16 12 06 7c         BNE $s2, 0x067c
+1fc00a34:   00 00 00 00         NOP
+1fc00a38:   3c 08 62 64         LUI $t0, 0x6264
+1fc00a3c:   35 08 e5 f0         ORI $t0, $t0, 0xe5f0
+1fc00a40:   34 09 d3 b0         ORI $t1, $zero, 0xd3b0
+1fc00a44:   21 10 d3 b0         ADDI $s0, $t0, 0xd3b0
+1fc00a48:   3c 12 62 64         LUI $s2, 0x6264
+1fc00a4c:   36 52 b9 a0         ORI $s2, $s2, 0xb9a0
+1fc00a50:   16 12 06 74         BNE $s2, 0x0674
+1fc00a54:   00 00 00 00         NOP
+1fc00a58:   3c 08 1a ee         LUI $t0, 0x1aee
+1fc00a5c:   35 08 26 54         ORI $t0, $t0, 0x2654
+1fc00a60:   34 09 b0 06         ORI $t1, $zero, 0xb006
+1fc00a64:   21 10 b0 06         ADDI $s0, $t0, 0xb006
+1fc00a68:   3c 12 1a ed         LUI $s2, 0x1aed
+1fc00a6c:   36 52 d6 5a         ORI $s2, $s2, 0xd65a
+1fc00a70:   16 12 06 6c         BNE $s2, 0x066c
+1fc00a74:   00 00 00 00         NOP
+1fc00a78:   3c 08 cf e5         LUI $t0, 0xcfe5
+1fc00a7c:   35 08 e6 f4         ORI $t0, $t0, 0xe6f4
+1fc00a80:   34 09 be 4b         ORI $t1, $zero, 0xbe4b
+1fc00a84:   21 10 be 4b         ADDI $s0, $t0, 0xbe4b
+1fc00a88:   3c 12 cf e5         LUI $s2, 0xcfe5
+1fc00a8c:   36 52 a5 3f         ORI $s2, $s2, 0xa53f
+1fc00a90:   16 12 06 64         BNE $s2, 0x0664
+1fc00a94:   00 00 00 00         NOP
+1fc00a98:   3c 08 29 26         LUI $t0, 0x2926
+1fc00a9c:   35 08 7c ec         ORI $t0, $t0, 0x7cec
+1fc00aa0:   24 09 3c 38         ADDIU $t1, $zero, 0x3c38
+1fc00aa4:   21 10 3c 38         ADDI $s0, $t0, 0x3c38
+1fc00aa8:   3c 12 29 26         LUI $s2, 0x2926
+1fc00aac:   36 52 b9 24         ORI $s2, $s2, 0xb924
+1fc00ab0:   16 12 06 5c         BNE $s2, 0x065c
+1fc00ab4:   00 00 00 00         NOP
+1fc00ab8:   3c 08 25 80         LUI $t0, 0x2580
+1fc00abc:   35 08 49 d6         ORI $t0, $t0, 0x49d6
+1fc00ac0:   34 09 d1 bd         ORI $t1, $zero, 0xd1bd
+1fc00ac4:   21 10 d1 bd         ADDI $s0, $t0, 0xd1bd
+1fc00ac8:   3c 12 25 80         LUI $s2, 0x2580
+1fc00acc:   36 52 1b 93         ORI $s2, $s2, 0x1b93
+1fc00ad0:   16 12 06 54         BNE $s2, 0x0654
+1fc00ad4:   00 00 00 00         NOP
+1fc00ad8:   3c 08 e8 dc         LUI $t0, 0xe8dc
+1fc00adc:   35 08 62 c0         ORI $t0, $t0, 0x62c0
+1fc00ae0:   34 09 ce 16         ORI $t1, $zero, 0xce16
+1fc00ae4:   21 10 ce 16         ADDI $s0, $t0, 0xce16
+1fc00ae8:   3c 12 e8 dc         LUI $s2, 0xe8dc
+1fc00aec:   36 52 30 d6         ORI $s2, $s2, 0x30d6
+1fc00af0:   16 12 06 4c         BNE $s2, 0x064c
+1fc00af4:   00 00 00 00         NOP
+1fc00af8:   3c 08 cc 78         LUI $t0, 0xcc78
+1fc00afc:   35 08 60 8c         ORI $t0, $t0, 0x608c
+1fc00b00:   34 09 97 90         ORI $t1, $zero, 0x9790
+1fc00b04:   21 10 97 90         ADDI $s0, $t0, 0x9790
+1fc00b08:   3c 12 cc 77         LUI $s2, 0xcc77
+1fc00b0c:   36 52 f8 1c         ORI $s2, $s2, 0xf81c
+1fc00b10:   16 12 06 44         BNE $s2, 0x0644
+1fc00b14:   00 00 00 00         NOP
+1fc00b18:   3c 08 5d ea         LUI $t0, 0x5dea
+1fc00b1c:   35 08 68 1e         ORI $t0, $t0, 0x681e
+1fc00b20:   24 09 0c b4         ADDIU $t1, $zero, 0x0cb4
+1fc00b24:   21 10 0c b4         ADDI $s0, $t0, 0x0cb4
+1fc00b28:   3c 12 5d ea         LUI $s2, 0x5dea
+1fc00b2c:   36 52 74 d2         ORI $s2, $s2, 0x74d2
+1fc00b30:   16 12 06 3c         BNE $s2, 0x063c
+1fc00b34:   00 00 00 00         NOP
+1fc00b38:   3c 08 c7 80         LUI $t0, 0xc780
+1fc00b3c:   35 08 80 52         ORI $t0, $t0, 0x8052
+1fc00b40:   24 09 20 40         ADDIU $t1, $zero, 0x2040
+1fc00b44:   21 10 20 40         ADDI $s0, $t0, 0x2040
+1fc00b48:   3c 12 c7 80         LUI $s2, 0xc780
+1fc00b4c:   36 52 a0 92         ORI $s2, $s2, 0xa092
+1fc00b50:   16 12 06 34         BNE $s2, 0x0634
+1fc00b54:   00 00 00 00         NOP
+1fc00b58:   3c 08 32 a9         LUI $t0, 0x32a9
+1fc00b5c:   35 08 bd 1a         ORI $t0, $t0, 0xbd1a
+1fc00b60:   34 09 c6 1a         ORI $t1, $zero, 0xc61a
+1fc00b64:   21 10 c6 1a         ADDI $s0, $t0, 0xc61a
+1fc00b68:   3c 12 32 a9         LUI $s2, 0x32a9
+1fc00b6c:   36 52 83 34         ORI $s2, $s2, 0x8334
+1fc00b70:   16 12 06 2c         BNE $s2, 0x062c
+1fc00b74:   00 00 00 00         NOP
+1fc00b78:   3c 08 21 5c         LUI $t0, 0x215c
+1fc00b7c:   35 08 4c 38         ORI $t0, $t0, 0x4c38
+1fc00b80:   24 09 6c 37         ADDIU $t1, $zero, 0x6c37
+1fc00b84:   21 10 6c 37         ADDI $s0, $t0, 0x6c37
+1fc00b88:   3c 12 21 5c         LUI $s2, 0x215c
+1fc00b8c:   36 52 b8 6f         ORI $s2, $s2, 0xb86f
+1fc00b90:   16 12 06 24         BNE $s2, 0x0624
+1fc00b94:   00 00 00 00         NOP
+1fc00b98:   3c 08 1e 55         LUI $t0, 0x1e55
+1fc00b9c:   35 08 99 98         ORI $t0, $t0, 0x9998
+1fc00ba0:   34 09 c4 31         ORI $t1, $zero, 0xc431
+1fc00ba4:   21 10 c4 31         ADDI $s0, $t0, 0xc431
+1fc00ba8:   3c 12 1e 55         LUI $s2, 0x1e55
+1fc00bac:   36 52 5d c9         ORI $s2, $s2, 0x5dc9
+1fc00bb0:   16 12 06 1c         BNE $s2, 0x061c
+1fc00bb4:   00 00 00 00         NOP
+1fc00bb8:   3c 08 38 50         LUI $t0, 0x3850
+1fc00bbc:   35 08 00 c4         ORI $t0, $t0, 0x00c4
+1fc00bc0:   24 09 7d 68         ADDIU $t1, $zero, 0x7d68
+1fc00bc4:   21 10 7d 68         ADDI $s0, $t0, 0x7d68
+1fc00bc8:   3c 12 38 50         LUI $s2, 0x3850
+1fc00bcc:   36 52 7e 2c         ORI $s2, $s2, 0x7e2c
+1fc00bd0:   16 12 06 14         BNE $s2, 0x0614
+1fc00bd4:   00 00 00 00         NOP
+1fc00bd8:   3c 08 62 03         LUI $t0, 0x6203
+1fc00bdc:   35 08 d8 b0         ORI $t0, $t0, 0xd8b0
+1fc00be0:   24 09 3e 16         ADDIU $t1, $zero, 0x3e16
+1fc00be4:   21 10 3e 16         ADDI $s0, $t0, 0x3e16
+1fc00be8:   3c 12 62 04         LUI $s2, 0x6204
+1fc00bec:   36 52 16 c6         ORI $s2, $s2, 0x16c6
+1fc00bf0:   16 12 06 0c         BNE $s2, 0x060c
+1fc00bf4:   00 00 00 00         NOP
+1fc00bf8:   3c 08 f9 6e         LUI $t0, 0xf96e
+1fc00bfc:   35 08 64 18         ORI $t0, $t0, 0x6418
+1fc00c00:   34 09 9c a7         ORI $t1, $zero, 0x9ca7
+1fc00c04:   21 10 9c a7         ADDI $s0, $t0, 0x9ca7
+1fc00c08:   3c 12 f9 6e         LUI $s2, 0xf96e
+1fc00c0c:   36 52 00 bf         ORI $s2, $s2, 0x00bf
+1fc00c10:   16 12 06 04         BNE $s2, 0x0604
+1fc00c14:   00 00 00 00         NOP
+1fc00c18:   3c 08 b8 b1         LUI $t0, 0xb8b1
+1fc00c1c:   35 08 c0 57         ORI $t0, $t0, 0xc057
+1fc00c20:   24 09 6d 06         ADDIU $t1, $zero, 0x6d06
+1fc00c24:   21 10 6d 06         ADDI $s0, $t0, 0x6d06
+1fc00c28:   3c 12 b8 b2         LUI $s2, 0xb8b2
+1fc00c2c:   36 52 2d 5d         ORI $s2, $s2, 0x2d5d
+1fc00c30:   16 12 05 fc         BNE $s2, 0x05fc
+1fc00c34:   00 00 00 00         NOP
+1fc00c38:   3c 08 14 5a         LUI $t0, 0x145a
+1fc00c3c:   35 08 c1 08         ORI $t0, $t0, 0xc108
+1fc00c40:   34 09 bf 84         ORI $t1, $zero, 0xbf84
+1fc00c44:   21 10 bf 84         ADDI $s0, $t0, 0xbf84
+1fc00c48:   3c 12 14 5a         LUI $s2, 0x145a
+1fc00c4c:   36 52 80 8c         ORI $s2, $s2, 0x808c
+1fc00c50:   16 12 05 f4         BNE $s2, 0x05f4
+1fc00c54:   00 00 00 00         NOP
+1fc00c58:   3c 08 96 93         LUI $t0, 0x9693
+1fc00c5c:   35 08 03 14         ORI $t0, $t0, 0x0314
+1fc00c60:   24 09 40 aa         ADDIU $t1, $zero, 0x40aa
+1fc00c64:   21 10 40 aa         ADDI $s0, $t0, 0x40aa
+1fc00c68:   3c 12 96 93         LUI $s2, 0x9693
+1fc00c6c:   36 52 43 be         ORI $s2, $s2, 0x43be
+1fc00c70:   16 12 05 ec         BNE $s2, 0x05ec
+1fc00c74:   00 00 00 00         NOP
+1fc00c78:   3c 08 3b 87         LUI $t0, 0x3b87
+1fc00c7c:   35 08 85 10         ORI $t0, $t0, 0x8510
+1fc00c80:   24 09 7b 30         ADDIU $t1, $zero, 0x7b30
+1fc00c84:   21 10 7b 30         ADDI $s0, $t0, 0x7b30
+1fc00c88:   3c 12 3b 88         LUI $s2, 0x3b88
+1fc00c8c:   36 52 00 40         ORI $s2, $s2, 0x0040
+1fc00c90:   16 12 05 e4         BNE $s2, 0x05e4
+1fc00c94:   00 00 00 00         NOP
+1fc00c98:   3c 08 a5 52         LUI $t0, 0xa552
+1fc00c9c:   35 08 b3 61         ORI $t0, $t0, 0xb361
+1fc00ca0:   34 09 f1 67         ORI $t1, $zero, 0xf167
+1fc00ca4:   21 10 f1 67         ADDI $s0, $t0, 0xf167
+1fc00ca8:   3c 12 a5 52         LUI $s2, 0xa552
+1fc00cac:   36 52 a4 c8         ORI $s2, $s2, 0xa4c8
+1fc00cb0:   16 12 05 dc         BNE $s2, 0x05dc
+1fc00cb4:   00 00 00 00         NOP
+1fc00cb8:   3c 08 de d9         LUI $t0, 0xded9
+1fc00cbc:   35 08 f6 04         ORI $t0, $t0, 0xf604
+1fc00cc0:   24 09 0f 49         ADDIU $t1, $zero, 0x0f49
+1fc00cc4:   21 10 0f 49         ADDI $s0, $t0, 0x0f49
+1fc00cc8:   3c 12 de da         LUI $s2, 0xdeda
+1fc00ccc:   36 52 05 4d         ORI $s2, $s2, 0x054d
+1fc00cd0:   16 12 05 d4         BNE $s2, 0x05d4
+1fc00cd4:   00 00 00 00         NOP
+1fc00cd8:   3c 08 b2 99         LUI $t0, 0xb299
+1fc00cdc:   35 08 07 62         ORI $t0, $t0, 0x0762
+1fc00ce0:   24 09 6d 02         ADDIU $t1, $zero, 0x6d02
+1fc00ce4:   21 10 6d 02         ADDI $s0, $t0, 0x6d02
+1fc00ce8:   3c 12 b2 99         LUI $s2, 0xb299
+1fc00cec:   36 52 74 64         ORI $s2, $s2, 0x7464
+1fc00cf0:   16 12 05 cc         BNE $s2, 0x05cc
+1fc00cf4:   00 00 00 00         NOP
+1fc00cf8:   3c 08 bd 4b         LUI $t0, 0xbd4b
+1fc00cfc:   35 08 9c 87         ORI $t0, $t0, 0x9c87
+1fc00d00:   24 09 02 d8         ADDIU $t1, $zero, 0x02d8
+1fc00d04:   21 10 02 d8         ADDI $s0, $t0, 0x02d8
+1fc00d08:   3c 12 bd 4b         LUI $s2, 0xbd4b
+1fc00d0c:   36 52 9f 5f         ORI $s2, $s2, 0x9f5f
+1fc00d10:   16 12 05 c4         BNE $s2, 0x05c4
+1fc00d14:   00 00 00 00         NOP
+1fc00d18:   3c 08 84 53         LUI $t0, 0x8453
+1fc00d1c:   35 08 57 34         ORI $t0, $t0, 0x5734
+1fc00d20:   34 09 bb 60         ORI $t1, $zero, 0xbb60
+1fc00d24:   21 10 bb 60         ADDI $s0, $t0, 0xbb60
+1fc00d28:   3c 12 84 53         LUI $s2, 0x8453
+1fc00d2c:   36 52 12 94         ORI $s2, $s2, 0x1294
+1fc00d30:   16 12 05 bc         BNE $s2, 0x05bc
+1fc00d34:   00 00 00 00         NOP
+1fc00d38:   3c 08 1c be         LUI $t0, 0x1cbe
+1fc00d3c:   35 08 8e 60         ORI $t0, $t0, 0x8e60
+1fc00d40:   24 09 6a cc         ADDIU $t1, $zero, 0x6acc
+1fc00d44:   21 10 6a cc         ADDI $s0, $t0, 0x6acc
+1fc00d48:   3c 12 1c be         LUI $s2, 0x1cbe
+1fc00d4c:   36 52 f9 2c         ORI $s2, $s2, 0xf92c
+1fc00d50:   16 12 05 b4         BNE $s2, 0x05b4
+1fc00d54:   00 00 00 00         NOP
+1fc00d58:   3c 08 17 bd         LUI $t0, 0x17bd
+1fc00d5c:   35 08 ee f0         ORI $t0, $t0, 0xeef0
+1fc00d60:   24 09 46 44         ADDIU $t1, $zero, 0x4644
+1fc00d64:   21 10 46 44         ADDI $s0, $t0, 0x4644
+1fc00d68:   3c 12 17 be         LUI $s2, 0x17be
+1fc00d6c:   36 52 35 34         ORI $s2, $s2, 0x3534
+1fc00d70:   16 12 05 ac         BNE $s2, 0x05ac
+1fc00d74:   00 00 00 00         NOP
+1fc00d78:   3c 08 0b 15         LUI $t0, 0x0b15
+1fc00d7c:   35 08 05 c0         ORI $t0, $t0, 0x05c0
+1fc00d80:   24 09 40 00         ADDIU $t1, $zero, 0x4000
+1fc00d84:   21 10 40 00         ADDI $s0, $t0, 0x4000
+1fc00d88:   3c 12 0b 15         LUI $s2, 0x0b15
+1fc00d8c:   36 52 45 c0         ORI $s2, $s2, 0x45c0
+1fc00d90:   16 12 05 a4         BNE $s2, 0x05a4
+1fc00d94:   00 00 00 00         NOP
+1fc00d98:   3c 08 8d 45         LUI $t0, 0x8d45
+1fc00d9c:   35 08 54 44         ORI $t0, $t0, 0x5444
+1fc00da0:   34 09 a0 da         ORI $t1, $zero, 0xa0da
+1fc00da4:   21 10 a0 da         ADDI $s0, $t0, 0xa0da
+1fc00da8:   3c 12 8d 44         LUI $s2, 0x8d44
+1fc00dac:   36 52 f5 1e         ORI $s2, $s2, 0xf51e
+1fc00db0:   16 12 05 9c         BNE $s2, 0x059c
+1fc00db4:   00 00 00 00         NOP
+1fc00db8:   3c 08 3b 86         LUI $t0, 0x3b86
+1fc00dbc:   35 08 5e 84         ORI $t0, $t0, 0x5e84
+1fc00dc0:   24 09 5c 89         ADDIU $t1, $zero, 0x5c89
+1fc00dc4:   21 10 5c 89         ADDI $s0, $t0, 0x5c89
+1fc00dc8:   3c 12 3b 86         LUI $s2, 0x3b86
+1fc00dcc:   36 52 bb 0d         ORI $s2, $s2, 0xbb0d
+1fc00dd0:   16 12 05 94         BNE $s2, 0x0594
+1fc00dd4:   00 00 00 00         NOP
+1fc00dd8:   3c 08 fe 2e         LUI $t0, 0xfe2e
+1fc00ddc:   35 08 97 04         ORI $t0, $t0, 0x9704
+1fc00de0:   34 09 e5 24         ORI $t1, $zero, 0xe524
+1fc00de4:   21 10 e5 24         ADDI $s0, $t0, 0xe524
+1fc00de8:   3c 12 fe 2e         LUI $s2, 0xfe2e
+1fc00dec:   36 52 7c 28         ORI $s2, $s2, 0x7c28
+1fc00df0:   16 12 05 8c         BNE $s2, 0x058c
+1fc00df4:   00 00 00 00         NOP
+1fc00df8:   3c 08 81 0f         LUI $t0, 0x810f
+1fc00dfc:   35 08 9a 90         ORI $t0, $t0, 0x9a90
+1fc00e00:   34 09 d5 aa         ORI $t1, $zero, 0xd5aa
+1fc00e04:   21 10 d5 aa         ADDI $s0, $t0, 0xd5aa
+1fc00e08:   3c 12 81 0f         LUI $s2, 0x810f
+1fc00e0c:   36 52 70 3a         ORI $s2, $s2, 0x703a
+1fc00e10:   16 12 05 84         BNE $s2, 0x0584
+1fc00e14:   00 00 00 00         NOP
+1fc00e18:   3c 08 72 9a         LUI $t0, 0x729a
+1fc00e1c:   35 08 55 e7         ORI $t0, $t0, 0x55e7
+1fc00e20:   24 09 63 d1         ADDIU $t1, $zero, 0x63d1
+1fc00e24:   21 10 63 d1         ADDI $s0, $t0, 0x63d1
+1fc00e28:   3c 12 72 9a         LUI $s2, 0x729a
+1fc00e2c:   36 52 b9 b8         ORI $s2, $s2, 0xb9b8
+1fc00e30:   16 12 05 7c         BNE $s2, 0x057c
+1fc00e34:   00 00 00 00         NOP
+1fc00e38:   3c 08 7d da         LUI $t0, 0x7dda
+1fc00e3c:   35 08 e5 cf         ORI $t0, $t0, 0xe5cf
+1fc00e40:   24 09 4d 93         ADDIU $t1, $zero, 0x4d93
+1fc00e44:   21 10 4d 93         ADDI $s0, $t0, 0x4d93
+1fc00e48:   3c 12 7d db         LUI $s2, 0x7ddb
+1fc00e4c:   36 52 33 62         ORI $s2, $s2, 0x3362
+1fc00e50:   16 12 05 74         BNE $s2, 0x0574
+1fc00e54:   00 00 00 00         NOP
+1fc00e58:   3c 08 44 85         LUI $t0, 0x4485
+1fc00e5c:   35 08 c0 5e         ORI $t0, $t0, 0xc05e
+1fc00e60:   34 09 d0 f8         ORI $t1, $zero, 0xd0f8
+1fc00e64:   21 10 d0 f8         ADDI $s0, $t0, 0xd0f8
+1fc00e68:   3c 12 44 85         LUI $s2, 0x4485
+1fc00e6c:   36 52 91 56         ORI $s2, $s2, 0x9156
+1fc00e70:   16 12 05 6c         BNE $s2, 0x056c
+1fc00e74:   00 00 00 00         NOP
+1fc00e78:   3c 08 a2 cd         LUI $t0, 0xa2cd
+1fc00e7c:   35 08 75 d0         ORI $t0, $t0, 0x75d0
+1fc00e80:   34 09 c4 3c         ORI $t1, $zero, 0xc43c
+1fc00e84:   21 10 c4 3c         ADDI $s0, $t0, 0xc43c
+1fc00e88:   3c 12 a2 cd         LUI $s2, 0xa2cd
+1fc00e8c:   36 52 3a 0c         ORI $s2, $s2, 0x3a0c
+1fc00e90:   16 12 05 64         BNE $s2, 0x0564
+1fc00e94:   00 00 00 00         NOP
+1fc00e98:   3c 08 29 dd         LUI $t0, 0x29dd
+1fc00e9c:   35 08 99 fa         ORI $t0, $t0, 0x99fa
+1fc00ea0:   34 09 85 4a         ORI $t1, $zero, 0x854a
+1fc00ea4:   21 10 85 4a         ADDI $s0, $t0, 0x854a
+1fc00ea8:   3c 12 29 dd         LUI $s2, 0x29dd
+1fc00eac:   36 52 1f 44         ORI $s2, $s2, 0x1f44
+1fc00eb0:   16 12 05 5c         BNE $s2, 0x055c
+1fc00eb4:   00 00 00 00         NOP
+1fc00eb8:   3c 08 59 7a         LUI $t0, 0x597a
+1fc00ebc:   35 08 52 00         ORI $t0, $t0, 0x5200
+1fc00ec0:   34 09 eb 96         ORI $t1, $zero, 0xeb96
+1fc00ec4:   21 10 eb 96         ADDI $s0, $t0, 0xeb96
+1fc00ec8:   3c 12 59 7a         LUI $s2, 0x597a
+1fc00ecc:   36 52 3d 96         ORI $s2, $s2, 0x3d96
+1fc00ed0:   16 12 05 54         BNE $s2, 0x0554
+1fc00ed4:   00 00 00 00         NOP
+1fc00ed8:   3c 08 3f 61         LUI $t0, 0x3f61
+1fc00edc:   35 08 ed 98         ORI $t0, $t0, 0xed98
+1fc00ee0:   24 09 50 4c         ADDIU $t1, $zero, 0x504c
+1fc00ee4:   21 10 50 4c         ADDI $s0, $t0, 0x504c
+1fc00ee8:   3c 12 3f 62         LUI $s2, 0x3f62
+1fc00eec:   36 52 3d e4         ORI $s2, $s2, 0x3de4
+1fc00ef0:   16 12 05 4c         BNE $s2, 0x054c
+1fc00ef4:   00 00 00 00         NOP
+1fc00ef8:   3c 08 7c 03         LUI $t0, 0x7c03
+1fc00efc:   35 08 72 9a         ORI $t0, $t0, 0x729a
+1fc00f00:   34 09 f8 0f         ORI $t1, $zero, 0xf80f
+1fc00f04:   21 10 f8 0f         ADDI $s0, $t0, 0xf80f
+1fc00f08:   3c 12 7c 03         LUI $s2, 0x7c03
+1fc00f0c:   36 52 6a a9         ORI $s2, $s2, 0x6aa9
+1fc00f10:   16 12 05 44         BNE $s2, 0x0544
+1fc00f14:   00 00 00 00         NOP
+1fc00f18:   3c 08 f9 98         LUI $t0, 0xf998
+1fc00f1c:   35 08 90 18         ORI $t0, $t0, 0x9018
+1fc00f20:   34 09 80 4c         ORI $t1, $zero, 0x804c
+1fc00f24:   21 10 80 4c         ADDI $s0, $t0, 0x804c
+1fc00f28:   3c 12 f9 98         LUI $s2, 0xf998
+1fc00f2c:   36 52 10 64         ORI $s2, $s2, 0x1064
+1fc00f30:   16 12 05 3c         BNE $s2, 0x053c
+1fc00f34:   00 00 00 00         NOP
+1fc00f38:   3c 08 6c 5f         LUI $t0, 0x6c5f
+1fc00f3c:   35 08 98 2c         ORI $t0, $t0, 0x982c
+1fc00f40:   34 09 b5 01         ORI $t1, $zero, 0xb501
+1fc00f44:   21 10 b5 01         ADDI $s0, $t0, 0xb501
+1fc00f48:   3c 12 6c 5f         LUI $s2, 0x6c5f
+1fc00f4c:   36 52 4d 2d         ORI $s2, $s2, 0x4d2d
+1fc00f50:   16 12 05 34         BNE $s2, 0x0534
+1fc00f54:   00 00 00 00         NOP
+1fc00f58:   3c 08 df 25         LUI $t0, 0xdf25
+1fc00f5c:   35 08 dc 18         ORI $t0, $t0, 0xdc18
+1fc00f60:   24 09 0b 85         ADDIU $t1, $zero, 0x0b85
+1fc00f64:   21 10 0b 85         ADDI $s0, $t0, 0x0b85
+1fc00f68:   3c 12 df 25         LUI $s2, 0xdf25
+1fc00f6c:   36 52 e7 9d         ORI $s2, $s2, 0xe79d
+1fc00f70:   16 12 05 2c         BNE $s2, 0x052c
+1fc00f74:   00 00 00 00         NOP
+1fc00f78:   3c 08 92 82         LUI $t0, 0x9282
+1fc00f7c:   35 08 77 04         ORI $t0, $t0, 0x7704
+1fc00f80:   24 09 4d 1c         ADDIU $t1, $zero, 0x4d1c
+1fc00f84:   21 10 4d 1c         ADDI $s0, $t0, 0x4d1c
+1fc00f88:   3c 12 92 82         LUI $s2, 0x9282
+1fc00f8c:   36 52 c4 20         ORI $s2, $s2, 0xc420
+1fc00f90:   16 12 05 24         BNE $s2, 0x0524
+1fc00f94:   00 00 00 00         NOP
+1fc00f98:   3c 08 2f d2         LUI $t0, 0x2fd2
+1fc00f9c:   35 08 bb d5         ORI $t0, $t0, 0xbbd5
+1fc00fa0:   34 09 f2 94         ORI $t1, $zero, 0xf294
+1fc00fa4:   21 10 f2 94         ADDI $s0, $t0, 0xf294
+1fc00fa8:   3c 12 2f d2         LUI $s2, 0x2fd2
+1fc00fac:   36 52 ae 69         ORI $s2, $s2, 0xae69
+1fc00fb0:   16 12 05 1c         BNE $s2, 0x051c
+1fc00fb4:   00 00 00 00         NOP
+1fc00fb8:   3c 08 85 92         LUI $t0, 0x8592
+1fc00fbc:   35 08 e6 5e         ORI $t0, $t0, 0xe65e
+1fc00fc0:   24 09 47 5c         ADDIU $t1, $zero, 0x475c
+1fc00fc4:   21 10 47 5c         ADDI $s0, $t0, 0x475c
+1fc00fc8:   3c 12 85 93         LUI $s2, 0x8593
+1fc00fcc:   36 52 2d ba         ORI $s2, $s2, 0x2dba
+1fc00fd0:   16 12 05 14         BNE $s2, 0x0514
+1fc00fd4:   00 00 00 00         NOP
+1fc00fd8:   3c 08 e7 b1         LUI $t0, 0xe7b1
+1fc00fdc:   35 08 c1 00         ORI $t0, $t0, 0xc100
+1fc00fe0:   24 09 78 1c         ADDIU $t1, $zero, 0x781c
+1fc00fe4:   21 10 78 1c         ADDI $s0, $t0, 0x781c
+1fc00fe8:   3c 12 e7 b2         LUI $s2, 0xe7b2
+1fc00fec:   36 52 39 1c         ORI $s2, $s2, 0x391c
+1fc00ff0:   16 12 05 0c         BNE $s2, 0x050c
+1fc00ff4:   00 00 00 00         NOP
+1fc00ff8:   3c 08 9f 92         LUI $t0, 0x9f92
+1fc00ffc:   35 08 ef 00         ORI $t0, $t0, 0xef00
+1fc01000:   34 09 da a4         ORI $t1, $zero, 0xdaa4
+1fc01004:   21 10 da a4         ADDI $s0, $t0, 0xdaa4
+1fc01008:   3c 12 9f 92         LUI $s2, 0x9f92
+1fc0100c:   36 52 c9 a4         ORI $s2, $s2, 0xc9a4
+1fc01010:   16 12 05 04         BNE $s2, 0x0504
+1fc01014:   00 00 00 00         NOP
+1fc01018:   3c 08 dd 57         LUI $t0, 0xdd57
+1fc0101c:   35 08 b6 b8         ORI $t0, $t0, 0xb6b8
+1fc01020:   34 09 f6 a9         ORI $t1, $zero, 0xf6a9
+1fc01024:   21 10 f6 a9         ADDI $s0, $t0, 0xf6a9
+1fc01028:   3c 12 dd 57         LUI $s2, 0xdd57
+1fc0102c:   36 52 ad 61         ORI $s2, $s2, 0xad61
+1fc01030:   16 12 04 fc         BNE $s2, 0x04fc
+1fc01034:   00 00 00 00         NOP
+1fc01038:   3c 08 81 67         LUI $t0, 0x8167
+1fc0103c:   35 08 e1 98         ORI $t0, $t0, 0xe198
+1fc01040:   24 09 0f c9         ADDIU $t1, $zero, 0x0fc9
+1fc01044:   21 10 0f c9         ADDI $s0, $t0, 0x0fc9
+1fc01048:   3c 12 81 67         LUI $s2, 0x8167
+1fc0104c:   36 52 f1 61         ORI $s2, $s2, 0xf161
+1fc01050:   16 12 04 f4         BNE $s2, 0x04f4
+1fc01054:   00 00 00 00         NOP
+1fc01058:   3c 08 46 31         LUI $t0, 0x4631
+1fc0105c:   35 08 86 ee         ORI $t0, $t0, 0x86ee
+1fc01060:   34 09 c3 f0         ORI $t1, $zero, 0xc3f0
+1fc01064:   21 10 c3 f0         ADDI $s0, $t0, 0xc3f0
+1fc01068:   3c 12 46 31         LUI $s2, 0x4631
+1fc0106c:   36 52 4a de         ORI $s2, $s2, 0x4ade
+1fc01070:   16 12 04 ec         BNE $s2, 0x04ec
+1fc01074:   00 00 00 00         NOP
+1fc01078:   3c 08 1d bf         LUI $t0, 0x1dbf
+1fc0107c:   35 08 9f 18         ORI $t0, $t0, 0x9f18
+1fc01080:   34 09 ef 14         ORI $t1, $zero, 0xef14
+1fc01084:   21 10 ef 14         ADDI $s0, $t0, 0xef14
+1fc01088:   3c 12 1d bf         LUI $s2, 0x1dbf
+1fc0108c:   36 52 8e 2c         ORI $s2, $s2, 0x8e2c
+1fc01090:   16 12 04 e4         BNE $s2, 0x04e4
+1fc01094:   00 00 00 00         NOP
+1fc01098:   3c 08 52 6b         LUI $t0, 0x526b
+1fc0109c:   35 08 1b 50         ORI $t0, $t0, 0x1b50
+1fc010a0:   24 09 17 4c         ADDIU $t1, $zero, 0x174c
+1fc010a4:   21 10 17 4c         ADDI $s0, $t0, 0x174c
+1fc010a8:   3c 12 52 6b         LUI $s2, 0x526b
+1fc010ac:   36 52 32 9c         ORI $s2, $s2, 0x329c
+1fc010b0:   16 12 04 dc         BNE $s2, 0x04dc
+1fc010b4:   00 00 00 00         NOP
+1fc010b8:   3c 08 7c 24         LUI $t0, 0x7c24
+1fc010bc:   35 08 9f b9         ORI $t0, $t0, 0x9fb9
+1fc010c0:   24 09 0a 88         ADDIU $t1, $zero, 0x0a88
+1fc010c4:   21 10 0a 88         ADDI $s0, $t0, 0x0a88
+1fc010c8:   3c 12 7c 24         LUI $s2, 0x7c24
+1fc010cc:   36 52 aa 41         ORI $s2, $s2, 0xaa41
+1fc010d0:   16 12 04 d4         BNE $s2, 0x04d4
+1fc010d4:   00 00 00 00         NOP
+1fc010d8:   3c 08 ac c1         LUI $t0, 0xacc1
+1fc010dc:   35 08 d7 6c         ORI $t0, $t0, 0xd76c
+1fc010e0:   24 09 32 40         ADDIU $t1, $zero, 0x3240
+1fc010e4:   21 10 32 40         ADDI $s0, $t0, 0x3240
+1fc010e8:   3c 12 ac c2         LUI $s2, 0xacc2
+1fc010ec:   36 52 09 ac         ORI $s2, $s2, 0x09ac
+1fc010f0:   16 12 04 cc         BNE $s2, 0x04cc
+1fc010f4:   00 00 00 00         NOP
+1fc010f8:   3c 08 db cf         LUI $t0, 0xdbcf
+1fc010fc:   35 08 a6 30         ORI $t0, $t0, 0xa630
+1fc01100:   24 09 45 36         ADDIU $t1, $zero, 0x4536
+1fc01104:   21 10 45 36         ADDI $s0, $t0, 0x4536
+1fc01108:   3c 12 db cf         LUI $s2, 0xdbcf
+1fc0110c:   36 52 eb 66         ORI $s2, $s2, 0xeb66
+1fc01110:   16 12 04 c4         BNE $s2, 0x04c4
+1fc01114:   00 00 00 00         NOP
+1fc01118:   3c 08 ba a5         LUI $t0, 0xbaa5
+1fc0111c:   35 08 2f 90         ORI $t0, $t0, 0x2f90
+1fc01120:   34 09 b9 18         ORI $t1, $zero, 0xb918
+1fc01124:   21 10 b9 18         ADDI $s0, $t0, 0xb918
+1fc01128:   3c 12 ba a4         LUI $s2, 0xbaa4
+1fc0112c:   36 52 e8 a8         ORI $s2, $s2, 0xe8a8
+1fc01130:   16 12 04 bc         BNE $s2, 0x04bc
+1fc01134:   00 00 00 00         NOP
+1fc01138:   3c 08 dc 9b         LUI $t0, 0xdc9b
+1fc0113c:   35 08 9f ed         ORI $t0, $t0, 0x9fed
+1fc01140:   34 09 c6 46         ORI $t1, $zero, 0xc646
+1fc01144:   21 10 c6 46         ADDI $s0, $t0, 0xc646
+1fc01148:   3c 12 dc 9b         LUI $s2, 0xdc9b
+1fc0114c:   36 52 66 33         ORI $s2, $s2, 0x6633
+1fc01150:   16 12 04 b4         BNE $s2, 0x04b4
+1fc01154:   00 00 00 00         NOP
+1fc01158:   3c 08 6f a1         LUI $t0, 0x6fa1
+1fc0115c:   35 08 66 ac         ORI $t0, $t0, 0x66ac
+1fc01160:   24 09 17 0f         ADDIU $t1, $zero, 0x170f
+1fc01164:   21 10 17 0f         ADDI $s0, $t0, 0x170f
+1fc01168:   3c 12 6f a1         LUI $s2, 0x6fa1
+1fc0116c:   36 52 7d bb         ORI $s2, $s2, 0x7dbb
+1fc01170:   16 12 04 ac         BNE $s2, 0x04ac
+1fc01174:   00 00 00 00         NOP
+1fc01178:   3c 08 34 5c         LUI $t0, 0x345c
+1fc0117c:   35 08 cf 3c         ORI $t0, $t0, 0xcf3c
+1fc01180:   34 09 8f d8         ORI $t1, $zero, 0x8fd8
+1fc01184:   21 10 8f d8         ADDI $s0, $t0, 0x8fd8
+1fc01188:   3c 12 34 5c         LUI $s2, 0x345c
+1fc0118c:   36 52 5f 14         ORI $s2, $s2, 0x5f14
+1fc01190:   16 12 04 a4         BNE $s2, 0x04a4
+1fc01194:   00 00 00 00         NOP
+1fc01198:   3c 08 73 7e         LUI $t0, 0x737e
+1fc0119c:   35 08 4d 08         ORI $t0, $t0, 0x4d08
+1fc011a0:   34 09 98 dc         ORI $t1, $zero, 0x98dc
+1fc011a4:   21 10 98 dc         ADDI $s0, $t0, 0x98dc
+1fc011a8:   3c 12 73 7d         LUI $s2, 0x737d
+1fc011ac:   36 52 e5 e4         ORI $s2, $s2, 0xe5e4
+1fc011b0:   16 12 04 9c         BNE $s2, 0x049c
+1fc011b4:   00 00 00 00         NOP
+1fc011b8:   3c 08 ff 7a         LUI $t0, 0xff7a
+1fc011bc:   35 08 fc 4d         ORI $t0, $t0, 0xfc4d
+1fc011c0:   34 09 99 38         ORI $t1, $zero, 0x9938
+1fc011c4:   21 10 99 38         ADDI $s0, $t0, 0x9938
+1fc011c8:   3c 12 ff 7a         LUI $s2, 0xff7a
+1fc011cc:   36 52 95 85         ORI $s2, $s2, 0x9585
+1fc011d0:   16 12 04 94         BNE $s2, 0x0494
+1fc011d4:   00 00 00 00         NOP
+1fc011d8:   3c 08 56 77         LUI $t0, 0x5677
+1fc011dc:   35 08 bb 0f         ORI $t0, $t0, 0xbb0f
+1fc011e0:   34 09 9b 4e         ORI $t1, $zero, 0x9b4e
+1fc011e4:   21 10 9b 4e         ADDI $s0, $t0, 0x9b4e
+1fc011e8:   3c 12 56 77         LUI $s2, 0x5677
+1fc011ec:   36 52 56 5d         ORI $s2, $s2, 0x565d
+1fc011f0:   16 12 04 8c         BNE $s2, 0x048c
+1fc011f4:   00 00 00 00         NOP
+1fc011f8:   3c 08 4f 98         LUI $t0, 0x4f98
+1fc011fc:   35 08 8d a1         ORI $t0, $t0, 0x8da1
+1fc01200:   24 09 0c 57         ADDIU $t1, $zero, 0x0c57
+1fc01204:   21 10 0c 57         ADDI $s0, $t0, 0x0c57
+1fc01208:   3c 12 4f 98         LUI $s2, 0x4f98
+1fc0120c:   36 52 99 f8         ORI $s2, $s2, 0x99f8
+1fc01210:   16 12 04 84         BNE $s2, 0x0484
+1fc01214:   00 00 00 00         NOP
+1fc01218:   3c 08 88 f3         LUI $t0, 0x88f3
+1fc0121c:   35 08 01 9a         ORI $t0, $t0, 0x019a
+1fc01220:   34 09 f7 f8         ORI $t1, $zero, 0xf7f8
+1fc01224:   21 10 f7 f8         ADDI $s0, $t0, 0xf7f8
+1fc01228:   3c 12 88 f2         LUI $s2, 0x88f2
+1fc0122c:   36 52 f9 92         ORI $s2, $s2, 0xf992
+1fc01230:   16 12 04 7c         BNE $s2, 0x047c
+1fc01234:   00 00 00 00         NOP
+1fc01238:   3c 08 01 90         LUI $t0, 0x0190
+1fc0123c:   35 08 21 c0         ORI $t0, $t0, 0x21c0
+1fc01240:   34 09 c8 70         ORI $t1, $zero, 0xc870
+1fc01244:   21 10 c8 70         ADDI $s0, $t0, 0xc870
+1fc01248:   3c 12 01 8f         LUI $s2, 0x018f
+1fc0124c:   36 52 ea 30         ORI $s2, $s2, 0xea30
+1fc01250:   16 12 04 74         BNE $s2, 0x0474
+1fc01254:   00 00 00 00         NOP
+1fc01258:   3c 08 c9 5a         LUI $t0, 0xc95a
+1fc0125c:   35 08 e6 08         ORI $t0, $t0, 0xe608
+1fc01260:   34 09 dc c0         ORI $t1, $zero, 0xdcc0
+1fc01264:   21 10 dc c0         ADDI $s0, $t0, 0xdcc0
+1fc01268:   3c 12 c9 5a         LUI $s2, 0xc95a
+1fc0126c:   36 52 c2 c8         ORI $s2, $s2, 0xc2c8
+1fc01270:   16 12 04 6c         BNE $s2, 0x046c
+1fc01274:   00 00 00 00         NOP
+1fc01278:   3c 08 4e 04         LUI $t0, 0x4e04
+1fc0127c:   35 08 07 90         ORI $t0, $t0, 0x0790
+1fc01280:   24 09 57 97         ADDIU $t1, $zero, 0x5797
+1fc01284:   21 10 57 97         ADDI $s0, $t0, 0x5797
+1fc01288:   3c 12 4e 04         LUI $s2, 0x4e04
+1fc0128c:   36 52 5f 27         ORI $s2, $s2, 0x5f27
+1fc01290:   16 12 04 64         BNE $s2, 0x0464
+1fc01294:   00 00 00 00         NOP
+1fc01298:   3c 08 05 fb         LUI $t0, 0x05fb
+1fc0129c:   35 08 11 f4         ORI $t0, $t0, 0x11f4
+1fc012a0:   24 09 14 54         ADDIU $t1, $zero, 0x1454
+1fc012a4:   21 10 14 54         ADDI $s0, $t0, 0x1454
+1fc012a8:   3c 12 05 fb         LUI $s2, 0x05fb
+1fc012ac:   36 52 26 48         ORI $s2, $s2, 0x2648
+1fc012b0:   16 12 04 5c         BNE $s2, 0x045c
+1fc012b4:   00 00 00 00         NOP
+1fc012b8:   3c 08 3c 38         LUI $t0, 0x3c38
+1fc012bc:   35 08 31 da         ORI $t0, $t0, 0x31da
+1fc012c0:   24 09 45 b4         ADDIU $t1, $zero, 0x45b4
+1fc012c4:   21 10 45 b4         ADDI $s0, $t0, 0x45b4
+1fc012c8:   3c 12 3c 38         LUI $s2, 0x3c38
+1fc012cc:   36 52 77 8e         ORI $s2, $s2, 0x778e
+1fc012d0:   16 12 04 54         BNE $s2, 0x0454
+1fc012d4:   00 00 00 00         NOP
+1fc012d8:   3c 08 c0 d1         LUI $t0, 0xc0d1
+1fc012dc:   35 08 d9 47         ORI $t0, $t0, 0xd947
+1fc012e0:   34 09 b4 9c         ORI $t1, $zero, 0xb49c
+1fc012e4:   21 10 b4 9c         ADDI $s0, $t0, 0xb49c
+1fc012e8:   3c 12 c0 d1         LUI $s2, 0xc0d1
+1fc012ec:   36 52 8d e3         ORI $s2, $s2, 0x8de3
+1fc012f0:   16 12 04 4c         BNE $s2, 0x044c
+1fc012f4:   00 00 00 00         NOP
+1fc012f8:   3c 08 2d 9d         LUI $t0, 0x2d9d
+1fc012fc:   35 08 69 78         ORI $t0, $t0, 0x6978
+1fc01300:   34 09 e4 2f         ORI $t1, $zero, 0xe42f
+1fc01304:   21 10 e4 2f         ADDI $s0, $t0, 0xe42f
+1fc01308:   3c 12 2d 9d         LUI $s2, 0x2d9d
+1fc0130c:   36 52 4d a7         ORI $s2, $s2, 0x4da7
+1fc01310:   16 12 04 44         BNE $s2, 0x0444
+1fc01314:   00 00 00 00         NOP
+1fc01318:   3c 08 f6 70         LUI $t0, 0xf670
+1fc0131c:   35 08 4b 63         ORI $t0, $t0, 0x4b63
+1fc01320:   24 09 30 ac         ADDIU $t1, $zero, 0x30ac
+1fc01324:   21 10 30 ac         ADDI $s0, $t0, 0x30ac
+1fc01328:   3c 12 f6 70         LUI $s2, 0xf670
+1fc0132c:   36 52 7c 0f         ORI $s2, $s2, 0x7c0f
+1fc01330:   16 12 04 3c         BNE $s2, 0x043c
+1fc01334:   00 00 00 00         NOP
+1fc01338:   3c 08 c8 f1         LUI $t0, 0xc8f1
+1fc0133c:   35 08 2e e0         ORI $t0, $t0, 0x2ee0
+1fc01340:   24 09 13 49         ADDIU $t1, $zero, 0x1349
+1fc01344:   21 10 13 49         ADDI $s0, $t0, 0x1349
+1fc01348:   3c 12 c8 f1         LUI $s2, 0xc8f1
+1fc0134c:   36 52 42 29         ORI $s2, $s2, 0x4229
+1fc01350:   16 12 04 34         BNE $s2, 0x0434
+1fc01354:   00 00 00 00         NOP
+1fc01358:   3c 08 62 35         LUI $t0, 0x6235
+1fc0135c:   35 08 21 80         ORI $t0, $t0, 0x2180
+1fc01360:   24 09 56 bb         ADDIU $t1, $zero, 0x56bb
+1fc01364:   21 10 56 bb         ADDI $s0, $t0, 0x56bb
+1fc01368:   3c 12 62 35         LUI $s2, 0x6235
+1fc0136c:   36 52 78 3b         ORI $s2, $s2, 0x783b
+1fc01370:   16 12 04 2c         BNE $s2, 0x042c
+1fc01374:   00 00 00 00         NOP
+1fc01378:   3c 08 4f 9f         LUI $t0, 0x4f9f
+1fc0137c:   35 08 07 c0         ORI $t0, $t0, 0x07c0
+1fc01380:   24 09 50 48         ADDIU $t1, $zero, 0x5048
+1fc01384:   21 10 50 48         ADDI $s0, $t0, 0x5048
+1fc01388:   3c 12 4f 9f         LUI $s2, 0x4f9f
+1fc0138c:   36 52 58 08         ORI $s2, $s2, 0x5808
+1fc01390:   16 12 04 24         BNE $s2, 0x0424
+1fc01394:   00 00 00 00         NOP
+1fc01398:   3c 08 99 6b         LUI $t0, 0x996b
+1fc0139c:   35 08 ff 6f         ORI $t0, $t0, 0xff6f
+1fc013a0:   34 09 b8 52         ORI $t1, $zero, 0xb852
+1fc013a4:   21 10 b8 52         ADDI $s0, $t0, 0xb852
+1fc013a8:   3c 12 99 6b         LUI $s2, 0x996b
+1fc013ac:   36 52 b7 c1         ORI $s2, $s2, 0xb7c1
+1fc013b0:   16 12 04 1c         BNE $s2, 0x041c
+1fc013b4:   00 00 00 00         NOP
+1fc013b8:   3c 08 63 36         LUI $t0, 0x6336
+1fc013bc:   35 08 a5 06         ORI $t0, $t0, 0xa506
+1fc013c0:   24 09 76 2d         ADDIU $t1, $zero, 0x762d
+1fc013c4:   21 10 76 2d         ADDI $s0, $t0, 0x762d
+1fc013c8:   3c 12 63 37         LUI $s2, 0x6337
+1fc013cc:   36 52 1b 33         ORI $s2, $s2, 0x1b33
+1fc013d0:   16 12 04 14         BNE $s2, 0x0414
+1fc013d4:   00 00 00 00         NOP
+1fc013d8:   3c 08 46 a9         LUI $t0, 0x46a9
+1fc013dc:   35 08 a3 c8         ORI $t0, $t0, 0xa3c8
+1fc013e0:   24 09 7a 10         ADDIU $t1, $zero, 0x7a10
+1fc013e4:   21 10 7a 10         ADDI $s0, $t0, 0x7a10
+1fc013e8:   3c 12 46 aa         LUI $s2, 0x46aa
+1fc013ec:   36 52 1d d8         ORI $s2, $s2, 0x1dd8
+1fc013f0:   16 12 04 0c         BNE $s2, 0x040c
+1fc013f4:   00 00 00 00         NOP
+1fc013f8:   3c 08 64 bd         LUI $t0, 0x64bd
+1fc013fc:   35 08 46 00         ORI $t0, $t0, 0x4600
+1fc01400:   34 09 de b0         ORI $t1, $zero, 0xdeb0
+1fc01404:   21 10 de b0         ADDI $s0, $t0, 0xdeb0
+1fc01408:   3c 12 64 bd         LUI $s2, 0x64bd
+1fc0140c:   36 52 24 b0         ORI $s2, $s2, 0x24b0
+1fc01410:   16 12 04 04         BNE $s2, 0x0404
+1fc01414:   00 00 00 00         NOP
+1fc01418:   3c 08 92 31         LUI $t0, 0x9231
+1fc0141c:   35 08 9e 67         ORI $t0, $t0, 0x9e67
+1fc01420:   34 09 af 5c         ORI $t1, $zero, 0xaf5c
+1fc01424:   21 10 af 5c         ADDI $s0, $t0, 0xaf5c
+1fc01428:   3c 12 92 31         LUI $s2, 0x9231
+1fc0142c:   36 52 4d c3         ORI $s2, $s2, 0x4dc3
+1fc01430:   16 12 03 fc         BNE $s2, 0x03fc
+1fc01434:   00 00 00 00         NOP
+1fc01438:   3c 08 6c ae         LUI $t0, 0x6cae
+1fc0143c:   35 08 c3 16         ORI $t0, $t0, 0xc316
+1fc01440:   24 09 56 70         ADDIU $t1, $zero, 0x5670
+1fc01444:   21 10 56 70         ADDI $s0, $t0, 0x5670
+1fc01448:   3c 12 6c af         LUI $s2, 0x6caf
+1fc0144c:   36 52 19 86         ORI $s2, $s2, 0x1986
+1fc01450:   16 12 03 f4         BNE $s2, 0x03f4
+1fc01454:   00 00 00 00         NOP
+1fc01458:   3c 08 55 a5         LUI $t0, 0x55a5
+1fc0145c:   35 08 eb 38         ORI $t0, $t0, 0xeb38
+1fc01460:   34 09 bb 80         ORI $t1, $zero, 0xbb80
+1fc01464:   21 10 bb 80         ADDI $s0, $t0, 0xbb80
+1fc01468:   3c 12 55 a5         LUI $s2, 0x55a5
+1fc0146c:   36 52 a6 b8         ORI $s2, $s2, 0xa6b8
+1fc01470:   16 12 03 ec         BNE $s2, 0x03ec
+1fc01474:   00 00 00 00         NOP
+1fc01478:   3c 08 06 fd         LUI $t0, 0x06fd
+1fc0147c:   35 08 d3 af         ORI $t0, $t0, 0xd3af
+1fc01480:   24 09 25 12         ADDIU $t1, $zero, 0x2512
+1fc01484:   21 10 25 12         ADDI $s0, $t0, 0x2512
+1fc01488:   3c 12 06 fd         LUI $s2, 0x06fd
+1fc0148c:   36 52 f8 c1         ORI $s2, $s2, 0xf8c1
+1fc01490:   16 12 03 e4         BNE $s2, 0x03e4
+1fc01494:   00 00 00 00         NOP
+1fc01498:   3c 08 a3 b1         LUI $t0, 0xa3b1
+1fc0149c:   35 08 94 90         ORI $t0, $t0, 0x9490
+1fc014a0:   34 09 f2 83         ORI $t1, $zero, 0xf283
+1fc014a4:   21 10 f2 83         ADDI $s0, $t0, 0xf283
+1fc014a8:   3c 12 a3 b1         LUI $s2, 0xa3b1
+1fc014ac:   36 52 87 13         ORI $s2, $s2, 0x8713
+1fc014b0:   16 12 03 dc         BNE $s2, 0x03dc
+1fc014b4:   00 00 00 00         NOP
+1fc014b8:   3c 08 82 af         LUI $t0, 0x82af
+1fc014bc:   35 08 31 b6         ORI $t0, $t0, 0x31b6
+1fc014c0:   24 09 2f 02         ADDIU $t1, $zero, 0x2f02
+1fc014c4:   21 10 2f 02         ADDI $s0, $t0, 0x2f02
+1fc014c8:   3c 12 82 af         LUI $s2, 0x82af
+1fc014cc:   36 52 60 b8         ORI $s2, $s2, 0x60b8
+1fc014d0:   16 12 03 d4         BNE $s2, 0x03d4
+1fc014d4:   00 00 00 00         NOP
+1fc014d8:   3c 08 67 08         LUI $t0, 0x6708
+1fc014dc:   35 08 ba ac         ORI $t0, $t0, 0xbaac
+1fc014e0:   34 09 84 d0         ORI $t1, $zero, 0x84d0
+1fc014e4:   21 10 84 d0         ADDI $s0, $t0, 0x84d0
+1fc014e8:   3c 12 67 08         LUI $s2, 0x6708
+1fc014ec:   36 52 3f 7c         ORI $s2, $s2, 0x3f7c
+1fc014f0:   16 12 03 cc         BNE $s2, 0x03cc
+1fc014f4:   00 00 00 00         NOP
+1fc014f8:   3c 08 ca ca         LUI $t0, 0xcaca
+1fc014fc:   35 08 ac c0         ORI $t0, $t0, 0xacc0
+1fc01500:   24 09 7f 70         ADDIU $t1, $zero, 0x7f70
+1fc01504:   21 10 7f 70         ADDI $s0, $t0, 0x7f70
+1fc01508:   3c 12 ca cb         LUI $s2, 0xcacb
+1fc0150c:   36 52 2c 30         ORI $s2, $s2, 0x2c30
+1fc01510:   16 12 03 c4         BNE $s2, 0x03c4
+1fc01514:   00 00 00 00         NOP
+1fc01518:   3c 08 ad 80         LUI $t0, 0xad80
+1fc0151c:   35 08 13 6f         ORI $t0, $t0, 0x136f
+1fc01520:   34 09 a0 66         ORI $t1, $zero, 0xa066
+1fc01524:   21 10 a0 66         ADDI $s0, $t0, 0xa066
+1fc01528:   3c 12 ad 7f         LUI $s2, 0xad7f
+1fc0152c:   36 52 b3 d5         ORI $s2, $s2, 0xb3d5
+1fc01530:   16 12 03 bc         BNE $s2, 0x03bc
+1fc01534:   00 00 00 00         NOP
+1fc01538:   3c 08 10 43         LUI $t0, 0x1043
+1fc0153c:   35 08 47 14         ORI $t0, $t0, 0x4714
+1fc01540:   34 09 c6 e0         ORI $t1, $zero, 0xc6e0
+1fc01544:   21 10 c6 e0         ADDI $s0, $t0, 0xc6e0
+1fc01548:   3c 12 10 43         LUI $s2, 0x1043
+1fc0154c:   36 52 0d f4         ORI $s2, $s2, 0x0df4
+1fc01550:   16 12 03 b4         BNE $s2, 0x03b4
+1fc01554:   00 00 00 00         NOP
+1fc01558:   3c 08 15 73         LUI $t0, 0x1573
+1fc0155c:   35 08 8c 00         ORI $t0, $t0, 0x8c00
+1fc01560:   34 09 bb 2b         ORI $t1, $zero, 0xbb2b
+1fc01564:   21 10 bb 2b         ADDI $s0, $t0, 0xbb2b
+1fc01568:   3c 12 15 73         LUI $s2, 0x1573
+1fc0156c:   36 52 47 2b         ORI $s2, $s2, 0x472b
+1fc01570:   16 12 03 ac         BNE $s2, 0x03ac
+1fc01574:   00 00 00 00         NOP
+1fc01578:   3c 08 40 d9         LUI $t0, 0x40d9
+1fc0157c:   35 08 18 c7         ORI $t0, $t0, 0x18c7
+1fc01580:   34 09 f8 a8         ORI $t1, $zero, 0xf8a8
+1fc01584:   21 10 f8 a8         ADDI $s0, $t0, 0xf8a8
+1fc01588:   3c 12 40 d9         LUI $s2, 0x40d9
+1fc0158c:   36 52 11 6f         ORI $s2, $s2, 0x116f
+1fc01590:   16 12 03 a4         BNE $s2, 0x03a4
+1fc01594:   00 00 00 00         NOP
+1fc01598:   3c 08 4d 54         LUI $t0, 0x4d54
+1fc0159c:   35 08 c8 00         ORI $t0, $t0, 0xc800
+1fc015a0:   34 09 a4 2c         ORI $t1, $zero, 0xa42c
+1fc015a4:   21 10 a4 2c         ADDI $s0, $t0, 0xa42c
+1fc015a8:   3c 12 4d 54         LUI $s2, 0x4d54
+1fc015ac:   36 52 6c 2c         ORI $s2, $s2, 0x6c2c
+1fc015b0:   16 12 03 9c         BNE $s2, 0x039c
+1fc015b4:   00 00 00 00         NOP
+1fc015b8:   3c 08 71 0c         LUI $t0, 0x710c
+1fc015bc:   35 08 e1 80         ORI $t0, $t0, 0xe180
+1fc015c0:   34 09 d1 76         ORI $t1, $zero, 0xd176
+1fc015c4:   21 10 d1 76         ADDI $s0, $t0, 0xd176
+1fc015c8:   3c 12 71 0c         LUI $s2, 0x710c
+1fc015cc:   36 52 b2 f6         ORI $s2, $s2, 0xb2f6
+1fc015d0:   16 12 03 94         BNE $s2, 0x0394
+1fc015d4:   00 00 00 00         NOP
+1fc015d8:   3c 08 8a 0c         LUI $t0, 0x8a0c
+1fc015dc:   35 08 2d 90         ORI $t0, $t0, 0x2d90
+1fc015e0:   24 09 77 04         ADDIU $t1, $zero, 0x7704
+1fc015e4:   21 10 77 04         ADDI $s0, $t0, 0x7704
+1fc015e8:   3c 12 8a 0c         LUI $s2, 0x8a0c
+1fc015ec:   36 52 a4 94         ORI $s2, $s2, 0xa494
+1fc015f0:   16 12 03 8c         BNE $s2, 0x038c
+1fc015f4:   00 00 00 00         NOP
+1fc015f8:   3c 08 9d 03         LUI $t0, 0x9d03
+1fc015fc:   35 08 ef 78         ORI $t0, $t0, 0xef78
+1fc01600:   24 09 20 11         ADDIU $t1, $zero, 0x2011
+1fc01604:   21 10 20 11         ADDI $s0, $t0, 0x2011
+1fc01608:   3c 12 9d 04         LUI $s2, 0x9d04
+1fc0160c:   36 52 0f 89         ORI $s2, $s2, 0x0f89
+1fc01610:   16 12 03 84         BNE $s2, 0x0384
+1fc01614:   00 00 00 00         NOP
+1fc01618:   3c 08 00 a0         LUI $t0, 0x00a0
+1fc0161c:   35 08 12 4c         ORI $t0, $t0, 0x124c
+1fc01620:   24 09 22 53         ADDIU $t1, $zero, 0x2253
+1fc01624:   21 10 22 53         ADDI $s0, $t0, 0x2253
+1fc01628:   3c 12 00 a0         LUI $s2, 0x00a0
+1fc0162c:   36 52 34 9f         ORI $s2, $s2, 0x349f
+1fc01630:   16 12 03 7c         BNE $s2, 0x037c
+1fc01634:   00 00 00 00         NOP
+1fc01638:   3c 08 54 8e         LUI $t0, 0x548e
+1fc0163c:   35 08 f2 a6         ORI $t0, $t0, 0xf2a6
+1fc01640:   24 09 1c e8         ADDIU $t1, $zero, 0x1ce8
+1fc01644:   21 10 1c e8         ADDI $s0, $t0, 0x1ce8
+1fc01648:   3c 12 54 8f         LUI $s2, 0x548f
+1fc0164c:   36 52 0f 8e         ORI $s2, $s2, 0x0f8e
+1fc01650:   16 12 03 74         BNE $s2, 0x0374
+1fc01654:   00 00 00 00         NOP
+1fc01658:   3c 08 22 67         LUI $t0, 0x2267
+1fc0165c:   35 08 66 12         ORI $t0, $t0, 0x6612
+1fc01660:   24 09 42 ff         ADDIU $t1, $zero, 0x42ff
+1fc01664:   21 10 42 ff         ADDI $s0, $t0, 0x42ff
+1fc01668:   3c 12 22 67         LUI $s2, 0x2267
+1fc0166c:   36 52 a9 11         ORI $s2, $s2, 0xa911
+1fc01670:   16 12 03 6c         BNE $s2, 0x036c
+1fc01674:   00 00 00 00         NOP
+1fc01678:   3c 08 8f 54         LUI $t0, 0x8f54
+1fc0167c:   35 08 1d 96         ORI $t0, $t0, 0x1d96
+1fc01680:   34 09 fc e4         ORI $t1, $zero, 0xfce4
+1fc01684:   21 10 fc e4         ADDI $s0, $t0, 0xfce4
+1fc01688:   3c 12 8f 54         LUI $s2, 0x8f54
+1fc0168c:   36 52 1a 7a         ORI $s2, $s2, 0x1a7a
+1fc01690:   16 12 03 64         BNE $s2, 0x0364
+1fc01694:   00 00 00 00         NOP
+1fc01698:   3c 08 48 d6         LUI $t0, 0x48d6
+1fc0169c:   35 08 43 e8         ORI $t0, $t0, 0x43e8
+1fc016a0:   34 09 ce 9c         ORI $t1, $zero, 0xce9c
+1fc016a4:   21 10 ce 9c         ADDI $s0, $t0, 0xce9c
+1fc016a8:   3c 12 48 d6         LUI $s2, 0x48d6
+1fc016ac:   36 52 12 84         ORI $s2, $s2, 0x1284
+1fc016b0:   16 12 03 5c         BNE $s2, 0x035c
+1fc016b4:   00 00 00 00         NOP
+1fc016b8:   3c 08 3c 3a         LUI $t0, 0x3c3a
+1fc016bc:   35 08 67 80         ORI $t0, $t0, 0x6780
+1fc016c0:   24 09 06 52         ADDIU $t1, $zero, 0x0652
+1fc016c4:   21 10 06 52         ADDI $s0, $t0, 0x0652
+1fc016c8:   3c 12 3c 3a         LUI $s2, 0x3c3a
+1fc016cc:   36 52 6d d2         ORI $s2, $s2, 0x6dd2
+1fc016d0:   16 12 03 54         BNE $s2, 0x0354
+1fc016d4:   00 00 00 00         NOP
+1fc016d8:   3c 08 93 3f         LUI $t0, 0x933f
+1fc016dc:   35 08 29 c2         ORI $t0, $t0, 0x29c2
+1fc016e0:   24 09 02 93         ADDIU $t1, $zero, 0x0293
+1fc016e4:   21 10 02 93         ADDI $s0, $t0, 0x0293
+1fc016e8:   3c 12 93 3f         LUI $s2, 0x933f
+1fc016ec:   36 52 2c 55         ORI $s2, $s2, 0x2c55
+1fc016f0:   16 12 03 4c         BNE $s2, 0x034c
+1fc016f4:   00 00 00 00         NOP
+1fc016f8:   3c 08 75 9a         LUI $t0, 0x759a
+1fc016fc:   35 08 61 3e         ORI $t0, $t0, 0x613e
+1fc01700:   24 09 6b 17         ADDIU $t1, $zero, 0x6b17
+1fc01704:   21 10 6b 17         ADDI $s0, $t0, 0x6b17
+1fc01708:   3c 12 75 9a         LUI $s2, 0x759a
+1fc0170c:   36 52 cc 55         ORI $s2, $s2, 0xcc55
+1fc01710:   16 12 03 44         BNE $s2, 0x0344
+1fc01714:   00 00 00 00         NOP
+1fc01718:   3c 08 2c a8         LUI $t0, 0x2ca8
+1fc0171c:   35 08 45 03         ORI $t0, $t0, 0x4503
+1fc01720:   24 09 47 30         ADDIU $t1, $zero, 0x4730
+1fc01724:   21 10 47 30         ADDI $s0, $t0, 0x4730
+1fc01728:   3c 12 2c a8         LUI $s2, 0x2ca8
+1fc0172c:   36 52 8c 33         ORI $s2, $s2, 0x8c33
+1fc01730:   16 12 03 3c         BNE $s2, 0x033c
+1fc01734:   00 00 00 00         NOP
+1fc01738:   3c 08 6e c8         LUI $t0, 0x6ec8
+1fc0173c:   35 08 e7 70         ORI $t0, $t0, 0xe770
+1fc01740:   34 09 f7 21         ORI $t1, $zero, 0xf721
+1fc01744:   21 10 f7 21         ADDI $s0, $t0, 0xf721
+1fc01748:   3c 12 6e c8         LUI $s2, 0x6ec8
+1fc0174c:   36 52 de 91         ORI $s2, $s2, 0xde91
+1fc01750:   16 12 03 34         BNE $s2, 0x0334
+1fc01754:   00 00 00 00         NOP
+1fc01758:   3c 08 22 b5         LUI $t0, 0x22b5
+1fc0175c:   35 08 7c 97         ORI $t0, $t0, 0x7c97
+1fc01760:   24 09 36 25         ADDIU $t1, $zero, 0x3625
+1fc01764:   21 10 36 25         ADDI $s0, $t0, 0x3625
+1fc01768:   3c 12 22 b5         LUI $s2, 0x22b5
+1fc0176c:   36 52 b2 bc         ORI $s2, $s2, 0xb2bc
+1fc01770:   16 12 03 2c         BNE $s2, 0x032c
+1fc01774:   00 00 00 00         NOP
+1fc01778:   3c 08 05 d4         LUI $t0, 0x05d4
+1fc0177c:   35 08 b1 b4         ORI $t0, $t0, 0xb1b4
+1fc01780:   34 09 a5 ea         ORI $t1, $zero, 0xa5ea
+1fc01784:   21 10 a5 ea         ADDI $s0, $t0, 0xa5ea
+1fc01788:   3c 12 05 d4         LUI $s2, 0x05d4
+1fc0178c:   36 52 57 9e         ORI $s2, $s2, 0x579e
+1fc01790:   16 12 03 24         BNE $s2, 0x0324
+1fc01794:   00 00 00 00         NOP
+1fc01798:   3c 08 c6 10         LUI $t0, 0xc610
+1fc0179c:   35 08 3d e8         ORI $t0, $t0, 0x3de8
+1fc017a0:   34 09 b6 2b         ORI $t1, $zero, 0xb62b
+1fc017a4:   21 10 b6 2b         ADDI $s0, $t0, 0xb62b
+1fc017a8:   3c 12 c6 0f         LUI $s2, 0xc60f
+1fc017ac:   36 52 f4 13         ORI $s2, $s2, 0xf413
+1fc017b0:   16 12 03 1c         BNE $s2, 0x031c
+1fc017b4:   00 00 00 00         NOP
+1fc017b8:   3c 08 cc 6c         LUI $t0, 0xcc6c
+1fc017bc:   35 08 bc 66         ORI $t0, $t0, 0xbc66
+1fc017c0:   24 09 5a 81         ADDIU $t1, $zero, 0x5a81
+1fc017c4:   21 10 5a 81         ADDI $s0, $t0, 0x5a81
+1fc017c8:   3c 12 cc 6d         LUI $s2, 0xcc6d
+1fc017cc:   36 52 16 e7         ORI $s2, $s2, 0x16e7
+1fc017d0:   16 12 03 14         BNE $s2, 0x0314
+1fc017d4:   00 00 00 00         NOP
+1fc017d8:   3c 08 50 5e         LUI $t0, 0x505e
+1fc017dc:   35 08 d6 00         ORI $t0, $t0, 0xd600
+1fc017e0:   34 09 ae 0a         ORI $t1, $zero, 0xae0a
+1fc017e4:   21 10 ae 0a         ADDI $s0, $t0, 0xae0a
+1fc017e8:   3c 12 50 5e         LUI $s2, 0x505e
+1fc017ec:   36 52 84 0a         ORI $s2, $s2, 0x840a
+1fc017f0:   16 12 03 0c         BNE $s2, 0x030c
+1fc017f4:   00 00 00 00         NOP
+1fc017f8:   3c 08 d9 69         LUI $t0, 0xd969
+1fc017fc:   35 08 5b c0         ORI $t0, $t0, 0x5bc0
+1fc01800:   34 09 ad 4c         ORI $t1, $zero, 0xad4c
+1fc01804:   21 10 ad 4c         ADDI $s0, $t0, 0xad4c
+1fc01808:   3c 12 d9 69         LUI $s2, 0xd969
+1fc0180c:   36 52 09 0c         ORI $s2, $s2, 0x090c
+1fc01810:   16 12 03 04         BNE $s2, 0x0304
+1fc01814:   00 00 00 00         NOP
+1fc01818:   3c 08 bc f9         LUI $t0, 0xbcf9
+1fc0181c:   35 08 a4 0a         ORI $t0, $t0, 0xa40a
+1fc01820:   24 09 48 24         ADDIU $t1, $zero, 0x4824
+1fc01824:   21 10 48 24         ADDI $s0, $t0, 0x4824
+1fc01828:   3c 12 bc f9         LUI $s2, 0xbcf9
+1fc0182c:   36 52 ec 2e         ORI $s2, $s2, 0xec2e
+1fc01830:   16 12 02 fc         BNE $s2, 0x02fc
+1fc01834:   00 00 00 00         NOP
+1fc01838:   3c 08 60 e2         LUI $t0, 0x60e2
+1fc0183c:   35 08 1e 48         ORI $t0, $t0, 0x1e48
+1fc01840:   24 09 4c ad         ADDIU $t1, $zero, 0x4cad
+1fc01844:   21 10 4c ad         ADDI $s0, $t0, 0x4cad
+1fc01848:   3c 12 60 e2         LUI $s2, 0x60e2
+1fc0184c:   36 52 6a f5         ORI $s2, $s2, 0x6af5
+1fc01850:   16 12 02 f4         BNE $s2, 0x02f4
+1fc01854:   00 00 00 00         NOP
+1fc01858:   3c 08 db aa         LUI $t0, 0xdbaa
+1fc0185c:   35 08 fa 0a         ORI $t0, $t0, 0xfa0a
+1fc01860:   24 09 6a b8         ADDIU $t1, $zero, 0x6ab8
+1fc01864:   21 10 6a b8         ADDI $s0, $t0, 0x6ab8
+1fc01868:   3c 12 db ab         LUI $s2, 0xdbab
+1fc0186c:   36 52 64 c2         ORI $s2, $s2, 0x64c2
+1fc01870:   16 12 02 ec         BNE $s2, 0x02ec
+1fc01874:   00 00 00 00         NOP
+1fc01878:   3c 08 93 a1         LUI $t0, 0x93a1
+1fc0187c:   35 08 98 38         ORI $t0, $t0, 0x9838
+1fc01880:   24 09 44 6a         ADDIU $t1, $zero, 0x446a
+1fc01884:   21 10 44 6a         ADDI $s0, $t0, 0x446a
+1fc01888:   3c 12 93 a1         LUI $s2, 0x93a1
+1fc0188c:   36 52 dc a2         ORI $s2, $s2, 0xdca2
+1fc01890:   16 12 02 e4         BNE $s2, 0x02e4
+1fc01894:   00 00 00 00         NOP
+1fc01898:   3c 08 a8 15         LUI $t0, 0xa815
+1fc0189c:   35 08 32 af         ORI $t0, $t0, 0x32af
+1fc018a0:   24 09 3b f0         ADDIU $t1, $zero, 0x3bf0
+1fc018a4:   21 10 3b f0         ADDI $s0, $t0, 0x3bf0
+1fc018a8:   3c 12 a8 15         LUI $s2, 0xa815
+1fc018ac:   36 52 6e 9f         ORI $s2, $s2, 0x6e9f
+1fc018b0:   16 12 02 dc         BNE $s2, 0x02dc
+1fc018b4:   00 00 00 00         NOP
+1fc018b8:   3c 08 95 cf         LUI $t0, 0x95cf
+1fc018bc:   35 08 3f 04         ORI $t0, $t0, 0x3f04
+1fc018c0:   34 09 b0 07         ORI $t1, $zero, 0xb007
+1fc018c4:   21 10 b0 07         ADDI $s0, $t0, 0xb007
+1fc018c8:   3c 12 95 ce         LUI $s2, 0x95ce
+1fc018cc:   36 52 ef 0b         ORI $s2, $s2, 0xef0b
+1fc018d0:   16 12 02 d4         BNE $s2, 0x02d4
+1fc018d4:   00 00 00 00         NOP
+1fc018d8:   3c 08 24 93         LUI $t0, 0x2493
+1fc018dc:   35 08 6e 58         ORI $t0, $t0, 0x6e58
+1fc018e0:   34 09 90 42         ORI $t1, $zero, 0x9042
+1fc018e4:   21 10 90 42         ADDI $s0, $t0, 0x9042
+1fc018e8:   3c 12 24 92         LUI $s2, 0x2492
+1fc018ec:   36 52 fe 9a         ORI $s2, $s2, 0xfe9a
+1fc018f0:   16 12 02 cc         BNE $s2, 0x02cc
+1fc018f4:   00 00 00 00         NOP
+1fc018f8:   3c 08 bc bf         LUI $t0, 0xbcbf
+1fc018fc:   35 08 db e0         ORI $t0, $t0, 0xdbe0
+1fc01900:   34 09 f6 c0         ORI $t1, $zero, 0xf6c0
+1fc01904:   21 10 f6 c0         ADDI $s0, $t0, 0xf6c0
+1fc01908:   3c 12 bc bf         LUI $s2, 0xbcbf
+1fc0190c:   36 52 d2 a0         ORI $s2, $s2, 0xd2a0
+1fc01910:   16 12 02 c4         BNE $s2, 0x02c4
+1fc01914:   00 00 00 00         NOP
+1fc01918:   3c 08 d3 3b         LUI $t0, 0xd33b
+1fc0191c:   35 08 01 eb         ORI $t0, $t0, 0x01eb
+1fc01920:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01924:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01928:   3c 12 d3 3b         LUI $s2, 0xd33b
+1fc0192c:   36 52 01 eb         ORI $s2, $s2, 0x01eb
+1fc01930:   16 12 02 bc         BNE $s2, 0x02bc
+1fc01934:   00 00 00 00         NOP
+1fc01938:   3c 08 e7 7f         LUI $t0, 0xe77f
+1fc0193c:   35 08 bd 50         ORI $t0, $t0, 0xbd50
+1fc01940:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01944:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01948:   3c 12 e7 7f         LUI $s2, 0xe77f
+1fc0194c:   36 52 bd 50         ORI $s2, $s2, 0xbd50
+1fc01950:   16 12 02 b4         BNE $s2, 0x02b4
+1fc01954:   00 00 00 00         NOP
+1fc01958:   3c 08 04 8a         LUI $t0, 0x048a
+1fc0195c:   35 08 c1 80         ORI $t0, $t0, 0xc180
+1fc01960:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01964:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01968:   3c 12 04 8a         LUI $s2, 0x048a
+1fc0196c:   36 52 c1 80         ORI $s2, $s2, 0xc180
+1fc01970:   16 12 02 ac         BNE $s2, 0x02ac
+1fc01974:   00 00 00 00         NOP
+1fc01978:   3c 08 6b 80         LUI $t0, 0x6b80
+1fc0197c:   35 08 5e 70         ORI $t0, $t0, 0x5e70
+1fc01980:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01984:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01988:   3c 12 6b 80         LUI $s2, 0x6b80
+1fc0198c:   36 52 5e 70         ORI $s2, $s2, 0x5e70
+1fc01990:   16 12 02 a4         BNE $s2, 0x02a4
+1fc01994:   00 00 00 00         NOP
+1fc01998:   3c 08 0b f6         LUI $t0, 0x0bf6
+1fc0199c:   35 08 25 60         ORI $t0, $t0, 0x2560
+1fc019a0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc019a4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc019a8:   3c 12 0b f6         LUI $s2, 0x0bf6
+1fc019ac:   36 52 25 60         ORI $s2, $s2, 0x2560
+1fc019b0:   16 12 02 9c         BNE $s2, 0x029c
+1fc019b4:   00 00 00 00         NOP
+1fc019b8:   3c 08 0f 61         LUI $t0, 0x0f61
+1fc019bc:   35 08 c1 7a         ORI $t0, $t0, 0xc17a
+1fc019c0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc019c4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc019c8:   3c 12 0f 61         LUI $s2, 0x0f61
+1fc019cc:   36 52 c1 7a         ORI $s2, $s2, 0xc17a
+1fc019d0:   16 12 02 94         BNE $s2, 0x0294
+1fc019d4:   00 00 00 00         NOP
+1fc019d8:   3c 08 01 29         LUI $t0, 0x0129
+1fc019dc:   35 08 01 a0         ORI $t0, $t0, 0x01a0
+1fc019e0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc019e4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc019e8:   3c 12 01 29         LUI $s2, 0x0129
+1fc019ec:   36 52 01 a0         ORI $s2, $s2, 0x01a0
+1fc019f0:   16 12 02 8c         BNE $s2, 0x028c
+1fc019f4:   00 00 00 00         NOP
+1fc019f8:   3c 08 75 c7         LUI $t0, 0x75c7
+1fc019fc:   35 08 1b fc         ORI $t0, $t0, 0x1bfc
+1fc01a00:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01a04:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01a08:   3c 12 75 c7         LUI $s2, 0x75c7
+1fc01a0c:   36 52 1b fc         ORI $s2, $s2, 0x1bfc
+1fc01a10:   16 12 02 84         BNE $s2, 0x0284
+1fc01a14:   00 00 00 00         NOP
+1fc01a18:   3c 08 33 c0         LUI $t0, 0x33c0
+1fc01a1c:   35 08 27 34         ORI $t0, $t0, 0x2734
+1fc01a20:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01a24:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01a28:   3c 12 33 c0         LUI $s2, 0x33c0
+1fc01a2c:   36 52 27 34         ORI $s2, $s2, 0x2734
+1fc01a30:   16 12 02 7c         BNE $s2, 0x027c
+1fc01a34:   00 00 00 00         NOP
+1fc01a38:   3c 08 ac d9         LUI $t0, 0xacd9
+1fc01a3c:   35 08 a7 a0         ORI $t0, $t0, 0xa7a0
+1fc01a40:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01a44:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01a48:   3c 12 ac d9         LUI $s2, 0xacd9
+1fc01a4c:   36 52 a7 a0         ORI $s2, $s2, 0xa7a0
+1fc01a50:   16 12 02 74         BNE $s2, 0x0274
+1fc01a54:   00 00 00 00         NOP
+1fc01a58:   3c 08 f1 f3         LUI $t0, 0xf1f3
+1fc01a5c:   35 08 ef a4         ORI $t0, $t0, 0xefa4
+1fc01a60:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01a64:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01a68:   3c 12 f1 f3         LUI $s2, 0xf1f3
+1fc01a6c:   36 52 ef a4         ORI $s2, $s2, 0xefa4
+1fc01a70:   16 12 02 6c         BNE $s2, 0x026c
+1fc01a74:   00 00 00 00         NOP
+1fc01a78:   3c 08 b5 81         LUI $t0, 0xb581
+1fc01a7c:   35 08 63 f6         ORI $t0, $t0, 0x63f6
+1fc01a80:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01a84:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01a88:   3c 12 b5 81         LUI $s2, 0xb581
+1fc01a8c:   36 52 63 f6         ORI $s2, $s2, 0x63f6
+1fc01a90:   16 12 02 64         BNE $s2, 0x0264
+1fc01a94:   00 00 00 00         NOP
+1fc01a98:   3c 08 90 eb         LUI $t0, 0x90eb
+1fc01a9c:   35 08 90 00         ORI $t0, $t0, 0x9000
+1fc01aa0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01aa4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01aa8:   3c 12 90 eb         LUI $s2, 0x90eb
+1fc01aac:   36 52 90 00         ORI $s2, $s2, 0x9000
+1fc01ab0:   16 12 02 5c         BNE $s2, 0x025c
+1fc01ab4:   00 00 00 00         NOP
+1fc01ab8:   3c 08 f1 0b         LUI $t0, 0xf10b
+1fc01abc:   35 08 0a b0         ORI $t0, $t0, 0x0ab0
+1fc01ac0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ac4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ac8:   3c 12 f1 0b         LUI $s2, 0xf10b
+1fc01acc:   36 52 0a b0         ORI $s2, $s2, 0x0ab0
+1fc01ad0:   16 12 02 54         BNE $s2, 0x0254
+1fc01ad4:   00 00 00 00         NOP
+1fc01ad8:   3c 08 98 57         LUI $t0, 0x9857
+1fc01adc:   35 08 c6 d8         ORI $t0, $t0, 0xc6d8
+1fc01ae0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ae4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ae8:   3c 12 98 57         LUI $s2, 0x9857
+1fc01aec:   36 52 c6 d8         ORI $s2, $s2, 0xc6d8
+1fc01af0:   16 12 02 4c         BNE $s2, 0x024c
+1fc01af4:   00 00 00 00         NOP
+1fc01af8:   3c 08 0f ae         LUI $t0, 0x0fae
+1fc01afc:   35 08 51 4e         ORI $t0, $t0, 0x514e
+1fc01b00:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01b04:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01b08:   3c 12 0f ae         LUI $s2, 0x0fae
+1fc01b0c:   36 52 51 4e         ORI $s2, $s2, 0x514e
+1fc01b10:   16 12 02 44         BNE $s2, 0x0244
+1fc01b14:   00 00 00 00         NOP
+1fc01b18:   3c 08 02 7a         LUI $t0, 0x027a
+1fc01b1c:   35 08 ed ac         ORI $t0, $t0, 0xedac
+1fc01b20:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01b24:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01b28:   3c 12 02 7a         LUI $s2, 0x027a
+1fc01b2c:   36 52 ed ac         ORI $s2, $s2, 0xedac
+1fc01b30:   16 12 02 3c         BNE $s2, 0x023c
+1fc01b34:   00 00 00 00         NOP
+1fc01b38:   3c 08 98 e5         LUI $t0, 0x98e5
+1fc01b3c:   35 08 86 46         ORI $t0, $t0, 0x8646
+1fc01b40:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01b44:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01b48:   3c 12 98 e5         LUI $s2, 0x98e5
+1fc01b4c:   36 52 86 46         ORI $s2, $s2, 0x8646
+1fc01b50:   16 12 02 34         BNE $s2, 0x0234
+1fc01b54:   00 00 00 00         NOP
+1fc01b58:   3c 08 49 02         LUI $t0, 0x4902
+1fc01b5c:   35 08 9d 00         ORI $t0, $t0, 0x9d00
+1fc01b60:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01b64:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01b68:   3c 12 49 02         LUI $s2, 0x4902
+1fc01b6c:   36 52 9d 00         ORI $s2, $s2, 0x9d00
+1fc01b70:   16 12 02 2c         BNE $s2, 0x022c
+1fc01b74:   00 00 00 00         NOP
+1fc01b78:   3c 08 30 ef         LUI $t0, 0x30ef
+1fc01b7c:   35 08 89 dc         ORI $t0, $t0, 0x89dc
+1fc01b80:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01b84:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01b88:   3c 12 30 ef         LUI $s2, 0x30ef
+1fc01b8c:   36 52 89 dc         ORI $s2, $s2, 0x89dc
+1fc01b90:   16 12 02 24         BNE $s2, 0x0224
+1fc01b94:   00 00 00 00         NOP
+1fc01b98:   3c 08 f0 63         LUI $t0, 0xf063
+1fc01b9c:   35 08 c6 b4         ORI $t0, $t0, 0xc6b4
+1fc01ba0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ba4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ba8:   3c 12 f0 63         LUI $s2, 0xf063
+1fc01bac:   36 52 c6 b4         ORI $s2, $s2, 0xc6b4
+1fc01bb0:   16 12 02 1c         BNE $s2, 0x021c
+1fc01bb4:   00 00 00 00         NOP
+1fc01bb8:   3c 08 6b a4         LUI $t0, 0x6ba4
+1fc01bbc:   35 08 4d c0         ORI $t0, $t0, 0x4dc0
+1fc01bc0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01bc4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01bc8:   3c 12 6b a4         LUI $s2, 0x6ba4
+1fc01bcc:   36 52 4d c0         ORI $s2, $s2, 0x4dc0
+1fc01bd0:   16 12 02 14         BNE $s2, 0x0214
+1fc01bd4:   00 00 00 00         NOP
+1fc01bd8:   3c 08 0b e2         LUI $t0, 0x0be2
+1fc01bdc:   35 08 13 50         ORI $t0, $t0, 0x1350
+1fc01be0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01be4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01be8:   3c 12 0b e2         LUI $s2, 0x0be2
+1fc01bec:   36 52 13 50         ORI $s2, $s2, 0x1350
+1fc01bf0:   16 12 02 0c         BNE $s2, 0x020c
+1fc01bf4:   00 00 00 00         NOP
+1fc01bf8:   3c 08 76 97         LUI $t0, 0x7697
+1fc01bfc:   35 08 ce 00         ORI $t0, $t0, 0xce00
+1fc01c00:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01c04:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01c08:   3c 12 76 97         LUI $s2, 0x7697
+1fc01c0c:   36 52 ce 00         ORI $s2, $s2, 0xce00
+1fc01c10:   16 12 02 04         BNE $s2, 0x0204
+1fc01c14:   00 00 00 00         NOP
+1fc01c18:   3c 08 e3 2b         LUI $t0, 0xe32b
+1fc01c1c:   35 08 2e b4         ORI $t0, $t0, 0x2eb4
+1fc01c20:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01c24:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01c28:   3c 12 e3 2b         LUI $s2, 0xe32b
+1fc01c2c:   36 52 2e b4         ORI $s2, $s2, 0x2eb4
+1fc01c30:   16 12 01 fc         BNE $s2, 0x01fc
+1fc01c34:   00 00 00 00         NOP
+1fc01c38:   3c 08 bd 35         LUI $t0, 0xbd35
+1fc01c3c:   35 08 a8 ec         ORI $t0, $t0, 0xa8ec
+1fc01c40:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01c44:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01c48:   3c 12 bd 35         LUI $s2, 0xbd35
+1fc01c4c:   36 52 a8 ec         ORI $s2, $s2, 0xa8ec
+1fc01c50:   16 12 01 f4         BNE $s2, 0x01f4
+1fc01c54:   00 00 00 00         NOP
+1fc01c58:   3c 08 1a 49         LUI $t0, 0x1a49
+1fc01c5c:   35 08 4b 90         ORI $t0, $t0, 0x4b90
+1fc01c60:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01c64:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01c68:   3c 12 1a 49         LUI $s2, 0x1a49
+1fc01c6c:   36 52 4b 90         ORI $s2, $s2, 0x4b90
+1fc01c70:   16 12 01 ec         BNE $s2, 0x01ec
+1fc01c74:   00 00 00 00         NOP
+1fc01c78:   3c 08 19 4f         LUI $t0, 0x194f
+1fc01c7c:   35 08 1c 52         ORI $t0, $t0, 0x1c52
+1fc01c80:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01c84:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01c88:   3c 12 19 4f         LUI $s2, 0x194f
+1fc01c8c:   36 52 1c 52         ORI $s2, $s2, 0x1c52
+1fc01c90:   16 12 01 e4         BNE $s2, 0x01e4
+1fc01c94:   00 00 00 00         NOP
+1fc01c98:   3c 08 43 c7         LUI $t0, 0x43c7
+1fc01c9c:   35 08 6e 00         ORI $t0, $t0, 0x6e00
+1fc01ca0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ca4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ca8:   3c 12 43 c7         LUI $s2, 0x43c7
+1fc01cac:   36 52 6e 00         ORI $s2, $s2, 0x6e00
+1fc01cb0:   16 12 01 dc         BNE $s2, 0x01dc
+1fc01cb4:   00 00 00 00         NOP
+1fc01cb8:   3c 08 16 66         LUI $t0, 0x1666
+1fc01cbc:   35 08 c3 10         ORI $t0, $t0, 0xc310
+1fc01cc0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01cc4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01cc8:   3c 12 16 66         LUI $s2, 0x1666
+1fc01ccc:   36 52 c3 10         ORI $s2, $s2, 0xc310
+1fc01cd0:   16 12 01 d4         BNE $s2, 0x01d4
+1fc01cd4:   00 00 00 00         NOP
+1fc01cd8:   3c 08 a4 4f         LUI $t0, 0xa44f
+1fc01cdc:   35 08 bf 60         ORI $t0, $t0, 0xbf60
+1fc01ce0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ce4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ce8:   3c 12 a4 4f         LUI $s2, 0xa44f
+1fc01cec:   36 52 bf 60         ORI $s2, $s2, 0xbf60
+1fc01cf0:   16 12 01 cc         BNE $s2, 0x01cc
+1fc01cf4:   00 00 00 00         NOP
+1fc01cf8:   3c 08 6c 9c         LUI $t0, 0x6c9c
+1fc01cfc:   35 08 ad 6e         ORI $t0, $t0, 0xad6e
+1fc01d00:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01d04:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01d08:   3c 12 6c 9c         LUI $s2, 0x6c9c
+1fc01d0c:   36 52 ad 6e         ORI $s2, $s2, 0xad6e
+1fc01d10:   16 12 01 c4         BNE $s2, 0x01c4
+1fc01d14:   00 00 00 00         NOP
+1fc01d18:   3c 08 78 c8         LUI $t0, 0x78c8
+1fc01d1c:   35 08 09 9c         ORI $t0, $t0, 0x099c
+1fc01d20:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01d24:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01d28:   3c 12 78 c8         LUI $s2, 0x78c8
+1fc01d2c:   36 52 09 9c         ORI $s2, $s2, 0x099c
+1fc01d30:   16 12 01 bc         BNE $s2, 0x01bc
+1fc01d34:   00 00 00 00         NOP
+1fc01d38:   3c 08 6f 85         LUI $t0, 0x6f85
+1fc01d3c:   35 08 5e 10         ORI $t0, $t0, 0x5e10
+1fc01d40:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01d44:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01d48:   3c 12 6f 85         LUI $s2, 0x6f85
+1fc01d4c:   36 52 5e 10         ORI $s2, $s2, 0x5e10
+1fc01d50:   16 12 01 b4         BNE $s2, 0x01b4
+1fc01d54:   00 00 00 00         NOP
+1fc01d58:   3c 08 3a f0         LUI $t0, 0x3af0
+1fc01d5c:   35 08 f5 0c         ORI $t0, $t0, 0xf50c
+1fc01d60:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01d64:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01d68:   3c 12 3a f0         LUI $s2, 0x3af0
+1fc01d6c:   36 52 f5 0c         ORI $s2, $s2, 0xf50c
+1fc01d70:   16 12 01 ac         BNE $s2, 0x01ac
+1fc01d74:   00 00 00 00         NOP
+1fc01d78:   3c 08 5a ec         LUI $t0, 0x5aec
+1fc01d7c:   35 08 f8 4e         ORI $t0, $t0, 0xf84e
+1fc01d80:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01d84:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01d88:   3c 12 5a ec         LUI $s2, 0x5aec
+1fc01d8c:   36 52 f8 4e         ORI $s2, $s2, 0xf84e
+1fc01d90:   16 12 01 a4         BNE $s2, 0x01a4
+1fc01d94:   00 00 00 00         NOP
+1fc01d98:   3c 08 a5 c3         LUI $t0, 0xa5c3
+1fc01d9c:   35 08 0c 48         ORI $t0, $t0, 0x0c48
+1fc01da0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01da4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01da8:   3c 12 a5 c3         LUI $s2, 0xa5c3
+1fc01dac:   36 52 0c 48         ORI $s2, $s2, 0x0c48
+1fc01db0:   16 12 01 9c         BNE $s2, 0x019c
+1fc01db4:   00 00 00 00         NOP
+1fc01db8:   3c 08 35 a0         LUI $t0, 0x35a0
+1fc01dbc:   35 08 c0 b4         ORI $t0, $t0, 0xc0b4
+1fc01dc0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01dc4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01dc8:   3c 12 35 a0         LUI $s2, 0x35a0
+1fc01dcc:   36 52 c0 b4         ORI $s2, $s2, 0xc0b4
+1fc01dd0:   16 12 01 94         BNE $s2, 0x0194
+1fc01dd4:   00 00 00 00         NOP
+1fc01dd8:   3c 08 b9 a0         LUI $t0, 0xb9a0
+1fc01ddc:   35 08 57 d3         ORI $t0, $t0, 0x57d3
+1fc01de0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01de4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01de8:   3c 12 b9 a0         LUI $s2, 0xb9a0
+1fc01dec:   36 52 57 d3         ORI $s2, $s2, 0x57d3
+1fc01df0:   16 12 01 8c         BNE $s2, 0x018c
+1fc01df4:   00 00 00 00         NOP
+1fc01df8:   3c 08 4d ec         LUI $t0, 0x4dec
+1fc01dfc:   35 08 5d 00         ORI $t0, $t0, 0x5d00
+1fc01e00:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01e04:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01e08:   3c 12 4d ec         LUI $s2, 0x4dec
+1fc01e0c:   36 52 5d 00         ORI $s2, $s2, 0x5d00
+1fc01e10:   16 12 01 84         BNE $s2, 0x0184
+1fc01e14:   00 00 00 00         NOP
+1fc01e18:   3c 08 b5 1d         LUI $t0, 0xb51d
+1fc01e1c:   35 08 9f 68         ORI $t0, $t0, 0x9f68
+1fc01e20:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01e24:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01e28:   3c 12 b5 1d         LUI $s2, 0xb51d
+1fc01e2c:   36 52 9f 68         ORI $s2, $s2, 0x9f68
+1fc01e30:   16 12 01 7c         BNE $s2, 0x017c
+1fc01e34:   00 00 00 00         NOP
+1fc01e38:   3c 08 7b ff         LUI $t0, 0x7bff
+1fc01e3c:   35 08 4e a0         ORI $t0, $t0, 0x4ea0
+1fc01e40:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01e44:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01e48:   3c 12 7b ff         LUI $s2, 0x7bff
+1fc01e4c:   36 52 4e a0         ORI $s2, $s2, 0x4ea0
+1fc01e50:   16 12 01 74         BNE $s2, 0x0174
+1fc01e54:   00 00 00 00         NOP
+1fc01e58:   3c 08 01 9a         LUI $t0, 0x019a
+1fc01e5c:   35 08 99 ac         ORI $t0, $t0, 0x99ac
+1fc01e60:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01e64:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01e68:   3c 12 01 9a         LUI $s2, 0x019a
+1fc01e6c:   36 52 99 ac         ORI $s2, $s2, 0x99ac
+1fc01e70:   16 12 01 6c         BNE $s2, 0x016c
+1fc01e74:   00 00 00 00         NOP
+1fc01e78:   3c 08 f3 f5         LUI $t0, 0xf3f5
+1fc01e7c:   35 08 ae 48         ORI $t0, $t0, 0xae48
+1fc01e80:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01e84:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01e88:   3c 12 f3 f5         LUI $s2, 0xf3f5
+1fc01e8c:   36 52 ae 48         ORI $s2, $s2, 0xae48
+1fc01e90:   16 12 01 64         BNE $s2, 0x0164
+1fc01e94:   00 00 00 00         NOP
+1fc01e98:   3c 08 83 cc         LUI $t0, 0x83cc
+1fc01e9c:   35 08 9b 04         ORI $t0, $t0, 0x9b04
+1fc01ea0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ea4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ea8:   3c 12 83 cc         LUI $s2, 0x83cc
+1fc01eac:   36 52 9b 04         ORI $s2, $s2, 0x9b04
+1fc01eb0:   16 12 01 5c         BNE $s2, 0x015c
+1fc01eb4:   00 00 00 00         NOP
+1fc01eb8:   3c 08 1e ca         LUI $t0, 0x1eca
+1fc01ebc:   35 08 a2 e0         ORI $t0, $t0, 0xa2e0
+1fc01ec0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ec4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ec8:   3c 12 1e ca         LUI $s2, 0x1eca
+1fc01ecc:   36 52 a2 e0         ORI $s2, $s2, 0xa2e0
+1fc01ed0:   16 12 01 54         BNE $s2, 0x0154
+1fc01ed4:   00 00 00 00         NOP
+1fc01ed8:   3c 08 ee 7b         LUI $t0, 0xee7b
+1fc01edc:   35 08 61 28         ORI $t0, $t0, 0x6128
+1fc01ee0:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01ee4:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01ee8:   3c 12 ee 7b         LUI $s2, 0xee7b
+1fc01eec:   36 52 61 28         ORI $s2, $s2, 0x6128
+1fc01ef0:   16 12 01 4c         BNE $s2, 0x014c
+1fc01ef4:   00 00 00 00         NOP
+1fc01ef8:   3c 08 c5 b2         LUI $t0, 0xc5b2
+1fc01efc:   35 08 69 aa         ORI $t0, $t0, 0x69aa
+1fc01f00:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01f04:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01f08:   3c 12 c5 b2         LUI $s2, 0xc5b2
+1fc01f0c:   36 52 69 aa         ORI $s2, $s2, 0x69aa
+1fc01f10:   16 12 01 44         BNE $s2, 0x0144
+1fc01f14:   00 00 00 00         NOP
+1fc01f18:   3c 08 1b 6b         LUI $t0, 0x1b6b
+1fc01f1c:   35 08 22 28         ORI $t0, $t0, 0x2228
+1fc01f20:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01f24:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01f28:   3c 12 1b 6b         LUI $s2, 0x1b6b
+1fc01f2c:   36 52 22 28         ORI $s2, $s2, 0x2228
+1fc01f30:   16 12 01 3c         BNE $s2, 0x013c
+1fc01f34:   00 00 00 00         NOP
+1fc01f38:   3c 08 00 d6         LUI $t0, 0x00d6
+1fc01f3c:   35 08 1b 80         ORI $t0, $t0, 0x1b80
+1fc01f40:   24 09 00 00         ADDIU $t1, $zero, 0x0000
+1fc01f44:   21 10 00 00         ADDI $s0, $t0, 0x0000
+1fc01f48:   3c 12 00 d6         LUI $s2, 0x00d6
+1fc01f4c:   36 52 1b 80         ORI $s2, $s2, 0x1b80
+1fc01f50:   16 12 01 34         BNE $s2, 0x0134
+1fc01f54:   00 00 00 00         NOP
+1fc01f58:   24 08 00 00         ADDIU $t0, $zero, 0x0000
+1fc01f5c:   34 09 af 9a         ORI $t1, $zero, 0xaf9a
+1fc01f60:   21 10 af 9a         ADDI $s0, $t0, 0xaf9a
+1fc01f64:   24 12 af 9a         ADDIU $s2, $zero, 0xaf9a
+1fc01f68:   16 12 01 2e         BNE $s2, 0x012e
+1fc02424:   00 00 00 3f         BNE $s2, 0x012e

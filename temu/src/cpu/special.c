@@ -2,6 +2,7 @@
 #include "monitor.h"
 
 extern char assembly[80];
+extern uint32_t instr;
 
 make_helper(nop) {
 	sprintf(assembly, "NOP");
@@ -36,6 +37,7 @@ make_helper(temu_trap) {
 
 make_helper(bad_temu_trap) {
 	printf("\33[1;31mtemu: HIT BAD TRAP\33[0m at $pc = 0x%08x\n\n", cpu.pc);
+	printf("instruction: 0x%08x\n", instr);
 	temu_state = END;
 }	
 

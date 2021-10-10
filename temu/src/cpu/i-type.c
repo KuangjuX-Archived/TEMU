@@ -30,13 +30,27 @@ make_helper(lui) {
 
 make_helper(addi) {
 	decode_imm_type(instr);
-	reg_w(op_dest->reg) = (int)op_src1->val + (int)op_src2->val;
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int res = (int)op_src1->val + temp;
+	fprintf(stdout, "reg: %d, imm: %d\n", (int)op_src1->val, temp);
+	if((int)op_src1->val > 0 && temp > 0 && res < 0) {
+		fprintf(stdout, "整形溢出例外.\n");
+	}else if((int)op_src1->val < 0 && temp < 0 && res > 0) {
+		fprintf(stdout, "整形溢出例外.\n");
+	}
+	reg_w(op_dest->reg) = res;
 	sprintf(assembly, "ADDI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(addiu) {
 	decode_imm_type(instr);
-	reg_w(op_dest->reg) = op_src1->val + op_src2->val;
+	int temp = (op_src1->val << 16) >> 16;
+	reg_w(op_dest->reg) = temp + (int)op_src2->val;
 	sprintf(assembly, "ADDIU %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
@@ -128,7 +142,7 @@ make_helper(bne) {
 	if(reg_w(op_dest->reg) != reg_w(op_src1->reg)) {
 		uint32_t offset = op_src2->val;
 		int temp = (offset << 16) >> 16;
-		uint32_t addr = (int)cpu.pc + temp;
+		uint32_t addr = (int)cpu.pc + (temp << 2);
 		cpu.pc = addr;
 	}
 	sprintf(assembly, "BNE %s, 0x%04x", REG_NAME(op_dest->reg), op_src2->val);

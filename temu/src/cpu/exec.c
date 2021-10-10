@@ -13,7 +13,7 @@ uint32_t instr;
 op_fun opcode_table [64] = {
 /* 0x00 */	_2byte_esc, inv, inv, inv,
 /* 0x04 */	inv, bne, inv, inv,
-/* 0x08 */	addi, inv, inv, inv,
+/* 0x08 */	addi, addiu, inv, inv,
 /* 0x0c */	inv, ori, inv, lui,
 /* 0x10 */	inv, inv, temu_trap, inv,
 /* 0x14 */	inv, inv, inv, inv,
@@ -30,7 +30,7 @@ op_fun opcode_table [64] = {
 };
 
 op_fun _2byte_opcode_table [64] = {
-/* 0x00 */	bad_temu_trap, inv, inv, inv, 
+/* 0x00 */	nop, inv, inv, inv, 
 /* 0x04 */	inv, inv, inv, inv, 
 /* 0x08 */	inv, inv, inv, inv, 
 /* 0x0c */	inv, inv, inv, inv, 
@@ -45,7 +45,7 @@ op_fun _2byte_opcode_table [64] = {
 /* 0x30 */	inv, inv, inv, inv, 
 /* 0x34 */	inv, inv, inv, inv,
 /* 0x38 */	inv, inv, inv, inv, 
-/* 0x3c */	inv, inv, inv, inv
+/* 0x3c */	inv, inv, inv, bad_temu_trap
 };
 
 make_helper(exec) {
