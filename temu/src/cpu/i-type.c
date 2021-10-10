@@ -65,22 +65,29 @@ make_helper(andi) {
 }
 
 make_helper(ori) {
-	decode_r_type(instr);
+	decode_imm_type(instr);
 	reg_w(op_dest->reg) = (op_src1->val) | (op_src2->val);
 	sprintf(assembly, "OR %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(xori) {
-	decode_r_type(instr);
+	decode_imm_type(instr);
 	reg_w(op_dest->reg) = (op_src1->val) ^ (op_src2->val);
 	sprintf(assembly, "XORI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(lw) {
-
+	decode_imm_type(instr);
+	reg_w(op_dest->reg) = *(uint32_t*)(op_src1->val + op_src2->val);
+	sprintf(assembly, "LW %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_dest->reg));
 }
 
 make_helper(sw) {
-
+	decode_imm_type(instr);
+	uint32_t* addr = reg_w(op_dest->val) + op_src2->val;
+	if ((uint32_t)addr & 0x3) {
+		// 触发地址错例外
+	}
+	*addr = op_src1->val;
+	sprintf(assembly, "SW %s, 0x%04x(%s)", REG_NAME(op_src1->reg), op_src2->val, REG_NAME(op_dest->reg));
 }
-

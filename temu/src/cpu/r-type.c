@@ -86,3 +86,8 @@ make_helper(sllv) {
 	sprintf(assembly, "SLLV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
 }
 
+make_helper(srlv) {
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src2->val) >> (op_src1->val);
+	sprintf(assembly, "SRLV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
+}
