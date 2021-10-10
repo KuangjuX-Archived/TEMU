@@ -37,13 +37,13 @@ make_helper(addi) {
 		temp = op_src2->val;
 	}
 	int res = (int)op_src1->val + temp;
-	fprintf(stdout, "reg: %d, imm: %d\n", (int)op_src1->val, temp);
 	if((int)op_src1->val > 0 && temp > 0 && res < 0) {
 		fprintf(stdout, "整形溢出例外.\n");
 	}else if((int)op_src1->val < 0 && temp < 0 && res > 0) {
 		fprintf(stdout, "整形溢出例外.\n");
 	}
 	reg_w(op_dest->reg) = res;
+	fprintf(stdout, "pc: 0x%08x, reg: 0x%08x, imm: 0x%08x, res: 0x%08x\n", cpu.pc, (int)op_src1->val, temp, res);
 	sprintf(assembly, "ADDI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
@@ -140,8 +140,12 @@ make_helper(xori) {
 make_helper(bne) {
 	decode_imm_type(instr);
 	if(reg_w(op_dest->reg) != reg_w(op_src1->reg)) {
-		uint32_t offset = op_src2->val;
-		int temp = (offset << 16) >> 16;
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
 		uint32_t addr = (int)cpu.pc + (temp << 2);
 		cpu.pc = addr;
 	}

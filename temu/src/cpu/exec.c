@@ -65,7 +65,7 @@ make_helper(exec) {
 	}
 	instr = instr_fetch(pc, 4);
 	ops_decoded.opcode = instr >> 26;
-	fprintf(stdout, "opcode: 0x%02x\n", ops_decoded.opcode);
+	// fprintf(stdout, "opcode: 0x%02x\n", ops_decoded.opcode);
 	opcode_table[ ops_decoded.opcode ](pc);
 }
 
