@@ -77,6 +77,42 @@ static int cmd_p(char* args){
     return 0;
 }
 
+static int cmd_x(char* args){
+    if (args == NULL)
+    {
+        printf("Need more parameters type 1.\n");
+        return 0;
+    }
+
+    char *arg = strtok(args, " ");
+    if (arg == NULL)
+    {
+        printf("Need more parameters type 2.\n");
+        return 0;
+    }
+
+    int n = atoi(arg);
+    char *EXPR = strtok(NULL, " ");
+    if (EXPR == NULL)
+    {
+        printf("Need more parameters type 3.\n");
+        return 0;
+    }
+
+    char* str;
+    uint32_t address=strtol(EXPR,&str,16);
+    for (int i=0;i<n;i++){
+        uint32_t data= mem_read(address+i*4,4);
+        printf("0x%08x: ",address + i*4);
+        for(int j=0;j<4;j++){
+            printf("0x%02x ",data&0xff);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
 static struct {
 	char *name;
 	char *description;
@@ -87,6 +123,7 @@ static struct {
 	{ "q", "Exit TEMU", cmd_q },
 	{ "si", "Single step", cmd_si },
     {"p","Expression evaluation.",cmd_p},
+    {"x","Scan memory.",cmd_x},
 	/* TODO: Add more commands */
 	{ "info", "r for print register state \n w for print watchpoint information", cmd_info},
 
