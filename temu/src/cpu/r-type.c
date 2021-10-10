@@ -68,44 +68,21 @@ make_helper(sltu) {
 }
 
 
-
 make_helper(or) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) | (op_src2->val);
+	sprintf(assembly, "OR %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(xor) {
-
-}
-
-make_helper(nor) {
-
-}
-
-make_helper(sll) {
-
-}
-
-make_helper(srl) {
-
-}
-
-make_helper(sra) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) ^ (op_src2->val);
+	sprintf(assembly, "XOR %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
 make_helper(sllv) {
-
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src2->val) << (op_src1->val); 
+	sprintf(assembly, "SLLV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
 }
 
-make_helper(srlv) {
-
-}
-
-make_helper(srav) {
-
-}
-
-
-make_helper(jr) {
-	
-}

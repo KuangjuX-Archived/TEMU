@@ -64,8 +64,16 @@ make_helper(andi) {
 	sprintf(assembly, "ANDI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
-make_helper(xori) {
+make_helper(ori) {
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) | (op_src2->val);
+	sprintf(assembly, "OR %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
+}
 
+make_helper(xori) {
+	decode_r_type(instr);
+	reg_w(op_dest->reg) = (op_src1->val) ^ (op_src2->val);
+	sprintf(assembly, "XORI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(lw) {
