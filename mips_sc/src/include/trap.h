@@ -1,4 +1,6 @@
 #define HIT_GOOD_TRAP \
 	.word 0x4a000000
+
+	
 #define HIT_BAD_TRAP \
-	.word 0x11000000
+	.word 0x00000000

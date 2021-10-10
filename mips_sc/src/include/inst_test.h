@@ -15,8 +15,8 @@
  */
 #define TEST_ADDI(vs, vt, vd) \
     ADDI(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 3

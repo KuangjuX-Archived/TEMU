@@ -3,6 +3,10 @@
 
 extern char assembly[80];
 
+make_helper(nop) {
+	sprintf(assembly, "NOP");
+}
+
 /* invalid opcode */
 make_helper(inv) {
 
@@ -30,7 +34,7 @@ make_helper(temu_trap) {
 
 }
 
-make_helper(bad_temu_trpa) {
+make_helper(bad_temu_trap) {
 	printf("\33[1;31mtemu: HIT BAD TRAP\33[0m at $pc = 0x%08x\n\n", cpu.pc);
 	temu_state = END;
 }	

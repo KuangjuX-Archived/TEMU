@@ -12,9 +12,9 @@
  * ADDI(v0, v1)
  */
 #define ADDI(v0, v1) \
-    li t0, v0; \
-    li t1, v1; \
-    addi s0, t0, v1
+    li $t0, v0; \
+    li $t1, v1; \
+    addi $s0, $t0, v1
 
 /* 3
  * ADDU(v0, v1)
