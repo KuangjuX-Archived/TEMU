@@ -24,8 +24,8 @@
  */
 #define TEST_ADDU(vs, vt, vd) \
     ADDU(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 4
@@ -33,8 +33,8 @@
  */
 #define TEST_ADDIU(vs, vt, vd) \
     ADDIU(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 5
@@ -42,8 +42,8 @@
  */
 #define TEST_SUB(vs, vt, vd) \
     SUB(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 6
@@ -51,8 +51,8 @@
  */
 #define TEST_SUBU(vs, vt, vd) \
     SUBU(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 7
@@ -60,8 +60,8 @@
  */
 #define TEST_SLT(vs, vt, vd) \
     SLT(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 8
@@ -69,8 +69,8 @@
  */
 #define TEST_SLTI(vs, vt, vd) \
     SLTI(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 9
@@ -78,8 +78,8 @@
  */
 #define TEST_SLTU(vs, vt, vd) \
     SLTU(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 10
@@ -87,8 +87,8 @@
  */
 #define TEST_SLTIU(vs, vt, vd) \
     SLTIU(vs, vt); \
-    li s2, vd; \
-    bne s0, s2, inst_error; \
+    li $s2, vd; \
+    bne $s0, $s2, inst_error; \
     nop
 
 /* 11
