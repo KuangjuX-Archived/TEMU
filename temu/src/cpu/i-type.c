@@ -76,18 +76,39 @@ make_helper(xori) {
 	sprintf(assembly, "XORI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
+make_helper(lb) {
+	decode_imm_type(instr);
+}
+
 make_helper(lw) {
 	decode_imm_type(instr);
-	reg_w(op_dest->reg) = *(uint32_t*)(op_src1->val + op_src2->val);
+	reg_w(op_dest->reg) = *(int*)((int)op_src1->val + (int)op_src2->val);
 	sprintf(assembly, "LW %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_dest->reg));
+}
+
+make_helper(sb) {
+	decode_imm_type(instr);
+	int* addr = (int)op_src1->val + (int)op_src2->val;
+	*addr = (int)reg_w(op_dest->reg) & 0xFF;
+	sprintf(assembly, "SB %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(sh) {
+	decode_imm_type(instr);
+	int* addr = (int)op_src1->val + (int)op_src2->val;
+	if((int)addr & 0x1) {
+		// 触发地址错例外
+	}
+	*addr = ((int)reg_w(op_dest->reg) & 0xFFFF);
+	sprintf(assembly, "SH %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
 }
 
 make_helper(sw) {
 	decode_imm_type(instr);
-	uint32_t* addr = reg_w(op_dest->val) + op_src2->val;
-	if ((uint32_t)addr & 0x3) {
+	int* addr = (int)op_src1->val + (int)op_src2->val;
+	if((int)addr & 0x3) {
 		// 触发地址错例外
 	}
 	*addr = op_src1->val;
-	sprintf(assembly, "SW %s, 0x%04x(%s)", REG_NAME(op_src1->reg), op_src2->val, REG_NAME(op_dest->reg));
+	sprintf(assembly, "SW %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
 }
