@@ -44,7 +44,7 @@ static struct rule {
 	{"\\)", RB},					//rb
 	{"0[xX][0-9a-zA-Z]+", HEX},		//hex
 	{"[0-9]+", DEC},				//dec
-	{"\\$[a-z]+", REG}				//reg
+	{"\\$[a-z0-9]+", REG}				//reg
 };
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]) )
@@ -96,13 +96,15 @@ static bool make_token(char *e) {
 				 * to record the token in the array `tokens'. For certain types
 				 * of tokens, some extra actions should be performed.
 				 */
-
 				switch(rules[i].token_type) {
 					case NOTYPE:
 						break;											//It's blank!
 					case HEX:case DEC:case REG:
+
 						strncpy(tokens[nr_token].str, e + position - substr_len, substr_len);//regs or number
-						tokens[nr_token].str[substr_len] = '\0';		//add '\0', it's very important
+                        printf("%s \n",tokens[nr_token].str);
+						tokens[nr_token].str[substr_len] = '\0';
+                        //add '\0', it's very important
 						//WARNING: 64 may be a little small...
 					default:
 						if(rules[i].token_type == MINUS) {	//solve neg

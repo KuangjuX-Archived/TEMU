@@ -20,6 +20,6 @@ void mem_write(uint32_t addr, size_t len, uint32_t data) {
 #ifdef DEBUG
 	assert(len == 1 || len == 2 || len == 4);
 #endif
-	dram_write(addr, len, data);
+	dram_write(mem_map(addr), len, data);
 }
 

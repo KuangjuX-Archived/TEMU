@@ -73,7 +73,7 @@ static int cmd_p(char* args){
     {
         printf("Expression %s:\t0x%x\t%d\n", args, num, num);
     }
-    else assert(0);
+//    else assert(0);
     return 0;
 }
 
@@ -99,17 +99,23 @@ static int cmd_x(char* args){
         return 0;
     }
 
-    char* str;
-    uint32_t address=strtol(EXPR,&str,16);
-    for (int i=0;i<n;i++){
-        uint32_t data= mem_read(address+i*4,4);
-        printf("0x%08x: ",address + i*4);
-        for(int j=0;j<4;j++){
-            printf("0x%02x ",data&0xff);
+    uint32_t address;
+    bool success;
+    address = expr(EXPR, &success);
+    if (success)
+    {
+        for (int i=0;i<n;i++){
+            uint32_t data= mem_read(address+i*4,4);
+            printf("0x%08x: ",address + i*4);
+            for(int j=0;j<4;j++){
+                printf("0x%02x ",data&0xff);
+            }
+            printf("\n");
         }
-        printf("\n");
     }
-
+    else {
+        assert(0);
+    }
     return 0;
 }
 
