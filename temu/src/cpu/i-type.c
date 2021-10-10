@@ -78,7 +78,22 @@ make_helper(xori) {
 
 make_helper(lb) {
 	decode_imm_type(instr);
+	int res = *(int*)((int)op_src1->val + (int)op_src2->val);
+	if (res >= 0) {
+		res = res & 0xFF;
+	}else {
+		res = res & 0xFF | 0xFFFFFF00;
+	}
+	reg_w(op_dest->reg) = res;
+}
+
+make_helper(lbu) {
+	decode_imm_type(instr);
 	reg_w(op_dest->reg) = (*(uint32_t*)((int)op_src1->val + (int)op_src2->val)) & 0xFF;
+}
+
+make_helper(lh) {
+
 }
 
 make_helper(lw) {
