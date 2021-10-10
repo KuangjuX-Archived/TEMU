@@ -100,7 +100,7 @@ typedef struct {
 extern CPU_state cpu;
 
 static inline int check_reg_index(int index) {
-	assert(index >= 0 && index < 31);
+	assert(index >= 0 && index <= 31);
 	return index;
 }
 

@@ -8,9 +8,9 @@ RUN apt-get update \
     && apt-get install sudo -y \
     && apt-get install wget -y \
     && apt-get install make -y \
-    && apt-get install libreadline-dev \
+    && apt-get install libreadline-dev -y \
     && apt-get install lib32ncurses5-dev -y \
-    && apt-get install lib32z1-dev \
-    && apt-get install vim \
-    && dpkg-reconfigure -plow dash \
+    && apt-get install lib32z1-dev -y \
+    && apt-get install vim -y
+#    && dpkg-reconfigure -plow dash \
 EXPOSE 22

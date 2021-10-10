@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <expr.h>
 
 void cpu_exec(uint32_t);
 
@@ -64,6 +65,18 @@ static int cmd_info(char* args) {
 	return 0;
 }
 
+static int cmd_p(char* args){
+    uint32_t num;
+    bool success;
+    num = expr(args, &success);
+    if (success)
+    {
+        printf("Expression %s:\t0x%x\t%d\n", args, num, num);
+    }
+    else assert(0);
+    return 0;
+}
+
 static struct {
 	char *name;
 	char *description;
@@ -73,6 +86,7 @@ static struct {
 	{ "c", "Continue the execution of the program", cmd_c },
 	{ "q", "Exit TEMU", cmd_q },
 	{ "si", "Single step", cmd_si },
+    {"p","Expression evaluation.",cmd_p},
 	/* TODO: Add more commands */
 	{ "info", "r for print register state \n w for print watchpoint information", cmd_info},
 
