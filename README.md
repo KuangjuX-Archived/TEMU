@@ -27,3 +27,7 @@ Try to use mips cross compiler:
 ```shell
 mips-sde-elf-gcc –v
 ```
+
+## 通过测试的指令:  
+- [x] lui
+- [x] ori

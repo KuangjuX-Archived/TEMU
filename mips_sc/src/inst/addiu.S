@@ -1,5 +1,7 @@
 #include "trap.h"
 #include "inst_test.h"
+#include "asm/regdef.h"
+#include "asm/asm.h"
     .set noreorder
     .set noat 
     .global main 
