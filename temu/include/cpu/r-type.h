@@ -2,5 +2,6 @@
 #define __RTYPE_H__
 
 make_helper(and);
+make_helper(or);
 
 #endif
