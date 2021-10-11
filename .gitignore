@@ -1,0 +1,4 @@
+*.bin
+*.txt
+build/*
+mips_sc/build/*
