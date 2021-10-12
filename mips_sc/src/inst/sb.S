@@ -3,8 +3,7 @@
 #include "asm/context.h"
 #include "inst_test.h"
 #include "trap.h"
-    .set noreorder
-    .set noat 
+    .set noreorder 
     .global main 
     .text 
 

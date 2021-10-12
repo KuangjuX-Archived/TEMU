@@ -3,5 +3,6 @@
 
 make_helper(and);
 make_helper(or);
+make_helper(addu);
 
 #endif

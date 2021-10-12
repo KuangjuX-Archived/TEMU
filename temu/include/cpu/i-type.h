@@ -17,7 +17,13 @@ make_helper(blez);
 make_helper(bltz);
 make_helper(bgezal);
 make_helper(bltzal);
+make_helper(lb);
+make_helper(lbu);
+make_helper(lh);
+make_helper(lhu);
 make_helper(lw);
+make_helper(sb);
+make_helper(sh);
 make_helper(sw);
 
 #endif

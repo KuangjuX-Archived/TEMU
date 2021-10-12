@@ -31,7 +31,7 @@ mips-sde-elf-gcc –v
 ## 通过测试的指令:  
 **I-type Instruction**  
 
-- [ ] addi
+- [x] addi
 - [x] addiu
 - [x] slti
 - [x] sltiu
@@ -45,6 +45,13 @@ mips-sde-elf-gcc –v
 - [x] bgtz
 - [x] blez
 - [ ] bltz
-- [ ] bgezal
-- [ ] bltzal
+- [ ] bgezal(测试用例编译失败)
+- [ ] bltzal(测试用例编译失败)
+- [x] lb
+- [x] lbu
+- [x] lh
+- [x] lhu
 - [x] lw
+- [x] sb
+- [x] sh
+- [x] sw

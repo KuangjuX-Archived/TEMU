@@ -1,2 +1,2 @@
 # change the tesctcase name
-USER_PROGRAM := lw
+USER_PROGRAM := bltz

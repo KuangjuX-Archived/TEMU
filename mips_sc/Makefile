@@ -52,7 +52,7 @@ all: inst.bin data.bin convert
 
 $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).o: $(TESTCASE_SRC_DIR)$(USER_PROGRAM).S
 	@mkdir -p $(TESTCASE_BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ -nostdinc -nostdlib
 
 $(TESTCASE_BUILD_DIR)$(USER_PROGRAM): default.ld $(OBJECTS)
 	$(LD) -T default.ld $(CFLAGS) $(OBJECTS) -o $@
