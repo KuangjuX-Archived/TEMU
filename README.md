@@ -56,6 +56,11 @@ mips-sde-elf-gcc –v
 - [x] sh
 - [x] sw 
 
+**R-type Instruction**
+- [x] and
+- [x] nor
+- [x] or
+
 **Exception and Other**
 - [x] break
 - [x] syscall
