@@ -182,7 +182,6 @@ make_helper(blez) {
 
 make_helper(bltz) {
 	decode_imm_type(instr);
-	// fprintf(stdout, "op_src1: 0x%08x\n", (int)op_src1->val);
 	if((int)op_src1->val < 0) {
 		int temp;
 		if(op_src2->val & 0x8000) {
@@ -190,7 +189,15 @@ make_helper(bltz) {
 		}else {
 			temp = op_src2->val;
 		}
-		uint32_t addr = cpu.pc + (temp << 2);
+		uint32_t addr;
+		if(temp < 0) {
+			uint32_t a = (uint32_t)(~temp + 1);
+			addr = cpu.pc - (a << 2);
+		}else {
+			addr = cpu.pc + (temp << 2);
+		}
+		// fprintf(stdout, "addr: %u\n", addr);
+		// fprintf(stdout, "pc: %u\n", cpu.pc);
 		cpu.pc = addr;
 	}
 	sprintf(assembly, "BLTZ %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
