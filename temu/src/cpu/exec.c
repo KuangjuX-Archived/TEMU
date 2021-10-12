@@ -4,6 +4,7 @@
 typedef void (*op_fun)(uint32_t);
 static make_helper(_2byte_esc);
 static make_helper(b_sel);
+static make_helper(privilege_instr);
 
 Operands ops_decoded;
 uint32_t instr;
@@ -16,7 +17,7 @@ op_fun opcode_table [64] = {
 /* 0x04 */	beq, bne, blez, bgtz,
 /* 0x08 */	addi, addiu, slti, sltiu,
 /* 0x0c */	andi, ori, xori, lui,
-/* 0x10 */	inv, inv, temu_trap, inv,
+/* 0x10 */	privilege_instr, inv, temu_trap, inv,
 /* 0x14 */	inv, inv, inv, inv,
 /* 0x18 */	inv, inv, inv, inv,
 /* 0x1c */	inv, inv, inv, inv,
@@ -34,7 +35,7 @@ op_fun _2byte_opcode_table [64] = {
 /* 0x00 */	nop, inv, inv, inv, 
 /* 0x04 */	inv, inv, inv, inv, 
 /* 0x08 */	inv, inv, inv, inv, 
-/* 0x0c */	inv, inv, inv, inv, 
+/* 0x0c */	syscall, break_, inv, inv, 
 /* 0x10 */	inv, inv, inv, inv, 
 /* 0x14 */	inv, inv, inv, inv, 
 /* 0x18 */	inv, inv, inv, inv, 
@@ -87,5 +88,17 @@ static make_helper(b_sel) {
 			bltzal(pc);
 		case 17:
 			bgezal(pc);
+	}
+}
+
+static make_helper(privilege_instr) {
+	uint32_t select = (instr >> 21) & 0x001F;
+	switch(select) {
+		case 0:
+			mfc0(pc);
+		case 4:
+			mtc0(pc);
+		case 16:
+			eret(pc);
 	}
 }

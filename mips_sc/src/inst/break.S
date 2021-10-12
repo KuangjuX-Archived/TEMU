@@ -10,6 +10,9 @@
 
 main:
     break
+    li s0, 0xff000000
+    bne v0, s0, inst_error
+    nop
 
 inst_error: 
     HIT_BAD_TRAP

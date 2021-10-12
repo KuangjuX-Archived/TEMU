@@ -54,4 +54,8 @@ mips-sde-elf-gcc –v
 - [x] lw
 - [x] sb
 - [x] sh
-- [x] sw
+- [x] sw 
+
+**Exception and Other**
+- [x] break
+- [x] syscall
