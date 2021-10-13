@@ -4,9 +4,9 @@
  * ADD(v0, v1)
  */
 #define ADD(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    add $s0, $t0, $t1 \
+    li t0, v0; \
+    li t1, v1; \
+    add s0, t0, t1 \
 
 /* 2
  * ADDI(v0, v1)

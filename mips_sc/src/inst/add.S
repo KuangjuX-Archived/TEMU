@@ -6,6 +6,7 @@
     .set noat 
     .global main 
     .text 
+    
 main:
     ###test inst
     TEST_ADD(0x0480ff04, 0x40933204, 0x45143108)

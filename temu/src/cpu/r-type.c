@@ -13,7 +13,7 @@ static void decode_r_type(uint32_t instr) {
 	op_src1->val = reg_w(op_src1->reg);
 	
 	op_src2->type = OP_TYPE_REG;
-	op_src2->imm = (instr & RT_MASK) >> (RD_SIZE + SHAMT_SIZE + FUNC_SIZE);
+	op_src2->reg = (instr & RT_MASK) >> (RD_SIZE + SHAMT_SIZE + FUNC_SIZE);
 	op_src2->val = reg_w(op_src2->reg);
 
 	op_dest->type = OP_TYPE_REG;
@@ -34,9 +34,11 @@ make_helper(and) {
 
 make_helper(add) {
 	decode_r_type(instr);
-	reg_w(op_dest->reg) = (op_src1->val) + (op_src2->val);
-	if (reg_w(op_dest->reg) < op_src1->val || reg_w(op_dest->reg) < op_src2->val) {
+	uint32_t temp = (op_src1->val) + (op_src2->val);
+	if (temp < op_src1->val || reg_w(op_dest->reg) < op_src2->val) {
 		// 触发整形溢出例外
+	}else {
+		reg_w(op_dest->reg) = temp;
 	}
 	sprintf(assembly, "ADD %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
@@ -72,6 +74,18 @@ make_helper(sltu) {
 	sprintf(assembly, "SLT %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 
+make_helper(div) {
+
+}
+
+
+make_helper(divu) {
+	uint32_t quotient = op_src2->val / op_src1->val;
+	uint32_t remainder = op_src2->val % op_src1->val;
+	cpu.lo = quotient;
+	cpu.hi = remainder;
+	sprintf(assembly, "DIVU %s, %s", REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
+}
 
 make_helper(or) {
 	decode_r_type(instr);
