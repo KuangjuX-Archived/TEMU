@@ -52,19 +52,19 @@ op_fun _2byte_opcode_table [64] = {
 
 make_helper(exec) {
 	// 此时需要去判断地址错例外
-	if(pc & 0x3) {
-		// 最后两位应为0
-		// 触发地址错例外
-		cpu.cp0.cause.ExcCode = AdEL;
-		if(cpu.cp0.status.EXL == 0) {
-			// 当cp0.status.EXL为0时，更新cp0.EPC
-			// EXL为0时表示 Normal level
-			cpu.cp0.EPC = pc;
-			pc = TRAP_ADDR;
-			cpu.cp0.status.EXL = 1;
-		}
-		return;
-	}
+	// if(pc & 0x3) {
+	// 	// 最后两位应为0
+	// 	// 触发地址错例外
+	// 	cpu.cp0.cause.ExcCode = AdEL;
+	// 	if(cpu.cp0.status.EXL == 0) {
+	// 		// 当cp0.status.EXL为0时，更新cp0.EPC
+	// 		// EXL为0时表示 Normal level
+	// 		cpu.cp0.EPC = pc;
+	// 		pc = TRAP_ADDR;
+	// 		cpu.cp0.status.EXL = 1;
+	// 	}
+	// 	return;
+	// }
 	instr = instr_fetch(pc, 4);
 	ops_decoded.opcode = instr >> 26;
 	// fprintf(stdout, "opcode: 0x%02x\n", ops_decoded.opcode);

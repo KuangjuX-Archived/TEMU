@@ -40,7 +40,7 @@ void cpu_exec(volatile uint32_t n) {
 
 	for(; n > 0; n --) {
 
-		pc = cpu.pc & 0x1fffffff;  //map the virtual address to the physical address, e.g. high 3 bits in cpu.pc are cleared
+		pc = cpu.pc & 0x1fffffff;  // map the virtual address to the physical address, e.g. high 3 bits in cpu.pc are cleared
 		
 #ifdef DEBUG
 		uint32_t pc_temp = pc;
