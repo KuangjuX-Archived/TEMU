@@ -66,6 +66,10 @@ mips-sde-elf-gcc –v
 - [x] and
 - [x] nor
 - [x] or
+- [x] div
+- [x] divu
+- [x] mult
+- [x] multu
 
 **Exception and Other**
 - [x] break
