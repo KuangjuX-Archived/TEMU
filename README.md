@@ -70,6 +70,10 @@ mips-sde-elf-gcc –v
 - [x] divu
 - [x] mult
 - [x] multu
+- [x] mfhi
+- [x] mflo
+- [x] mthi
+- [x] mtlo
 
 **Exception and Other**
 - [x] break
