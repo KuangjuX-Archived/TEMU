@@ -34,7 +34,8 @@ make_helper(and) {
 
 make_helper(add) {
 	decode_r_type(instr);
-	uint32_t temp = (op_src1->val) + (op_src2->val);
+	uint32_t temp = (int)(op_src1->val) + (int)(op_src2->val);
+	// fprintf(stdout, "0x%08x + 0x%08x = 0x%08x\n", op_src1->val, op_src2->val, temp);
 	if (temp < op_src1->val || reg_w(op_dest->reg) < op_src2->val) {
 		// 触发整形溢出例外
 	}else {

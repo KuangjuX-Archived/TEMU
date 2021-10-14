@@ -57,7 +57,7 @@ mips-sde-elf-gcc –v
 - [x] sw 
 
 **R-type Instruction**
-- [ ] add
+- [x] add
 - [x] addu
 - [x] sub
 - [x] subu
