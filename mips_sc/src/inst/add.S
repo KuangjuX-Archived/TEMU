@@ -1,10 +1,12 @@
 #include "trap.h"
 #include "inst_test.h"
+#include "asm/regdef.h"
+#include "asm/asm.h"
     .set noreorder
     .set noat 
     .global main 
     .text 
-
+    
 main:
     ###test inst
     TEST_ADD(0x0480ff04, 0x40933204, 0x45143108)

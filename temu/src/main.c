@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 	init_monitor(argc, argv);
 
 	/* Test the implementation of the `CPU_state' structure. */
-	//reg_test();
+	// reg_test();
 
 	/* Initialize the virtual computer system. */
 	restart();

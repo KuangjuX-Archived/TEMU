@@ -1,10 +1,12 @@
-#include "trap.h"
+#include "asm/regdef.h"
+#include "asm/asm.h"
+#include "asm/context.h"
 #include "inst_test.h"
+#include "trap.h"
     .set noreorder
     .set noat 
     .global main 
     .text 
-
 main:
     ###test inst
     TEST_SLTI(0xd9d129b5, 0x00000988, 0x00000001)

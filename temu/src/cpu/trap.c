@@ -16,6 +16,7 @@ make_helper(break_) {
     cpu.cp0.status.EXL = 1;
     cpu.cp0.EPC = cpu.pc;
     cpu.pc = TRAP_ADDR;
+    sprintf(assembly, "BREAK");
 }
 
 // 触发系统调用中断
@@ -26,6 +27,7 @@ make_helper(syscall) {
     cpu.cp0.status.EXL = 1;
     cpu.cp0.EPC = cpu.pc;
     cpu.pc = TRAP_ADDR;
+    sprintf(assembly, "SYSCALL");
 }
 
 // 从中断/例外返回
@@ -80,7 +82,7 @@ static void decode_mtc0(uint32_t instr) {
 // 向协处理器0的寄存器存值
 make_helper(mtc0) {
     decode_mtc0(instr);
-        if(op_dest->reg == BadVAddr_R && op_src2->imm == 0) {
+    if(op_dest->reg == BadVAddr_R && op_src2->imm == 0) {
         cpu.cp0.BadVAddr = reg_w(op_src1->reg);
         sprintf(assembly, "MTC0 %s, BadVAddr, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
     }else if(op_dest->reg == Cause_R && op_src2->imm == 0) {

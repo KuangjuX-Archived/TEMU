@@ -1,6 +1,7 @@
 #include "temu.h"
 
 #define ENTRY_START 0xbfc00000
+#define TRAP_START 0xbfc00380
 
 char *exec_file;
 uint8_t *hw_mem;
@@ -59,6 +60,8 @@ static void load_entry() {
 
 	fclose(fp);
 }
+
+
 
 void restart() {
 	/* Perform some initialization to restart a program */

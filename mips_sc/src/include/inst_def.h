@@ -4,81 +4,81 @@
  * ADD(v0, v1)
  */
 #define ADD(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    add $s0, $t0, $t1 \
+    li t0, v0; \
+    li t1, v1; \
+    add s0, t0, t1 \
 
 /* 2
  * ADDI(v0, v1)
  */
 #define ADDI(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    addi $s0, $t0, v1
+    li t0, v0; \
+    li t1, v1; \
+    addi s0, t0, v1
 
 /* 3
  * ADDU(v0, v1)
  */
 #define ADDU(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    addu $s0, $t0, $t1
+    li t0, v0; \
+    li t1, v1; \
+    addu s0, t0, t1
 
 /* 4
  * ADDIU(v0, v1)
  */
 #define ADDIU(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    addiu $s0, $t0, v1
+    li t0, v0; \
+    li t1, v1; \
+    addiu s0, t0, v1
 
 /* 5
  * SUB(v0, v1)
  */
 #define SUB(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    sub $s0, $t0, $t1
+    li t0, v0; \
+    li t1, v1; \
+    sub s0, t0, t1
 
 /* 6
  * SUBU(v0, v1)
  */
 #define SUBU(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    subu $s0, $t0, $t1
+    li t0, v0; \
+    li t1, v1; \
+    subu s0, t0, t1
 
 /* 7
  * SLT(v0, v1)
  */
 #define SLT(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    slt $s0, $t0, $t1
+    li t0, v0; \
+    li t1, v1; \
+    slt s0, t0, t1
 
 /* 8
  * SLTI(v0, v1)
  */
 #define SLTI(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    slti $s0, $t0, v1
+    li t0, v0; \
+    li t1, v1; \
+    slti s0, t0, v1
 
 /* 9
  * SLTU(v0, v1)
  */
 #define SLTU(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    sltu $s0, $t0, $t1
+    li t0, v0; \
+    li t1, v1; \
+    sltu s0, t0, t1
 
 /* 10
  * SLTIU(v0, v1)
  */
 #define SLTIU(v0, v1) \
-    li $t0, v0; \
-    li $t1, v1; \
-    sltiu $s0, $t0, v1
+    li t0, v0; \
+    li t1, v1; \
+    sltiu s0, t0, v1
 
 /* 11
  * DIV(v0, v1)

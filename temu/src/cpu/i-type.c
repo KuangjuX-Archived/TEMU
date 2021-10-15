@@ -4,6 +4,8 @@
 
 extern uint32_t instr;
 extern char assembly[80];
+uint32_t mem_read(uint32_t addr, size_t len);
+void mem_write(uint32_t, size_t, uint32_t);
 
 /* decode I-type instrucion with unsigned immediate */
 static void decode_imm_type(uint32_t instr) {
@@ -49,20 +51,38 @@ make_helper(addi) {
 
 make_helper(addiu) {
 	decode_imm_type(instr);
-	int temp = (op_src1->val << 16) >> 16;
-	reg_w(op_dest->reg) = temp + (int)op_src2->val;
+	// int temp = (op_src1->val << 16) >> 16;
+	int temp; 
+	if((op_src2->val) & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp =op_src2->val;
+	}
+	reg_w(op_dest->reg) = op_src1->val + temp;
 	sprintf(assembly, "ADDIU %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(slti) {
 	decode_imm_type(instr);
-	reg_w(op_dest->reg) = ((int)op_src1->val < (int)op_src2->val) ? 1 : 0;
+	int temp; 
+	if((op_src2->val) & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp =op_src2->val;
+	}
+	reg_w(op_dest->reg) = ((int)op_src1->val < temp) ? 1 : 0;
 	sprintf(assembly, "SLTI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(sltiu) {
 	decode_imm_type(instr);
-	reg_w(op_dest->reg) = (op_src1->val < op_src2->val) ? 1 : 0;
+	int temp; 
+	if((op_src2->val) & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp =op_src2->val;
+	}
+	reg_w(op_dest->reg) = (op_src1->val < temp) ? 1 : 0;
 	sprintf(assembly, "SLTIU %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
@@ -84,58 +104,21 @@ make_helper(xori) {
 	sprintf(assembly, "XORI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
-// make_helper(lb) {
-// 	decode_imm_type(instr);
-// 	int res = *(int*)((int)op_src1->val + (int)op_src2->val);
-// 	if (res >= 0) {
-// 		res = res & 0xFF;
-// 	}else {
-// 		res = res & 0xFF | 0xFFFFFF00;
-// 	}
-// 	reg_w(op_dest->reg) = res;
-// }
-
-// make_helper(lbu) {
-// 	decode_imm_type(instr);
-// 	reg_w(op_dest->reg) = (*(uint32_t*)((int)op_src1->val + (int)op_src2->val)) & 0xFF;
-// }
-
-// make_helper(lh) {
-
-// }
-
-// make_helper(lw) {
-// 	decode_imm_type(instr);
-// 	reg_w(op_dest->reg) = *(uint32_t*)((int)op_src1->val + (int)op_src2->val);
-// 	sprintf(assembly, "LW %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_dest->reg));
-// }
-
-// make_helper(sb) {
-// 	decode_imm_type(instr);
-// 	uint32_t* addr = (int)op_src1->val + (int)op_src2->val;
-// 	*addr = reg_w(op_dest->reg) & 0xFF;
-// 	sprintf(assembly, "SB %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
-// }
-
-// make_helper(sh) {
-// 	decode_imm_type(instr);
-// 	uint32_t* addr = (int)op_src1->val + (int)op_src2->val;
-// 	if((uint32_t)addr & 0x1) {
-// 		// 触发地址错例外
-// 	}
-// 	*addr = (reg_w(op_dest->reg) & 0xFFFF);
-// 	sprintf(assembly, "SH %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
-// }
-
-// make_helper(sw) {
-// 	decode_imm_type(instr);
-// 	uint32_t* addr = (int)op_src1->val + (int)op_src2->val;
-// 	if((uint32_t)addr & 0x3) {
-// 		// 触发地址错例外
-// 	}
-// 	*addr = reg_w(op_dest->val);
-// 	sprintf(assembly, "SW %s, 0x%04x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
-// }
+make_helper(beq) {
+	decode_imm_type(instr);
+	if(reg_w(op_dest->reg) == reg_w(op_src1->reg)) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr = (int)cpu.pc + (temp << 2);
+		cpu.pc = addr;
+	}
+	sprintf(assembly, "BEQ %s, %s, 0x%04x", REG_NAME(op_src1->reg), REG_NAME(op_dest->reg), op_src2->val);
+	
+}
 
 make_helper(bne) {
 	decode_imm_type(instr);
@@ -149,5 +132,255 @@ make_helper(bne) {
 		uint32_t addr = (int)cpu.pc + (temp << 2);
 		cpu.pc = addr;
 	}
-	sprintf(assembly, "BNE %s, 0x%04x", REG_NAME(op_dest->reg), op_src2->val);
+	sprintf(assembly, "BNE %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
 }
+
+make_helper(bgez) {
+	decode_imm_type(instr);
+	if((int)op_src1->val >= 0) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr = (int)cpu.pc + (temp << 2);
+		cpu.pc = addr;
+	}
+	sprintf(assembly, "BGEZ %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(bgtz) {
+	decode_imm_type(instr);
+	if((int)op_src1->val > 0) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr = (int)cpu.pc + (temp << 2);
+		cpu.pc = addr;
+	}
+	sprintf(assembly, "BGTZ %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(blez) {
+	decode_imm_type(instr);
+	if((int)op_src1->val <= 0) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr = (int)cpu.pc + (temp << 2);
+		cpu.pc = addr;
+	}
+	sprintf(assembly, "BLEZ %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(bltz) {
+	decode_imm_type(instr);
+	if((int)op_src1->val < 0) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr;
+		if(temp < 0) {
+			uint32_t a = (uint32_t)(~temp + 1);
+			addr = cpu.pc - (a << 2);
+		}else {
+			addr = cpu.pc + (temp << 2);
+		}
+		// fprintf(stdout, "addr: %u\n", addr);
+		// fprintf(stdout, "pc: %u\n", cpu.pc);
+		cpu.pc = addr;
+	}
+	sprintf(assembly, "BLTZ %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(bgezal) {
+	decode_imm_type(instr);
+	// fprintf(stdout, "op_src1: 0x%08x\n", (int)op_src1->val);
+	if((int)op_src1->val >= 0) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr = cpu.pc + (temp << 2);
+		reg_w(31) = cpu.pc + 8;
+		cpu.pc = addr;
+	}else {
+		reg_w(31) = cpu.pc + 8;
+	}
+	sprintf(assembly, "BGEZAL %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+}
+
+make_helper(bltzal) {
+	decode_imm_type(instr);
+	if((int)op_src1->val < 0) {
+		int temp;
+		if(op_src2->val & 0x8000) {
+			temp = (0xFFFF << 16) | op_src2->val;
+		}else {
+			temp = op_src2->val;
+		}
+		uint32_t addr = cpu.pc + (temp << 2);
+		reg_w(31) = cpu.pc + 8;
+		cpu.pc = addr;
+	}else {
+		reg_w(31) = cpu.pc + 8;
+	}
+	sprintf(assembly, "BLTZAL %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+}
+
+
+
+
+make_helper(lb) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	
+	int val = mem_read((uint32_t)addr, 1);
+	if(val & 0x80) {
+		val = (0xFFFFFF << 8) | val;
+	}
+	reg_w(op_dest->reg) = val;
+	
+	sprintf(assembly, "LB %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(lbu) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	
+	int val = mem_read((uint32_t)addr, 1);
+	reg_w(op_dest->reg) = val;
+	
+	sprintf(assembly, "LBU %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(lh) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	if(addr & 0x1) {
+
+	}else {
+		int val = mem_read((uint32_t)addr, 2);
+		if(val & 0x8000) {
+			val = (0xFFFF << 16) | val;
+		}
+		reg_w(op_dest->reg) = val;
+	}
+	sprintf(assembly, "LH %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(lhu) {
+		decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	if(addr & 0x1) {
+
+	}else {
+		int val = mem_read((uint32_t)addr, 2);
+		reg_w(op_dest->reg) = val;
+	}
+	sprintf(assembly, "LHU %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(lw) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	if(addr & 0x3) {
+
+	}else {
+		uint32_t val = mem_read((uint32_t)addr, 4);
+		reg_w(op_dest->reg) = val;
+	}
+	sprintf(assembly, "LW %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+
+}
+
+make_helper(sb) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	mem_write((uint32_t)addr, 1, reg_w(op_dest->reg));
+	
+	sprintf(assembly, "SB %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(sh) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	if(addr & 0x1) {
+
+	}else {
+		mem_write((uint32_t)addr, 2, reg_w(op_dest->reg));
+	}
+	sprintf(assembly, "SH %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+
+make_helper(sw) {
+	decode_imm_type(instr);
+	int temp;
+	if(op_src2->val & 0x8000) {
+		temp = (0xFFFF << 16) | op_src2->val;
+	}else {
+		temp = op_src2->val;
+	}
+	int addr = temp + op_src1->val;
+	if(addr & 0x3) {
+
+	}else {
+		mem_write((uint32_t)addr, 4, reg_w(op_dest->reg));
+	}
+	sprintf(assembly, "SW %s, 0x%08x(%s)", REG_NAME(op_dest->reg), op_src2->val, REG_NAME(op_src1->reg));
+}
+

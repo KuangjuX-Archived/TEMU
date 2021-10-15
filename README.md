@@ -27,3 +27,54 @@ Try to use mips cross compiler:
 ```shell
 mips-sde-elf-gcc –v
 ```
+
+## 通过测试的指令:  
+**I-type Instruction**  
+
+- [x] addi
+- [x] addiu
+- [x] slti
+- [x] sltiu
+- [x] andi
+- [x] lui
+- [x] ori
+- [x] xori
+- [x] beq
+- [x] bne
+- [x] bgez
+- [x] bgtz
+- [x] blez
+- [ ] bltz
+- [ ] bgezal(测试用例编译失败)
+- [ ] bltzal(测试用例编译失败)
+- [x] lb
+- [x] lbu
+- [x] lh
+- [x] lhu
+- [x] lw
+- [x] sb
+- [x] sh
+- [x] sw 
+
+**R-type Instruction**
+- [xsi] add
+- [x] addu
+- [x] sub
+- [x] subu
+- [x] slt
+- [x] sltu
+- [x] and
+- [x] nor
+- [x] or
+- [x] div
+- [x] divu
+- [x] mult
+- [x] multu
+- [x] mfhi
+- [x] mflo
+- [x] mthi
+- [x] mtlo
+
+**Exception and Other**
+- [x] break
+- [x] syscall
