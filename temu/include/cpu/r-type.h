@@ -18,5 +18,6 @@ make_helper(mfhi);
 make_helper(mflo);
 make_helper(mthi);
 make_helper(mtlo);
+make_helper(sll);
 
 #endif

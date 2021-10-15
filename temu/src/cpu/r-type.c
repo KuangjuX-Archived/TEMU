@@ -173,3 +173,10 @@ make_helper(mtlo) {
 	cpu.lo = reg_w(reg);
 	sprintf(assembly, "MTLO %s", REG_NAME(reg));
 }
+
+make_helper(sll) {
+    decode_r_type(instr);
+    uint32_t sa=(instr & SHAMT_MASK) >> FUNC_SIZE;
+    reg_w(op_dest->reg)=op_src2->val<<sa;
+    sprintf(assembly, "SLL %s, %s, %u", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), sa);
+}

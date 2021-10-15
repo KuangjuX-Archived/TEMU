@@ -32,7 +32,7 @@ op_fun opcode_table [64] = {
 };
 
 op_fun _2byte_opcode_table [64] = {
-/* 0x00 */	nop, inv, inv, inv, 
+/* 0x00 */	sll, inv, inv, inv,
 /* 0x04 */	inv, inv, inv, inv, 
 /* 0x08 */	inv, inv, inv, inv, 
 /* 0x0c */	syscall, break_, inv, inv, 
