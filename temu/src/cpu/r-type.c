@@ -180,3 +180,10 @@ make_helper(sll) {
     reg_w(op_dest->reg)=op_src2->val<<sa;
     sprintf(assembly, "SLL %s, %s, %u", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), sa);
 }
+
+make_helper(srav) {
+    decode_r_type(instr);
+    int temp=(int) op_src2->val;
+    reg_w(op_dest->reg)=temp >> op_src1->val;
+    sprintf(assembly, "SRAV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
+}
