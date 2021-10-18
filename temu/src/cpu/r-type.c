@@ -181,6 +181,14 @@ make_helper(sll) {
     sprintf(assembly, "SLL %s, %s, %u", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), sa);
 }
 
+make_helper(sra) {
+    decode_r_type(instr);
+    int temp=(int) op_src2->val;
+    uint32_t sa=(instr & SHAMT_MASK) >> FUNC_SIZE;
+    reg_w(op_dest->reg)=temp >> sa;
+    sprintf(assembly, "SRA %s, %s, %u", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), sa);
+}
+
 make_helper(srav) {
     decode_r_type(instr);
     int temp=(int) op_src2->val;

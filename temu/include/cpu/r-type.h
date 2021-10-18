@@ -19,6 +19,7 @@ make_helper(mflo);
 make_helper(mthi);
 make_helper(mtlo);
 make_helper(sll);
+make_helper(sra);
 make_helper(srav);
 
 #endif

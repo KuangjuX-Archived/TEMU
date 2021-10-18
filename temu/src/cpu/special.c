@@ -13,7 +13,7 @@ make_helper(inv) {
 
 	uint32_t temp;
 	temp = instr_fetch(pc, 4);
-
+    printf("%032x",temp);
 	uint8_t *p = (void *)&temp;
 	printf("invalid opcode(pc = 0x%08x): %02x %02x %02x %02x ...\n\n", 
 			pc, p[3], p[2], p[1], p[0]);
