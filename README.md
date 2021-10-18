@@ -77,6 +77,7 @@ mips-sde-elf-gcc –v
 - [x] sll
 - [x] srav
 - [x] sra
+- [x] srl
 
 **Exception and Other**
 - [x] break
