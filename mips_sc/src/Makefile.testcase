@@ -1,2 +1,2 @@
 # change the tesctcase name
-USER_PROGRAM := sra
+USER_PROGRAM := srl

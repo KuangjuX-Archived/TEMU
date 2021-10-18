@@ -21,5 +21,6 @@ make_helper(mtlo);
 make_helper(sll);
 make_helper(sra);
 make_helper(srav);
+make_helper(srl);
 
 #endif

@@ -195,3 +195,10 @@ make_helper(srav) {
     reg_w(op_dest->reg)=temp >> op_src1->val;
     sprintf(assembly, "SRAV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
 }
+
+make_helper(srl) {
+    decode_r_type(instr);
+    uint32_t sa=(instr & SHAMT_MASK) >> FUNC_SIZE;
+    reg_w(op_dest->reg)=op_src2->val >> sa;
+    sprintf(assembly, "SRL %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
+}
