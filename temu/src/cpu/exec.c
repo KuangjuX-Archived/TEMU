@@ -13,7 +13,11 @@ uint32_t instr;
 /* TODO: Add more instructions!!! */
 
 op_fun opcode_table [64] = {
+<<<<<<< HEAD
 /* 0x00 */	_2byte_esc, b_sel, j, inv,
+=======
+/* 0x00 */	_2byte_esc, b_sel, j, jal,
+>>>>>>> d291fa9db23cbc0235958311abe6e0f51d7ca99e
 /* 0x04 */	beq, bne, blez, bgtz,
 /* 0x08 */	addi, addiu, slti, sltiu,
 /* 0x0c */	andi, ori, xori, lui,
