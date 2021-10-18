@@ -79,6 +79,9 @@ mips-sde-elf-gcc –v
 - [x] sra
 - [x] srl
 
+**J-type Instruction**
+- [x] j
+
 **Exception and Other**
 - [x] break
 - [x] syscall

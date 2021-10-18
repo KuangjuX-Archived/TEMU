@@ -132,7 +132,7 @@ make_helper(bne) {
 		uint32_t addr = (int)cpu.pc + (temp << 2);
 		cpu.pc = addr;
 	}
-	sprintf(assembly, "BNE %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
+	sprintf(assembly, "BNE %s,%s, 0x%04x", REG_NAME(op_src1->reg),REG_NAME(op_dest->reg), op_src2->val);
 }
 
 make_helper(bgez) {
