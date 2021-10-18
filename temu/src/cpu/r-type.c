@@ -173,3 +173,32 @@ make_helper(mtlo) {
 	cpu.lo = reg_w(reg);
 	sprintf(assembly, "MTLO %s", REG_NAME(reg));
 }
+
+make_helper(sll) {
+    decode_r_type(instr);
+    uint32_t sa=(instr & SHAMT_MASK) >> FUNC_SIZE;
+    reg_w(op_dest->reg)=op_src2->val<<sa;
+    sprintf(assembly, "SLL %s, %s, %u", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), sa);
+}
+
+make_helper(sra) {
+    decode_r_type(instr);
+    int temp=(int) op_src2->val;
+    uint32_t sa=(instr & SHAMT_MASK) >> FUNC_SIZE;
+    reg_w(op_dest->reg)=temp >> sa;
+    sprintf(assembly, "SRA %s, %s, %u", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), sa);
+}
+
+make_helper(srav) {
+    decode_r_type(instr);
+    int temp=(int) op_src2->val;
+    reg_w(op_dest->reg)=temp >> op_src1->val;
+    sprintf(assembly, "SRAV %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
+}
+
+make_helper(srl) {
+    decode_r_type(instr);
+    uint32_t sa=(instr & SHAMT_MASK) >> FUNC_SIZE;
+    reg_w(op_dest->reg)=op_src2->val >> sa;
+    sprintf(assembly, "SRL %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
+}

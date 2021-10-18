@@ -2,6 +2,7 @@
 #include "asm/asm.h"
 #include "asm/context.h"
 #include "inst_test.h"
+#include "inst_def.h"
 #include "trap.h"
     .set noreorder
     .set noat 
