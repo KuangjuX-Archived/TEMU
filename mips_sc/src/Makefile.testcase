@@ -1,2 +1,2 @@
 # change the tesctcase name
-USER_PROGRAM := jal
+USER_PROGRAM := jalr

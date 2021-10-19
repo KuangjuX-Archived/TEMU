@@ -78,6 +78,8 @@ mips-sde-elf-gcc –v
 - [x] srav
 - [x] sra
 - [x] srl
+- [x] jr
+- [x] jalr
 
 **J-type Instruction**
 - [x] j

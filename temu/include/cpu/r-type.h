@@ -22,5 +22,7 @@ make_helper(sll);
 make_helper(sra);
 make_helper(srav);
 make_helper(srl);
+make_helper(jr);
+make_helper(jalr);
 
 #endif

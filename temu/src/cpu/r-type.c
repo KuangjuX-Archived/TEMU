@@ -202,3 +202,18 @@ make_helper(srl) {
     reg_w(op_dest->reg)=op_src2->val >> sa;
     sprintf(assembly, "SRL %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src2->reg), REG_NAME(op_src1->reg));
 }
+
+make_helper(jr) {
+    decode_r_type(instr);
+    cpu.pc=op_src1->val;
+    cpu.pc-=4;
+    sprintf(assembly, "JR %s", REG_NAME(op_src1->reg));
+}
+
+make_helper(jalr) {
+    decode_r_type(instr);
+    reg_w(op_dest->reg)=cpu.pc+8;
+    cpu.pc=op_src1->val;
+    cpu.pc-=4;
+    sprintf(assembly, "JR %s", REG_NAME(op_src1->reg));
+}
