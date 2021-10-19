@@ -82,12 +82,16 @@ static make_helper(b_sel) {
 	switch(select) {
 		case 0:
 			bltz(pc);
+            break;
 		case 1:
 			bgez(pc);
+            break;
 		case 16:
 			bltzal(pc);
+            break;
 		case 17:
 			bgezal(pc);
+            break;
 	}
 }
 
@@ -96,9 +100,12 @@ static make_helper(privilege_instr) {
 	switch(select) {
 		case 0:
 			mfc0(pc);
+            break;
 		case 4:
 			mtc0(pc);
+            break;
 		case 16:
 			eret(pc);
+            break;
 	}
 }

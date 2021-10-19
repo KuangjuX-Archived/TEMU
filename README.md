@@ -44,9 +44,9 @@ mips-sde-elf-gcc –v
 - [x] bgez
 - [x] bgtz
 - [x] blez
-- [ ] bltz
-- [ ] bgezal(测试用例编译失败)
-- [ ] bltzal(测试用例编译失败)
+- [x] bltz
+- [x] bgezal
+- [x] bltzal
 - [x] lb
 - [x] lbu
 - [x] lh

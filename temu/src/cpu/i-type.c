@@ -206,7 +206,7 @@ make_helper(bltz) {
 make_helper(bgezal) {
 	decode_imm_type(instr);
 	// fprintf(stdout, "op_src1: 0x%08x\n", (int)op_src1->val);
-	if((int)op_src1->val >= 0) {
+	if(((int)op_src1->val) >= 0) {
 		int temp;
 		if(op_src2->val & 0x8000) {
 			temp = (0xFFFF << 16) | op_src2->val;
@@ -224,19 +224,19 @@ make_helper(bgezal) {
 
 make_helper(bltzal) {
 	decode_imm_type(instr);
-	if((int)op_src1->val < 0) {
-		int temp;
-		if(op_src2->val & 0x8000) {
-			temp = (0xFFFF << 16) | op_src2->val;
-		}else {
-			temp = op_src2->val;
-		}
-		uint32_t addr = cpu.pc + (temp << 2);
-		reg_w(31) = cpu.pc + 8;
-		cpu.pc = addr;
-	}else {
-		reg_w(31) = cpu.pc + 8;
-	}
+    if(((int)op_src1->val) < 0) {
+        int temp;
+        if(op_src2->val & 0x8000) {
+            temp = (0xFFFF << 16) | op_src2->val;
+        }else {
+            temp = op_src2->val;
+        }
+        uint32_t addr = cpu.pc + (temp << 2);
+        reg_w(31) = cpu.pc + 8;
+        cpu.pc = addr;
+    }else {
+        reg_w(31) = cpu.pc + 8;
+    }
 	sprintf(assembly, "BLTZAL %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
 }
 
