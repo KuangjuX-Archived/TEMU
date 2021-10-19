@@ -14,13 +14,14 @@ make_helper(j) {
     decode_j_type(instr);
     uint32_t addr = (((int)cpu.pc)&0xF0000000) | (op_src1->instr_index << 2);
     cpu.pc = addr - 4 ; // why
-    sprintf(assembly, "J %x", cpu.pc);
+    sprintf(assembly, "J %x", cpu.pc+4);
 }
 
 make_helper(jal) {
     //TODO test
     decode_j_type(instr);
-    cpu.fp=cpu.pc+8;
-    cpu.pc=(cpu.pc&0xF000000) | (op_src1->instr_index<<2);
-    sprintf(assembly, "J %d", cpu.pc);
+    cpu.ra=cpu.pc+8;
+    uint32_t addr = (((int)cpu.pc)&0xF0000000) | (op_src1->instr_index << 2);
+    cpu.pc = addr - 4 ; // why
+    sprintf(assembly, "JAL %x", cpu.pc+4);
 }
