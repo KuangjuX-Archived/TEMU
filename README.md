@@ -81,6 +81,7 @@ mips-sde-elf-gcc –v
 
 **J-type Instruction**
 - [x] j
+- [x] jal
 
 **Exception and Other**
 - [x] break
