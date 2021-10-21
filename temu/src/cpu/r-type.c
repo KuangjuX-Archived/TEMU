@@ -34,10 +34,14 @@ make_helper(and) {
 
 make_helper(add) {
 	decode_r_type(instr);
-	uint32_t temp = (int)(op_src1->val) + (int)(op_src2->val);
-	// fprintf(stdout, "0x%08x + 0x%08x = 0x%08x\n", op_src1->val, op_src2->val, temp);
-	if (temp < op_src1->val || reg_w(op_dest->reg) < op_src2->val) {
-		// 触发整形溢出例外
+	int temp = (int)(op_src1->val) + (int)(op_src2->val);
+	if (((int)op_src1->val > 0 && (int)op_src2->val > 0 && temp < 0) && ((int)op_src1->val < 0 && (int)op_src2->val < 0 && temp > 0)) {
+		if (cpu.cp0.status.EXL == 0) {
+			cpu.cp0.cause.ExcCode = Ov;
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.status.EXL = 1;
+		}
 	}else {
 		reg_w(op_dest->reg) = temp;
 	}
@@ -52,8 +56,17 @@ make_helper(addu) {
 
 make_helper(sub) {
 	decode_r_type(instr);
-	reg_w(op_dest->reg) = (op_src1->val) - (op_src2->val);
-	// 此处应当触发整形溢出例外
+	int temp = (int)(op_src1->val) - (int)(op_src2->val);
+	if(((int)op_src1->val > 0 && (int)op_src2->val < 0 && temp < 0) || (int)op_src1->val < 0 && (int)op_src2->val > 0 && temp > 0) {
+		if (cpu.cp0.status.EXL == 0) {
+			cpu.cp0.cause.ExcCode = Ov;
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.status.EXL = 1;
+		}
+	}else{
+		reg_w(op_dest->reg) = (op_src1->val) - (op_src2->val);
+	} 
 	sprintf(assembly, "SUB %s, %s, %s", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), REG_NAME(op_src2->reg));
 }
 

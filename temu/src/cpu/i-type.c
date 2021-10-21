@@ -39,19 +39,21 @@ make_helper(addi) {
 		temp = op_src2->val;
 	}
 	int res = (int)op_src1->val + temp;
-	if((int)op_src1->val > 0 && temp > 0 && res < 0) {
-		fprintf(stdout, "整形溢出例外.\n");
-	}else if((int)op_src1->val < 0 && temp < 0 && res > 0) {
-		fprintf(stdout, "整形溢出例外.\n");
+	if(((int)op_src1->val > 0 && temp > 0 && res < 0) || ((int)op_src1->val < 0 && temp < 0 && res > 0)) {
+		if (cpu.cp0.status.EXL == 0) {
+			cpu.cp0.cause.ExcCode = Ov;
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.status.EXL = 1;
+		}
+	}else {
+		reg_w(op_dest->reg) = res;
 	}
-	reg_w(op_dest->reg) = res;
-	fprintf(stdout, "pc: 0x%08x, reg: 0x%08x, imm: 0x%08x, res: 0x%08x\n", cpu.pc, (int)op_src1->val, temp, res);
 	sprintf(assembly, "ADDI %s, %s, 0x%04x", REG_NAME(op_dest->reg), REG_NAME(op_src1->reg), op_src2->val);
 }
 
 make_helper(addiu) {
 	decode_imm_type(instr);
-	// int temp = (op_src1->val << 16) >> 16;
 	int temp; 
 	if((op_src2->val) & 0x8000) {
 		temp = (0xFFFF << 16) | op_src2->val;
@@ -196,8 +198,6 @@ make_helper(bltz) {
 		}else {
 			addr = cpu.pc + (temp << 2);
 		}
-		// fprintf(stdout, "addr: %u\n", addr);
-		// fprintf(stdout, "pc: %u\n", cpu.pc);
 		cpu.pc = addr;
 	}
 	sprintf(assembly, "BLTZ %s, 0x%04x", REG_NAME(op_src1->reg), op_src2->val);
@@ -205,7 +205,6 @@ make_helper(bltz) {
 
 make_helper(bgezal) {
 	decode_imm_type(instr);
-	// fprintf(stdout, "op_src1: 0x%08x\n", (int)op_src1->val);
 	if(((int)op_src1->val) >= 0) {
 		int temp;
 		if(op_src2->val & 0x8000) {
@@ -288,7 +287,13 @@ make_helper(lh) {
 	}
 	int addr = temp + op_src1->val;
 	if(addr & 0x1) {
-
+		// 地址错异常
+		if(cpu.cp0.status.EXL == 0) {
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.cause.ExcCode = AdEL;
+			cpu.cp0.status.EXL = 1;
+		}
 	}else {
 		int val = mem_read((uint32_t)addr, 2);
 		if(val & 0x8000) {
@@ -309,7 +314,13 @@ make_helper(lhu) {
 	}
 	int addr = temp + op_src1->val;
 	if(addr & 0x1) {
-
+		// 地址错异常
+		if(cpu.cp0.status.EXL == 0) {
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.cause.ExcCode = AdEL;
+			cpu.cp0.status.EXL = 1;
+		}
 	}else {
 		int val = mem_read((uint32_t)addr, 2);
 		reg_w(op_dest->reg) = val;
@@ -327,7 +338,13 @@ make_helper(lw) {
 	}
 	int addr = temp + op_src1->val;
 	if(addr & 0x3) {
-
+		// 地址错异常
+		if(cpu.cp0.status.EXL == 0) {
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.cause.ExcCode = AdEL;
+			cpu.cp0.status.EXL = 1;
+		}
 	}else {
 		uint32_t val = mem_read((uint32_t)addr, 4);
 		reg_w(op_dest->reg) = val;
@@ -360,7 +377,13 @@ make_helper(sh) {
 	}
 	int addr = temp + op_src1->val;
 	if(addr & 0x1) {
-
+		// 地址错异常
+		if(cpu.cp0.status.EXL == 0) {
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.cause.ExcCode = AdES;
+			cpu.cp0.status.EXL = 1;
+		}
 	}else {
 		mem_write((uint32_t)addr, 2, reg_w(op_dest->reg));
 	}
@@ -377,7 +400,13 @@ make_helper(sw) {
 	}
 	int addr = temp + op_src1->val;
 	if(addr & 0x3) {
-
+		// 地址错异常
+		if(cpu.cp0.status.EXL == 0) {
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.cause.ExcCode = AdES;
+			cpu.cp0.status.EXL = 1;
+		}
 	}else {
 		mem_write((uint32_t)addr, 4, reg_w(op_dest->reg));
 	}
