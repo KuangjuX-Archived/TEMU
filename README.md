@@ -88,3 +88,5 @@ mips-sde-elf-gcc –v
 **Exception and Other**
 - [x] break
 - [x] syscall
+- [x] mfc0
+- [x] mtc0

@@ -42,7 +42,7 @@ static void decode_mfc0(uint32_t instr) {
     op_dest->reg = (instr & 0x001F0000) >> 16;
 
     op_src1->type = OP_TYPE_REG;
-    op_dest->reg = (instr & 0x0000F800) >> 11;
+    op_src1->reg = (instr & 0x0000F800) >> 11;
 
     op_src2->type = OP_TYPE_IMM;
     op_src2->imm = (instr & 0x00000007);
@@ -60,11 +60,11 @@ make_helper(mfc0) {
     }else if(op_src1->reg == EPC_R && op_src2->imm == 0) {
         reg_w(op_dest->reg) = cpu.cp0.EPC;
         sprintf(assembly, "MFC0 %s, EPC, 0x%04x", REG_NAME(op_dest->reg), op_src2->imm);
-    }else if(op_src1->reg == Status_R && op_src1->imm == 0) {
+    }else if(op_src1->reg == Status_R && op_src2->imm == 0) {
         reg_w(op_dest->reg) = cpu.cp0.status.val;
         sprintf(assembly, "MFC0 %s, Status, 0x%04x", REG_NAME(op_dest->reg), op_src2->imm);
     }else {
-        panic("[mtc0] Invalid cp0 register.\n");
+        panic("[MFC0] Invalid cp0 register.\n");
     }
 }
 
@@ -91,10 +91,10 @@ make_helper(mtc0) {
     }else if(op_dest->reg == EPC_R && op_src2->imm == 0) {
         cpu.cp0.EPC = reg_w(op_src1->reg);
         sprintf(assembly, "MTC0 %s, EPC, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
-    }else if(op_dest->reg == Status_R && op_src1->imm == 0) {
+    }else if(op_dest->reg == Status_R && op_src2->imm == 0) {
         cpu.cp0.status.val = reg_w(op_src1->reg);
         sprintf(assembly, "MTC0 %s, Status, 0x%04x", REG_NAME(op_src1->reg), op_src2->imm);
     }else {
-        panic("[mtc0] Invalid cp0 register.\n");
+        panic("[MTC0] Invalid cp0 register.\n");
     }
 }
