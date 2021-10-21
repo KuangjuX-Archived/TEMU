@@ -35,7 +35,7 @@ make_helper(and) {
 make_helper(add) {
 	decode_r_type(instr);
 	int temp = (int)(op_src1->val) + (int)(op_src2->val);
-	if (((int)op_src1->val > 0 && (int)op_src2->val > 0 && temp < 0) && ((int)op_src1->val < 0 && (int)op_src2->val < 0 && temp > 0)) {
+	if (((int)op_src1->val > 0 && (int)op_src2->val > 0 && temp < 0) || ((int)op_src1->val < 0 && (int)op_src2->val < 0 && temp > 0)) {
 		if (cpu.cp0.status.EXL == 0) {
 			cpu.cp0.cause.ExcCode = Ov;
 			cpu.cp0.EPC = cpu.pc;
@@ -57,7 +57,7 @@ make_helper(addu) {
 make_helper(sub) {
 	decode_r_type(instr);
 	int temp = (int)(op_src1->val) - (int)(op_src2->val);
-	if(((int)op_src1->val > 0 && (int)op_src2->val < 0 && temp < 0) || (int)op_src1->val < 0 && (int)op_src2->val > 0 && temp > 0) {
+	if(((int)op_src1->val > 0 && (int)op_src2->val < 0 && temp < 0) || ((int)op_src1->val < 0 && (int)op_src2->val > 0 && temp > 0)) {
 		if (cpu.cp0.status.EXL == 0) {
 			cpu.cp0.cause.ExcCode = Ov;
 			cpu.cp0.EPC = cpu.pc;

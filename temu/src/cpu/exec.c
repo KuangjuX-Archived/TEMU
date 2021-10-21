@@ -70,7 +70,6 @@ make_helper(exec) {
 
 static make_helper(_2byte_esc) {
 	ops_decoded.func = instr & FUNC_MASK;
-	// fprintf(stdout, "func: 0x%02x\n", ops_decoded.func);
 	_2byte_opcode_table[ops_decoded.func](pc); 
 }
 

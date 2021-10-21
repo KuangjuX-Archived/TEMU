@@ -6,7 +6,7 @@
  */
 #define TEST_ADD(vs, vt, vd) \
     ADD(vs, vt); \
-    lw s2, vd; \
+    li s2, vd; \
     bne s0, s2, inst_error; \
     nop
 
