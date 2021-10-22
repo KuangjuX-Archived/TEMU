@@ -12,6 +12,14 @@ void cpu_exec(uint32_t);
 void display_reg();
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
+
+void display_wp(){
+    WP *head = getHead();
+    while(head!=NULL){
+        printf("watchpoint %d : %s\n", head->NO, head->expr);
+        head = head->next;
+    }
+}
 char* rl_gets() {
 	static char *line_read = NULL;
 
@@ -61,7 +69,9 @@ static int cmd_info(char* args) {
 		for(i = R_ZERO; i <= R_RA; i++) {
 			printf("%s\t0x%08x\n", regfile[i], reg_w(i));
 		}
-	}
+	}else if(strcmp(arg, "w") == 0){
+        display_wp();
+    }
 	return 0;
 }
 
@@ -120,6 +130,19 @@ static int cmd_x(char* args){
     return 0;
 }
 
+static int cmd_w(char *args) {
+    if(args == NULL) return 0;
+    int id = insertExpr(args);
+    if(id == -1) {
+        printf("\033[1;31mInvalid expression\n\033[0m");
+        return 0;
+    }
+    printf("Add watchpoint %d\n", id);
+    return 0;
+}
+
+
+
 static struct {
 	char *name;
 	char *description;
@@ -131,6 +154,7 @@ static struct {
 	{ "si", "Single step", cmd_si },
     {"p","Expression evaluation.",cmd_p},
     {"x","Scan memory.",cmd_x},
+    {"w","Set watch points.",cmd_w},
 	/* TODO: Add more commands */
 	{ "info", "r for print register state \n w for print watchpoint information", cmd_info},
 
