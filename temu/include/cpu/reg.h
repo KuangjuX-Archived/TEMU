@@ -10,7 +10,7 @@ enum { R_ZERO, R_AT, R_V0, R_V1, R_A0, R_A1, R_A2, R_A3, R_T0, R_T1, R_T2, R_T3,
 #define Cause_R 13
 #define EPC_R 14
 
-#define TRAP_ADDR 0xBFC00380
+#define TRAP_ADDR (0xBFC00380 - 0x4)
 
 // 地址错例外
 // 取指或读数据

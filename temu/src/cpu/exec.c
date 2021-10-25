@@ -5,6 +5,7 @@ typedef void (*op_fun)(uint32_t);
 static make_helper(_2byte_esc);
 static make_helper(b_sel);
 static make_helper(privilege_instr);
+static make_helper(trap_handler);
 
 Operands ops_decoded;
 uint32_t instr;
@@ -63,6 +64,10 @@ make_helper(exec) {
 		}
 		return;
 	}
+	if(pc == 0x1FC00380) {
+		trap_handler(pc);
+		return;
+	}
 	instr = instr_fetch(pc, 4);
 	ops_decoded.opcode = instr >> 26;
 	opcode_table[ ops_decoded.opcode ](pc);
@@ -104,4 +109,30 @@ static make_helper(privilege_instr) {
 			eret(pc);
             break;
 	}
+}
+
+static make_helper(trap_handler) {
+	switch(cpu.cp0.cause.ExcCode) {
+		case AdEL:
+			printf("Instruction read address error.\n");
+			break;
+		case AdES:
+			printf("Instruction write address error.\n");
+			break;
+		case Ov:
+			printf("Int overflow error.\n");
+			break;
+		case Sys:
+			printf("Syscall.\n");
+			break;
+		case Bp:
+			printf("Break.\n");
+			break;
+		case RI:
+			printf("Reversed instruction error.\n");
+			break;
+		default:
+			printf("Unresolved exception.\n");
+	}
+	eret(pc);
 }

@@ -1,2 +1,2 @@
 # change the tesctcase name
-USER_PROGRAM := add
+USER_PROGRAM := add_ex
