@@ -35,6 +35,7 @@ make_helper(syscall) {
 make_helper(eret) {
     cpu.pc = cpu.cp0.EPC;
     cpu.cp0.status.EXL = 0;
+    sprintf(assembly, "ERET");
 }
 
 static void decode_mfc0(uint32_t instr) {

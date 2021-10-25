@@ -96,3 +96,4 @@ nodemon --watch './node_be/src/**/*.ts' -L --exec 'ts-node' ./node_be/src/index.
 - [x] syscall
 - [x] mfc0
 - [x] mtc0
+- [x] eret
