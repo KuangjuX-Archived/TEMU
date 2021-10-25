@@ -11,19 +11,25 @@ make_helper(nop) {
 /* invalid opcode */
 make_helper(inv) {
 
-	uint32_t temp;
-	temp = instr_fetch(pc, 4);
-    printf("%032x",temp);
-	uint8_t *p = (void *)&temp;
-	printf("invalid opcode(pc = 0x%08x): %02x %02x %02x %02x ...\n\n", 
-			pc, p[3], p[2], p[1], p[0]);
+// 	uint32_t temp;
+// 	temp = instr_fetch(pc, 4);
+//     printf("%032x",temp);
+// 	uint8_t *p = (void *)&temp;
+// 	printf("invalid opcode(pc = 0x%08x): %02x %02x %02x %02x ...\n\n", 
+// 			pc, p[3], p[2], p[1], p[0]);
 
-	printf("There are two cases which will trigger this unexpected exception:\n\
-1. The instruction at pc = 0x%08x is not implemented.\n\
-2. Something is implemented incorrectly.\n", pc);
-	printf("Find this pc value(0x%08x) in the disassembling result to distinguish which case it is.\n\n", pc);
+// 	printf("There are two cases which will trigger this unexpected exception:\n
+// 1. The instruction at pc = 0x%08x is not implemented.\n
+// 2. Something is implemented incorrectly.\n", pc);
+// 	printf("Find this pc value(0x%08x) in the disassembling result to distinguish which case it is.\n\n", pc);
 
-	assert(0);
+// 	assert(0);
+	if (cpu.cp0.status.EXL == 0) {
+			cpu.cp0.cause.ExcCode = RI;
+			cpu.cp0.EPC = cpu.pc;
+			cpu.pc = TRAP_ADDR;
+			cpu.cp0.status.EXL = 1;
+		}
 }
 
 /* stop temu */
