@@ -1,0 +1,23 @@
+{
+  "name": "node_be",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rauschma/stringio": "^1.4.0",
+    "@types/node": "^16.11.4",
+    "nodemon": "^2.0.14",
+    "ws": "^8.2.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.2.0"
+  }
+}
