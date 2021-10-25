@@ -28,12 +28,11 @@ char* rl_gets() {
 		line_read = NULL;
 	}
 
-	line_read = readline("(temu) ");
+    line_read = readline("(temu) ");
 
 	if (line_read && *line_read) {
 		add_history(line_read);
 	}
-
 	return line_read;
 }
 
@@ -211,5 +210,5 @@ void ui_mainloop() {
 		}
 
 		if(i == NR_CMD) { printf("Unknown command '%s'\n", cmd); }
-	}
+    }
 }

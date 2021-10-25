@@ -28,6 +28,12 @@ Try to use mips cross compiler:
 mips-sde-elf-gcc –v
 ```
 
+## GUI
+In this project we use node.js as our backend developing tool.
+```shell
+nodemon --watch './node_be/src/**/*.ts' -L --exec 'ts-node' ./node_be/src/index.ts
+```
+
 ## 通过测试的指令:  
 **I-type Instruction**  
 

@@ -2,3 +2,4 @@
 *.txt
 build/*
 mips_sc/build/*
+/node_be/node_modules/
