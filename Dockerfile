@@ -11,6 +11,6 @@ RUN apt-get update \
     && apt-get install libreadline-dev -y \
     && apt-get install lib32ncurses5-dev -y \
     && apt-get install lib32z1-dev -y \
-    && apt-get install vim -y
-#    && dpkg-reconfigure -plow dash \
+    && apt-get install vim -y \ 
+    && apt-get install python3.8
 EXPOSE 22
