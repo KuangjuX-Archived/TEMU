@@ -64,7 +64,7 @@ make_helper(exec) {
 		}
 		return;
 	}
-	if(pc == 0x1FC00380) {
+	if(pc == 0x1FC00380 && cpu.cp0.cause.ExcCode != 0) {
 		trap_handler(pc);
 		return;
 	}
