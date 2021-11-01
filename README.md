@@ -7,7 +7,7 @@ A Mips Simulator written in c.
 ```shell
 sudo docker build -t temu .   
    
-sudo docker run -itd --name TEMU -v ~/lab/MIPSCPU/TEMU:/temu temu /bin/bash  
+sudo docker run -itd --name TEMU -p 8848:8848 -p 8888:8888 -v /mnt/d/C/TEMU:/temu temu /bin/bash  
   
 sudo docker exec -it TEMU /bin/bash  
 ```

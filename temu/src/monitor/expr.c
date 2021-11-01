@@ -102,7 +102,7 @@ static bool make_token(char *e) {
 					case HEX:case DEC:case REG:
 
 						strncpy(tokens[nr_token].str, e + position - substr_len, substr_len);//regs or number
-                        printf("%s \n",tokens[nr_token].str);
+//                        printf("%s \n",tokens[nr_token].str);
 						tokens[nr_token].str[substr_len] = '\0';
                         //add '\0', it's very important
 						//WARNING: 64 may be a little small...
